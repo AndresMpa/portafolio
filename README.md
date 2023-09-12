@@ -1,6 +1,6 @@
 # Portafolio
 
-Hey there, if you are look this page your are looking for my portafolio, check out 
+Hey there, if you are look this page your are looking for my portafolio, check out
 this [ref](https://github.com/AndresMpa/portafolio) (Still on process).
 
 Anyway, you can take a look on this pages too.
@@ -24,6 +24,10 @@ Anyway, you can take a look on this pages too.
 [NTF card preview](https://github.com/AndresMpa/NFT-card-preview)
 
 [Rock Paper Scissors Spock Lizard](https://github.com/AndresMpa/rock-paper-scissors-spock-lizard)
+
+[T O D O](https://github.com/AndresMpa/todo-app)
+
+[Advice generator app](https://github.com/AndresMpa/advice-generator-app)
 
 ### Web API
 
