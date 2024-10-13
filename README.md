@@ -7,7 +7,7 @@ Anyway, you can take a look on this pages too.
 
 ## To do
 
-- [ ] Move this into a simple web site.
+- [ ] Move this into an Astro or Vue web site
 
 ## Projects to add
 
