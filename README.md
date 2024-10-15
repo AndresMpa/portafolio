@@ -8,6 +8,7 @@ Anyway, you can take a look on this pages too.
 ## To do
 
 - [ ] Move this into an Astro
+- [ ] Review astro island 
 
 ## Projects to add
 
