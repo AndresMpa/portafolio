@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+
+import icon from "../assets/icon.svg";
+import theme from "../assets/theme.svg";
+import share from "../assets/share.svg";
+import download from "../assets/download.svg";
+
+import HeaderBtn from "./HeaderBtn.astro";
+
+const buttonData = [
+  {
+    icon: theme,
+    alt: "Theme",
+  },
+
+  {
+    icon: download,
+    alt: "Download",
+  },
+  {
+    icon: share,
+    alt: "Share",
+  },
+];
+---
+
+<nav id="home" class="flex justify-between p-4">
+  <Image src={icon} alt="Menu icon" width="45" class="ml-2" />
+
+  <div>
+    {buttonData.map((data) => <HeaderBtn icon={data.icon} alt={data.alt} />)}
+  </div>
+</nav>

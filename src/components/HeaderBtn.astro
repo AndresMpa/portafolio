@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  icon: any;
+  alt: string;
+}
+
+const { icon, alt } = Astro.props;
+---
+
+<button class="p-2 mr-2 rounded-full bg-accent hover:bg-accent active:bg-accent focus:outline-none focus:ring focus:ring-accent">
+  <Image src={icon} alt={alt} width={15} class="white-svg" />
+</button>
+
+<style>
+  .white-svg {
+    filter: brightness(0) invert(1);
+
+    &:hover {
+      filter: brightness(1.5) invert(1) drop-shadow(0 0 5px #ffffff);
+    }
+  }
+</style>
