@@ -1,0 +1,16 @@
+---
+interface Props {
+  name: string;
+  ref: string;
+}
+
+const { name, ref } = Astro.props;
+---
+
+<li class="mr-6">
+  <a
+    href={ref}
+    class="text-bold uppercase text-accent hover:brightness-125 hover:drop-shadow-[0_0_5px_#0bc7c3] transition duration-300"
+    >{name}</a
+  >
+</li>
