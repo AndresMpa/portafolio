@@ -1,0 +1,55 @@
+---
+import FooterContact from "./FooterContact.astro";
+
+import linkedin from "../assets/linkedin.svg";
+import telegram from "../assets/telegram.svg";
+import github from "../assets/github.svg";
+import gmail from "../assets/gmail.svg";
+
+const todayDate = new Date();
+const today = todayDate.toISOString().split("-")[0];
+
+const socialMedia = [
+  {
+    icon: github,
+    link: "https://github.com/AndresMpa",
+    alt: "GitHub",
+  },
+  {
+    icon: telegram,
+    link: "https://t.me/Andres_Mpa",
+    alt: "Telegram",
+  },
+  {
+    icon: linkedin,
+    link: "https://www.linkedin.com/in/andresmpa/",
+    alt: "LinkedIn",
+  },
+  {
+    icon: gmail,
+    link: "ing.andres.m.prieto@gmail.com",
+    alt: "",
+  },
+];
+---
+
+<footer class="mx-auto bg-accent py-12">
+  <p class="text-center">
+    &copy; Copyright {today}. All Rights Reserved. Made by <a
+      href="https://github.com/AndresMpa"
+      rel="noopener noreferrer"
+      class="font-bold"
+      target="_blank">@AndresMpa</a
+    >
+  </p>
+
+  <div class="border border-white w-11/12 mx-auto my-10"></div>
+
+  <div class="flex justify-center">
+    {
+      socialMedia.map((data) => (
+        <FooterContact icon={data.icon} link={data.link} alt={data.alt} />
+      ))
+    }
+  </div>
+</footer>

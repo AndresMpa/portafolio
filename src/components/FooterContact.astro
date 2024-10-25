@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  icon: ImageMetadata;
+  link: string;
+  alt: string;
+}
+
+const { icon, link, alt } = Astro.props;
+---
+
+<a href={link} target="_blank" rel="noopener noreferrer">
+  <Image src={icon} alt={alt} width={35} class="white-svg mx-5" />
+</a>
+
+<style>
+  .white-svg {
+    filter: brightness(0) invert(1);
+  
+    &:hover {
+      filter: brightness(1.5) invert(1) drop-shadow(0 0 5px #ffffff);
+    }
+  }
+</style>
