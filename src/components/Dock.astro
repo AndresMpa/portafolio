@@ -1,4 +1,5 @@
 ---
+// src/components/Dock.astro
 import DockRoute from "./DockRoute.astro";
 
 const dockRoutes = [
@@ -11,8 +12,10 @@ const dockRoutes = [
 ];
 ---
 
-<aside class="flex justify-center">
-  <ul class="flex rounded-lg border-white border-4 p-2 px-4">
+<aside class="absolute bottom-12 left-0 right-0 flex justify-center z-10">
+  <ul
+    class="flex rounded-lg border-white border-4 p-2 px-4 bg-white/80 backdrop-blur-sm"
+  >
     {
       dockRoutes.map((data) => (
         <DockRoute name={data} ref={`#${data.toLowerCase()}`} />
