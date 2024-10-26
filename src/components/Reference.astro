@@ -1,0 +1,48 @@
+---
+// src/components/Reference.astro
+
+import { Image } from "astro:assets";
+
+interface Props {
+  icon: any;
+  link: string;
+  alt: string;
+  width?: number;
+  useSvg?: boolean;
+  useAlt?: boolean;
+}
+
+const {
+  icon,
+  link,
+  alt,
+  width = 35,
+  useSvg = true,
+  useAlt = false,
+} = Astro.props;
+---
+
+<a
+  href={link}
+  target="_blank"
+  rel="noopener noreferrer"
+  class={useSvg ? "flex" : "flex items-center justify-center mx-2 "}
+>
+  {useAlt ? alt : ""}
+  <Image
+    src={icon}
+    alt={alt}
+    width={width}
+    class={`${useSvg ? "white-svg mx-5" : ""} m-auto`}
+  />
+</a>
+
+<style>
+  .white-svg {
+    filter: brightness(0) invert(1);
+
+    &:hover {
+      filter: brightness(1.5) invert(1) drop-shadow(0 0 5px #ffffff);
+    }
+  }
+</style>
