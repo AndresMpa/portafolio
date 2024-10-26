@@ -14,14 +14,16 @@ interface Props {
 const { type, ref, bolder, context } = Astro.props;
 ---
 
-<td>
+<td class={type === "chip" ? "flex justify-around items-center" : ""}>
   {
     type === "chip" ? (
-      context.split(",").map((text) => {
-        <div class="bg-accent/30 text-accent text-sm px-3 py-1 rounded-full font-semibold hover:bg-accent hover:text-text transition-colors duration-200">
-          {text}
-        </div>;
-      })
+      <>
+        {context.split(",").map((text) => (
+          <div class="bg-accent/30 text-accent text-sm px-3 py-1 rounded-full font-semibold hover:bg-accent hover:text-text transition-colors duration-200">
+            {text}
+          </div>
+        ))}
+      </>
     ) : (
       <div
         class={`${type === "reference" ? "text-white/80 hover:text-accent relative transition-colors duration-200 underline-animation" : type === "title" ? "text-white font-bold" : ""} ${bolder ? "text-bold" : ""} p-6`}
