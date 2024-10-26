@@ -1,5 +1,6 @@
 ---
-import FooterContact from "./FooterContact.astro";
+// src/components/Footer.astro
+import Reference from "./Reference.astro";
 
 import linkedin from "../assets/linkedin.svg";
 import telegram from "../assets/telegram.svg";
@@ -48,7 +49,7 @@ const socialMedia = [
   <div class="flex justify-center">
     {
       socialMedia.map((data) => (
-        <FooterContact icon={data.icon} link={data.link} alt={data.alt} />
+        <Reference icon={data.icon} link={data.link} alt={data.alt} />
       ))
     }
   </div>
