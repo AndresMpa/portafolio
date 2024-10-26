@@ -1,0 +1,534 @@
+---
+// src/components/Community.astro
+import Reference from "./Reference.astro";
+import TableIterator from "./TableIterator.astro";
+
+import arch from "../assets/arch.png";
+import ubuco from "../assets/ubuco.png";
+import flisol from "../assets/flisol.png";
+import forest from "../assets/forest.png";
+
+interface TableItemProps {
+  // TODO: Move to types
+  type: "chip" | "reference" | "title";
+  ref: boolean;
+  bolder: boolean;
+  context: string;
+}
+
+const communitiesData = [
+  {
+    icon: ubuco,
+    link: "https://github.com/AndresMpa",
+    alt: "GitHub",
+  },
+  {
+    icon: flisol,
+    link: "https://t.me/Andres_Mpa",
+    alt: "Telegram",
+  },
+  {
+    icon: arch,
+    link: "https://www.linkedin.com/in/andresmpa/",
+    alt: "LinkedIn",
+  },
+  {
+    icon: forest,
+    link: "mailto:ing.andres.m.prieto@gmail.com",
+    alt: "Correo: ing.andres.m.prieto@gmail.com",
+  },
+];
+
+const headers = ["Conference", "Event", "Topic", "Link", "Year"];
+const entries: Array<TableItemProps[]> = [
+  // 2021
+  [
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context:
+        "Reconocimiento a la excelencia por parte del gobierno de Colombia - Ministerio de las TIC - (Post de referencia)",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: true,
+      context: "Evento de Clausura de MisionTic 20/22",
+    },
+    {
+      type: "chip",
+      ref: false,
+      bolder: false,
+      context: "Reconocimiento público",
+    },
+    {
+      type: "reference",
+      ref: true,
+      bolder: false,
+      context:
+        "https://comunicaciones.utp.edu.co/49241/noticias/mision-tic-recibio-a-sus-tripulantes-en-la-utp-y-abrio-su-nueva-convocatoria/",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "2021",
+    },
+  ],
+
+  // 2023
+  [
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "UbuConLA 2023 - Web Speech API y una proxy bolita",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: true,
+      context: "UbuConLa - C4TA",
+    },
+    {
+      type: "chip",
+      ref: false,
+      bolder: false,
+      context: "Conferencia Internacional",
+    },
+    {
+      type: "reference",
+      ref: true,
+      bolder: false,
+      context: "https://www.youtube.com/live/ytPTSV_plrQ?feature=shared",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "2023",
+    },
+  ],
+
+  [
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "FLISOL2023/Colombia/Pereira - FLISOL",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: true,
+      context: "Festival Latinoamericano de Instalación de Software Libre",
+    },
+    {
+      type: "chip",
+      ref: false,
+      bolder: false,
+      context: "FLISoL, FOSS",
+    },
+    {
+      type: "reference",
+      ref: true,
+      bolder: false,
+      context: "https://flisol.info/FLISOL2023/Colombia/Pereira",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "2023",
+    },
+  ],
+
+  // 2024
+  [
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context:
+        "En Pereira se realizará el Festival Latinoamericano de Instalación de Software Libre - El Diario",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: true,
+      context: "Entrevista",
+    },
+    {
+      type: "chip",
+      ref: false,
+      bolder: false,
+      context: "FLISoL, FOSS",
+    },
+    {
+      type: "reference",
+      ref: true,
+      bolder: false,
+      context:
+        "https://www.eldiario.com.co/noticias/economia/en-pereira-se-realizara-el-festival-latinoamericano-de-instalacion-de-software-libre/",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "2024",
+    },
+  ],
+
+  [
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "FLISOL2024/Colombia/Pereira - FLISOL",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: true,
+      context: "Festival Latinoamericano de Instalación de Software Libre",
+    },
+    {
+      type: "chip",
+      ref: false,
+      bolder: false,
+      context: "FLISoL, FOSS",
+    },
+    {
+      type: "reference",
+      ref: true,
+      bolder: false,
+      context: "https://flisol.info/FLISOL2024/Colombia/Pereira",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "2024",
+    },
+  ],
+
+  [
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "Flisol UTP 2024: 20 Años trabajando por la libertad digital",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: true,
+      context: "Entrevista",
+    },
+    {
+      type: "chip",
+      ref: false,
+      bolder: false,
+      context: "FLISoL, FOSS",
+    },
+    {
+      type: "reference",
+      ref: true,
+      bolder: false,
+      context:
+        "https://comunicaciones.utp.edu.co/62220/facultades/flisol-utp-2024-20-anos-trabajando-por-la-libertad-digital/",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "2024",
+    },
+  ],
+
+  [
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context:
+        "De mortal a developer y otras cosas geniales que puedes hacer con Linux | 20 | Flisol Bogotá DC 2024",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: true,
+      context: "Entrevista",
+    },
+    {
+      type: "chip",
+      ref: false,
+      bolder: false,
+      context: "FLISoL, FOSS",
+    },
+    {
+      type: "reference",
+      ref: true,
+      bolder: false,
+      context: "https://flisolbogota.org/2024/2024/04/23/754/",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "2024",
+    },
+  ],
+
+  [
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context:
+        "La IA puede quitarme el trabajo y otras mentiras que escucharas pronto | 20 | Flisol Bogotá DC 2024",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: true,
+      context: "Entrevista",
+    },
+    {
+      type: "chip",
+      ref: false,
+      bolder: false,
+      context: "FLISoL, FOSS",
+    },
+    {
+      type: "reference",
+      ref: true,
+      bolder: false,
+      context: "https://flisolbogota.org/2024/2024/04/22/722/",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "2024",
+    },
+  ],
+
+  [
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context:
+        "Café FLISoL - ¿La IA puede quitarme el trabajo? - Con el Ing. Andrés Prieto",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: true,
+      context: "Conferencia",
+    },
+    {
+      type: "chip",
+      ref: false,
+      bolder: false,
+      context: "Café FLISoL, FOSS, IA",
+    },
+    {
+      type: "reference",
+      ref: true,
+      bolder: false,
+      context: "https://www.youtube.com/watch?v=JnAxmNA25ak",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "2024",
+    },
+  ],
+
+  [
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context:
+        "Ingenieros en Pereira desarrollan asistente de IA para programar código abierto",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: true,
+      context: "Entrevista",
+    },
+    {
+      type: "chip",
+      ref: false,
+      bolder: false,
+      context: "FOSS, OS, IA, Lyra",
+    },
+    {
+      type: "reference",
+      ref: true,
+      bolder: false,
+      context: "https://www.youtube.com/watch?v=KLSnCxgulKw",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "2024",
+    },
+  ],
+
+  [
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context:
+        "Dos ingenieros en Pereira crean herramientas de IA para programar en código abierto - Ep.32 2024",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: true,
+      context: "Entrevista",
+    },
+    {
+      type: "chip",
+      ref: false,
+      bolder: false,
+      context: "FOSS, OS, IA, Lyra",
+    },
+    {
+      type: "reference",
+      ref: true,
+      bolder: false,
+      context: "https://www.youtube.com/watch?v=eayh7u85Jhk",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "2024",
+    },
+  ],
+
+  [
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "Cómo y por qué hacer proyectos Open Source",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: true,
+      context: "Conferencia",
+    },
+    {
+      type: "chip",
+      ref: false,
+      bolder: false,
+      context: "FOSS, OS",
+    },
+    {
+      type: "reference",
+      ref: true,
+      bolder: false,
+      context: "https://youtu.be/5_qyNXwqpE8?t=2656",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "2024",
+    },
+  ],
+
+  [
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context:
+        "Proyecto Lyra. ¿Cómo pasar del pensar en IA a introducirla en tu sistema operativo? (Virtual)",
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: true,
+      context: "Conferencia Internacional",
+    },
+    {
+      type: "chip",
+      ref: false,
+      bolder: false,
+      context: "IA, Lyra",
+    },
+    {
+      type: "reference",
+      ref: true,
+      bolder: false,
+      context:
+        "https://comunicaciones.cecar.edu.co/congresos-internacionales/ix-simposio-internacional.html#ponentes", // TODO: Henrique
+    },
+    {
+      type: "title",
+      ref: false,
+      bolder: false,
+      context: "2024",
+    },
+  ],
+];
+---
+
+<section id="communities">
+  <div class="flex flex-row">
+    <article class="bg-accent p-12">
+      <h2 class="text-9xl font-bold p-12 uppercase">
+        Think <br />
+        Out <br />
+        Of <br />
+        Code
+      </h2>
+    </article>
+    <article class="flex flex-col items-end my-6 p-6 pr-12">
+      <h3 class="text-4xl mb-6 uppercase text-accent">Communities</h3>
+      <p class="text-right w-10/12 text-2xl">
+        I&#39;m <strong class="text-accent">not only a developer</strong>, I
+        truly believe that giving others to be heard makes devs the best
+        community in the world and <strong class="text-accent"
+          >gives my own voice</strong
+        >
+        space for <strong class="text-accent">an impact</strong> on those who want
+        me to talk to them, that's why <strong class="text-accent"
+          >I also do blogs</strong
+        > and sometimes when my schedule allows me to do it <strong
+          class="text-accent">I give talks</strong
+        > and those things I know
+      </p>
+      <div class="mt-auto flex">
+        {
+          communitiesData.map((data) => (
+            <Reference
+              icon={data.icon}
+              link={data.link}
+              alt={data.alt}
+              useSvg={false}
+              width={65}
+            />
+          ))
+        }
+      </div>
+    </article>
+  </div>
+
+  <article class="overflow-x-auto">
+    <TableIterator headers={headers} entries={entries} />
+  </article>
+</section>
