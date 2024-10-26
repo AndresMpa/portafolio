@@ -1,0 +1,45 @@
+---
+// src/components/TableIterator.astro
+
+import TableItem from "./TableItem.astro";
+
+interface TableItemProps {
+  // TODO: Move to types
+  type: "chip" | "reference" | "title";
+  ref: boolean;
+  bolder: boolean;
+  context: string;
+}
+
+interface Props {
+  headers: string[];
+  entries: Array<TableItemProps[]>;
+}
+
+const { headers, entries } = Astro.props;
+---
+
+<table class="m-12">
+  <thead>
+    <tr>
+      {headers.map((header) => <th>{header}</th>)}
+    </tr>
+  </thead>
+
+  <tbody>
+    {
+      entries.map((entryData) => (
+        <tr>
+          {entryData.map((entryDetail) => (
+            <TableItem
+              type={entryDetail.type}
+              ref={entryDetail.ref}
+              bolder={entryDetail.bolder}
+              context={entryDetail.context}
+            />
+          ))}
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
