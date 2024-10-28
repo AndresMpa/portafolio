@@ -21,15 +21,15 @@ const { headers, entries } = Astro.props;
 
 <table class="m-12">
   <thead>
-    <tr>
-      {headers.map((header) => <th>{header}</th>)}
+    <tr class="border-b-2 border-white">
+      {headers.map((header) => <th class="p-6">{header}</th>)}
     </tr>
   </thead>
 
   <tbody>
     {
       entries.map((entryData) => (
-        <tr>
+    <tr class="border-t border-gray-800/50">
           {entryData.map((entryDetail) => (
             <TableItem
               type={entryDetail.type}
