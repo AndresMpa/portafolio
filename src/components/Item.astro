@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  summary: string;
+  description: string;
+  date?: string;
+}
+
+const { title, summary, description, date } = Astro.props;
+---
+
+<li>
+  <div>
+    <h3>{title}</h3>
+    <p>{date}</p>
+  </div>
+  <div>
+    <summary> {summary}</summary>
+    <details>
+      {description}
+    </details>
+  </div>
+</li>
