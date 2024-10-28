@@ -7,8 +7,8 @@ Anyway, you can take a look on this pages too.
 
 ## To do
 
-- [x] Move this into an Astro
-- [ ] Review astro island 
+- [ ] Review astro island
+- [ ] Review Vue on astro 
 
 ## Projects to add
 
