@@ -3,20 +3,9 @@
 
 import TableItem from "./TableItem.astro";
 
-interface TableItemProps {
-  // TODO: Move to types
-  type: "chip" | "reference" | "title";
-  ref: boolean;
-  bolder: boolean;
-  context: string;
-}
+import type { TableHeadersProps } from "../types";
 
-interface Props {
-  headers: string[];
-  entries: Array<TableItemProps[]>;
-}
-
-const { headers, entries } = Astro.props;
+const { headers, entries } = Astro.props as TableHeadersProps;
 ---
 
 <table class="m-12">

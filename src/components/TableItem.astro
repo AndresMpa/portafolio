@@ -3,15 +3,9 @@
 import link from "../assets/link.svg";
 import Reference from "./Reference.astro";
 
-interface Props {
-  // TODO: Move to types
-  type: "chip" | "reference" | "title";
-  ref: boolean;
-  bolder: boolean;
-  context: string;
-}
+import type { TableItemProps } from "../types";
 
-const { type, ref, bolder, context } = Astro.props;
+const { type, ref, bolder, context } = Astro.props as TableItemProps;
 ---
 
 <td class={type === "chip" ? "flex justify-center items-center h-24" : ""}>

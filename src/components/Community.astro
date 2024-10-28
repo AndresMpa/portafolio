@@ -8,13 +8,7 @@ import ubuco from "../assets/ubuco.png";
 import flisol from "../assets/flisol.png";
 import forest from "../assets/forest.png";
 
-interface TableItemProps {
-  // TODO: Move to types
-  type: "chip" | "reference" | "title";
-  ref: boolean;
-  bolder: boolean;
-  context: string;
-}
+import type { TableItemProps } from "../types";
 
 const communitiesData = [
   {
