@@ -10,6 +10,7 @@ interface Props {
   width?: number;
   useSvg?: boolean;
   useAlt?: boolean;
+  styledClass?: string;
 }
 
 const {
@@ -19,6 +20,7 @@ const {
   width = 35,
   useSvg = true,
   useAlt = false,
+  styledClass = ""
 } = Astro.props;
 ---
 
@@ -26,7 +28,7 @@ const {
   href={link}
   target="_blank"
   rel="noopener noreferrer"
-  class={useSvg ? "flex" : "flex items-center justify-center mx-2 "}
+  class={`${useSvg ? "flex" : "flex items-center justify-center mx-2"} ${styledClass}`}
 >
   {useAlt ? alt : ""}
   <Image
