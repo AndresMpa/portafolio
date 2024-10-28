@@ -14,7 +14,7 @@ interface Props {
 const { type, ref, bolder, context } = Astro.props;
 ---
 
-<td class={type === "chip" ? "flex justify-around items-center" : ""}>
+<td class={type === "chip" ? "flex justify-center items-center h-24" : ""}>
   {
     type === "chip" ? (
       <>
