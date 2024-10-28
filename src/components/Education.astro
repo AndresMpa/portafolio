@@ -1,0 +1,215 @@
+---
+// src/components/Education.astro
+import TableIterator from "./TableIterator.astro";
+
+const headers = ["Title", "Institution", "Topics", "Year"];
+
+const entries = [
+  [
+    {
+      type: "title",
+      ref: false,
+      border: true,
+      context: "MEng. in Artificial Intelligence",
+    },
+    {
+      type: "reference",
+      ref: true,
+      border: false,
+      context: "https://www.utp.edu.co/",
+    },
+    {
+      type: "chip",
+      ref: false,
+      border: false,
+      context: "Architecture,Artificial Intelligence",
+    },
+    {
+      type: "title",
+      ref: false,
+      border: true,
+      context: "2025",
+    },
+  ],
+  [
+    {
+      type: "title",
+      ref: false,
+      border: true,
+      context: "Eng. Software",
+    },
+    {
+      type: "reference",
+      ref: true,
+      border: false,
+      context: "https://www.utp.edu.co/",
+    },
+    {
+      type: "chip",
+      ref: false,
+      border: false,
+      context: "Software,Engineering",
+    },
+    {
+      type: "title",
+      ref: false,
+      border: true,
+      context: "2023",
+    },
+  ],
+  [
+    {
+      type: "title",
+      ref: false,
+      border: true,
+      context: "Tech. Software",
+    },
+    {
+      type: "reference",
+      ref: true,
+      border: false,
+      context: "https://www.utp.edu.co/",
+    },
+    {
+      type: "chip",
+      ref: false,
+      border: false,
+      context: "Software,Engineering",
+    },
+    {
+      type: "title",
+      ref: false,
+      border: true,
+      context: "2021",
+    },
+  ],
+  [
+    {
+      type: "title",
+      ref: false,
+      border: true,
+      context: "JavaScript Fullstack Developer",
+    },
+    {
+      type: "reference",
+      ref: true,
+      border: false,
+      context:
+        "https://platzi.com/p/AndresMpa/ruta/100-javascript-full-stack/diploma/detalle/",
+    },
+    {
+      type: "chip",
+      ref: false,
+      border: false,
+      context: "JavaScript,Backend",
+    },
+    {
+      type: "title",
+      ref: false,
+      border: true,
+      context: "2022",
+    },
+  ],
+  [
+    {
+      type: "title",
+      ref: false,
+      border: true,
+      context: "Node.js Backend Developer",
+    },
+    {
+      type: "reference",
+      ref: true,
+      border: false,
+      context:
+        "https://platzi.com/p/AndresMpa/ruta/55-backend-javascript/diploma/detalle/",
+    },
+    {
+      type: "chip",
+      ref: false,
+      border: false,
+      context: "JavaScript,Backend",
+    },
+    {
+      type: "title",
+      ref: false,
+      border: true,
+      context: "2022",
+    },
+  ],
+  [
+    {
+      type: "title",
+      ref: false,
+      border: true,
+      context: "Python for Data Science, AI & Development",
+    },
+    {
+      type: "reference",
+      ref: true,
+      border: false,
+      context:
+        "https://www.coursera.org/account/accomplishments/certificate/JCG8E2UP6ES8",
+    },
+    {
+      type: "chip",
+      ref: false,
+      border: false,
+      context: "Python,Artifical Intelligence",
+    },
+    {
+      type: "title",
+      ref: false,
+      border: true,
+      context: "2022",
+    },
+  ],
+  [
+    {
+      type: "title",
+      ref: false,
+      border: true,
+      context: "JavaScript Basics",
+    },
+    {
+      type: "reference",
+      ref: true,
+      border: false,
+      context:
+        "https://www.coursera.org/account/accomplishments/verify/49636X93ZJUP",
+    },
+    {
+      type: "chip",
+      ref: false,
+      border: false,
+      context: "JavaScript,Backend",
+    },
+    {
+      type: "title",
+      ref: false,
+      border: true,
+      context: "2022",
+    },
+  ],
+];
+---
+
+<section id="education">
+  <article class="flex flex-col items-start my-6 p-6 pr-12">
+    <h3 class="text-4xl uppercase text-accent">Education</h3>
+    <div class="mx-auto">
+      <TableIterator headers={headers} entries={entries} />
+
+      <div class="text-accent text-center align-middle mb-6 mt-0">
+        <a
+          class="p-2 mx-auto text-xl rounded-full font-semibold hover:bg-accent hover:text-text transition-colors duration-200"
+          href="https://www.linkedin.com/in/andresmpa/details/certifications/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          See full list
+        </a>
+      </div>
+    </div>
+  </article>
+</section>
