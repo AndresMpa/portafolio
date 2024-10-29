@@ -1,0 +1,29 @@
+---
+// src/components/ProjectDescription.astro
+
+import type { ProjectDescriptionProps } from "../types";
+
+const {
+  title,
+  context,
+  authors = [{ link: "https://github.com/AndresMpa", user: "AndresMpa" }],
+} = Astro.props as ProjectDescriptionProps;
+---
+
+<div class="w-6/12 px-12">
+  <h4 class="text-2xl text-accent py-6">
+    {title}
+  </h4>
+  <p class="pl-6 py-6">
+    {context}
+  </p>
+  {
+    authors.map((author) => (
+      <a href={author.link} target="_blank" rel="noopener noreferrer">
+        <span class="bg-accent/30 text-accent text-sm text-center px-3 py-1 mx-2 rounded-full font-semibold hover:bg-accent hover:text-text transition-colors duration-200">
+          @{author.user}
+        </span>
+      </a>
+    ))
+  }
+</div>

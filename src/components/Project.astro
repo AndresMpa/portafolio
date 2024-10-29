@@ -1,0 +1,51 @@
+---
+// src/components/Project.astro
+import type { ProjectProps } from "../types";
+
+import ProjectDescription from "./ProjectDescription.astro";
+import ProjectLink from "./ProjectLink.astro";
+
+const projectsData: ProjectProps[] = [
+  {
+    description: {
+      title: "Lyra: Your Cosmic Companion",
+      context:
+        "Lyra is a virtual assistant designed to navigate the vast sea of information in GNU/Linux, making your computing experience harmonious and intuitive.",
+    },
+    link: {
+      url: "https://github.com/AndresMpa/lyra",
+      topics: "AI,JavaScript,Python",
+      alt: "Lyra's proyect",
+      image:
+        "https://raw.githubusercontent.com/AndresMpa/lyra/main/.doc/assets/banner.png",
+    },
+  },
+];
+---
+
+<section id="projects">
+  <article class="flex flex-col items-end my-6 p-12 pr-12">
+    <h3 class="text-4xl uppercase text-accent">Projects</h3>
+  </article>
+  <article>
+    {
+      projectsData.map((data, index) => (
+        <div class="flex justify-around">
+          <ProjectDescription
+            title={data.description.title}
+            context={data.description.context}
+            authors={data.description.authors}
+          />
+
+          <ProjectLink
+            url={data.link.url}
+            image={data.link.image}
+            topics={data.link.topics}
+            alt={data.link.alt}
+            flip={index % 2 === 0}
+          />
+        </div>
+      ))
+    }
+  </article>
+</section>
