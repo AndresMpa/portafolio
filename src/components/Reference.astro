@@ -3,16 +3,7 @@
 
 import { Image } from "astro:assets";
 
-interface Props {
-  icon: any;
-  link: string;
-  alt: string;
-  width?: number;
-  useSvg?: boolean;
-  useAlt?: boolean;
-  styledClass?: string;
-  underline?: boolean;
-}
+import type { ReferenceProps } from "../types";
 
 const {
   icon,
@@ -23,7 +14,7 @@ const {
   useAlt = false,
   styledClass = "",
   underline = false,
-} = Astro.props;
+} = Astro.props as ReferenceProps;
 ---
 
 <a

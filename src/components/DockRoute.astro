@@ -1,10 +1,9 @@
 ---
-interface Props {
-  name: string;
-  ref: string;
-}
+// src/components/DockRoute.astro
 
-const { name, ref } = Astro.props;
+import type { DockRouteProps } from "../types";
+
+const { name, ref } = Astro.props as DockRouteProps;
 ---
 
 <li class="mr-6">
