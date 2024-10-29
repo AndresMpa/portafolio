@@ -11,6 +11,10 @@ const projectsData: ProjectProps[] = [
       title: "Lyra: Your Cosmic Companion",
       context:
         "Lyra is a virtual assistant designed to navigate the vast sea of information in GNU/Linux, making your computing experience harmonious and intuitive.",
+      authors: [
+        { link: "https://github.com/AndresMpa", user: "AndresMpa" },
+        { link: "https://github.com/xcerock", user: "xcerock" },
+      ],
     },
     link: {
       url: "https://github.com/AndresMpa/lyra",
@@ -18,6 +22,90 @@ const projectsData: ProjectProps[] = [
       alt: "Lyra's proyect",
       image:
         "https://raw.githubusercontent.com/AndresMpa/lyra/main/.doc/assets/banner.png",
+    },
+  },
+  {
+    description: {
+      title: "MuVim",
+      context:
+        "Mu Vim is a fast NeoVim and Vim implementation to made to handle big and small projects everything from your terminal",
+    },
+    link: {
+      url: "https://github.com/AndresMpa/mu-vim",
+      topics: "GNU/Linux,Shell,Dockerfile,JavaScript,Lua",
+      alt: "MuVim",
+      image:
+        "https://raw.githubusercontent.com/AndresMpa/mu-vim/refs/heads/main/.examples/nvim_0.png",
+    },
+  },
+  {
+    description: {
+      title: "Dotfiles",
+      context:
+        "Dotfiles are configuration files, scripts and documentation about an operative system; this repositorie contains my configuration files including scripts, my shell config, some setting for those tools that I use; also some recomendations and guides such as Corne which contain all the necessary materials for building your own Corne keyboard such as mine. I high recommend to check some of my daemons if you use systemctl and AMD GPU like Radeon or something like that",
+    },
+    link: {
+      url: "https://github.com/AndresMpa/dotfiles",
+      topics: "GNU/Linux,Shell,Dockerfile,Python,Lua,C/C++",
+      alt: "Dotfile",
+      image:
+        "https://raw.githubusercontent.com/AndresMpa/dotfiles/main/examples/i3.png",
+    },
+  },
+  {
+    description: {
+      title: "Rock, Paper, Scissors, Spock, Lizard",
+      context:
+        "This is a re implementation from the classic rock, paper, scissors; I got the assets from frontendmentor and this project is a vanilla JS implementation, check the scr/util to see the logic behind it.",
+    },
+    link: {
+      url: "https://github.com/AndresMpa/rock-paper-scissors-spock-lizard",
+      topics: "JavaScript,SCSS,HTML",
+      alt: "Rock, Paper, Scissors, Spock, Lizard",
+      image:
+        "https://raw.githubusercontent.com/AndresMpa/rock-paper-scissors-spock-lizard/main/.doc/asset_1.png",
+    },
+  },
+  {
+    description: {
+      title: "TODO App",
+      context:
+        "This is the classic TODO app crafted for browser, with a couple of extra features like, localstorage, drag&drop and themes",
+    },
+    link: {
+      url: "https://github.com/AndresMpa/todo-app",
+      topics: "JavaScript,Stylus,HTML",
+      alt: "TODO App",
+      image:
+        "https://raw.githubusercontent.com/AndresMpa/todo-app/main/doc/example_dark.png",
+    },
+  },
+  {
+    description: {
+      title: "Advice Generator App",
+      context:
+        "A random quotes generator using some cool staff from Less and JavaScript to create as much senteces as you want",
+    },
+    link: {
+      url: "https://github.com/AndresMpa/advice-generator-app",
+      topics: "JavaScript,Less,CSS,HTML",
+      alt: "Advice Generator App",
+      image:
+        "https://raw.githubusercontent.com/AndresMpa/advice-generator-app/main/doc/advice-preview.png",
+    },
+  },
+  {
+    description: {
+      title: "NFT-Card Preview",
+      context:
+        "This is a simple challenge from Frontend Mentor, it's this one. What you are finding here is a small example of a web component",
+    },
+    link: {
+      url: "https://andresmpa.github.io/NFT-card-preview/",
+      topics: "SCSS,HTML",
+      alt: "NFT-Card Preview",
+      image:
+        "https://raw.githubusercontent.com/AndresMpa/NFT-card-preview/main/doc/example.png",
     },
   },
 ];
@@ -30,7 +118,9 @@ const projectsData: ProjectProps[] = [
   <article>
     {
       projectsData.map((data, index) => (
-        <div class="flex justify-around">
+        <div
+          class={`${index % 2 === 0 ? "" : "flex-row-reverse"} flex justify-around my-12`}
+        >
           <ProjectDescription
             title={data.description.title}
             context={data.description.context}
