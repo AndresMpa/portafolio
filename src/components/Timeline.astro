@@ -1,0 +1,54 @@
+---
+// src/components/Timeline.astro
+
+import type { TimelineProps } from "../types";
+
+const { year, company, title, description, topics } =
+  Astro.props as TimelineProps;
+---
+
+<div class="flex justify-center items-start space-x-8 py-10">
+  <div class="flex flex-col items-center max-w-72 m-12">
+    <div class="flex flex-col items-center">
+      <div
+        class="w-14 h-14 bg-accent rounded-full flex items-center justify-center text-white font-bold mb-2 shadow-lg shadow-blue-300/50"
+      >
+        {year}
+      </div>
+      <h3>{title}</h3>
+      <h4>{company}</h4>
+    </div>
+    <p class="text-center text-gray-700">
+      {description}
+    </p>
+    <div class="py-6 w-full overflow-hidden whitespace-nowrap">
+      <div class="inline-flex animate-scroll">
+        {
+          topics
+            .split(",")
+            .map((topic) => (
+              <span class="bg-accent/30 text-accent text-sm text-center px-3 py-1 mx-2 rounded-full font-semibold hover:bg-accent hover:text-text transition-colors duration-200">
+                {topic}
+              </span>
+            ))
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes scroll {
+    from {
+      transform: translateX(40%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-scroll {
+    display: inline-flex;
+    animation: scroll 15s linear infinite;
+  }
+</style>
