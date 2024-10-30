@@ -5,11 +5,6 @@ this [ref](https://github.com/AndresMpa/portafolio) (Still on process).
 
 Anyway, you can take a look on this pages too.
 
-## To do
-
-- [x] Review astro island (Unnecessary)
-- [x] Review Vue on astro (Unnecessary)
-
 ## Projects to add
 
 ### Oldest pieces of codes
