@@ -1,0 +1,109 @@
+---
+// src/components/Experience.astro
+
+import Timeline from "./Timeline.astro";
+
+const timelineData = [
+  {
+    year: "2017",
+    company: "H.E. GME",
+    title: "Junior Software Developer",
+    description:
+      "I made a platform for a highschool institution, the project was a books administration system in which I made requirements engineering, design and development",
+    topics:
+      "Custom Software,Databases,Desktop Virtualization,Microsoft Access,SQL,Software Engineering,Software Infrastructure",
+  },
+  {
+    year: "2018",
+    company: "Woldev SAS",
+    title: "Junior Software Engineer",
+    description:
+      "I developed small web components, a marketing campaign for a cryptocurrency game and some other game components.",
+    topics:
+      "C++,Web Development,Web 2.0,Bootstrap,CSS,Análisis web,HTML,JavaScript,GNU/Linux",
+  },
+  {
+    year: "2021",
+    company: "Pulsatrix",
+    title: "Blockchain Developer",
+    description:
+      "Secure voting project on Blockchain to manage elections with a cleaner process, providing electronic, secure voting free of modifications by third parties.",
+    topics:
+      "GNU/Linux,Testing,Node.js,Blockchain,Docker,Bash,JavaScript,REST,Web RESTful",
+  },
+  {
+    year: "2022",
+    company: "Delphi",
+    title: "Software Engineer",
+    description:
+      "Company dedicated to creating and innovating in the Artificial Intelligence (AI) sector, focused on machine learning techniques to create solutions.",
+    topics:
+      "Django,AI,Web Development,Lidership,JavaScript,Vue.js,React.js,GNU/Linux,Analysis,APIPython,Database,Docker,Software Development,Custom Software,Software Infraestructure,RESTful,Web RESTful",
+  },
+  {
+    year: "2023",
+    company: "Ubuntu Colombia",
+    title: "Project Development Manager",
+    description: "",
+    topics: "JavaScript,Python,Lidership,Project management,Marketing",
+  },
+  {
+    year: "2023",
+    company: "Forest Software Community",
+    title: "Co-Founder",
+    description: "",
+    topics:
+      "Web Development,Lidership,GNU/Linux,Analysis,FOSS,Open Source,Software Development,Python,JavaScript,React.js,Vue.js,Astro.js",
+  },
+  {
+    year: "2023",
+    company: "Freelancer",
+    title: "Technical Advisor",
+    description: "",
+    topics:
+      "HTML5,CSS,GNU/Linux,Software Development,Software Infraestructure,Docker,JavaScript,Python",
+  },
+  {
+    year: "2024",
+    company: "Freelancer",
+    title: "Software Developer",
+    description: "",
+    topics:
+      "Software Development,React.js,Vue.js,JavaScript,TypeScript,GNU/Linux,Docker,Git,Python,Software Infraestructure,Marketing,Lidership",
+  },
+];
+---
+
+<section id="experience">
+  <article class="flex flex-col items-start my-6 p-6 pr-12">
+    <h3 class="text-4xl uppercase text-accent">Experience</h3>
+    <div
+      class="flex overflow-x-auto space-x-4 py-4 max-w-full scrollbar-hidden"
+    >
+      <div class="flex space-x-4">
+        {
+          timelineData.map((data) => (
+            <Timeline
+              year={data.year}
+              company={data.company}
+              title={data.title}
+              description={data.description}
+              topics={data.topics}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </article>
+</section>
+
+<style>
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
