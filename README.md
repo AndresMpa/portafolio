@@ -7,8 +7,8 @@ Anyway, you can take a look on this pages too.
 
 ## To do
 
-- [ ] Review astro island
-- [ ] Review Vue on astro 
+- [x] Review astro island (Unnecessary)
+- [x] Review Vue on astro (Unnecessary)
 
 ## Projects to add
 
