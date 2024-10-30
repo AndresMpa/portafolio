@@ -53,6 +53,12 @@ interface TableHeadersProps {
   entries: Array<TableItemProps[]>;
 }
 
+interface TimelineProps {
+  year: string;
+  description: string;
+  topics: string;
+}
+
 export type {
   HeaderBtnProps,
   DockRouteProps,
@@ -62,4 +68,5 @@ export type {
   ReferenceProps,
   TableItemProps,
   TableHeadersProps,
+  TimelineProps,
 };
