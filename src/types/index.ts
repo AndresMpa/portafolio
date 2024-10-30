@@ -55,6 +55,8 @@ interface TableHeadersProps {
 
 interface TimelineProps {
   year: string;
+  company: string;
+  title: string;
   description: string;
   topics: string;
 }
