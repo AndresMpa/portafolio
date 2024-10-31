@@ -5,6 +5,10 @@ this [ref](https://github.com/AndresMpa/portafolio) (Still on process).
 
 Anyway, you can take a look on this pages too.
 
+### TODO:
+
+- [ ] Fix Favicon
+
 ## Projects to add
 
 ### Oldest pieces of codes
