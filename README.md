@@ -9,6 +9,7 @@ Anyway, you can take a look on this pages too.
 
 - [ ] Fix Favicon
 - [ ] Fix OG meta data
+- [ ] Find provider for OG images
 
 ## Projects to add
 
