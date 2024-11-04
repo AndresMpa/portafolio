@@ -8,6 +8,7 @@ Anyway, you can take a look on this pages too.
 ### TODO:
 
 - [ ] Fix Favicon
+- [ ] Fix OG meta data
 
 ## Projects to add
 
