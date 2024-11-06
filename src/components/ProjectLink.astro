@@ -24,7 +24,7 @@ const {
       class={`rounded single-img ${flip ? "flipped" : ""}`}
     />
   </a>
-  <div class={flip ? "flex justify-end" : ""}>
+  <p class=`${flip ? "flex justify-end" : ""} px-5 mt-5`>
     {
       topics
         .split(",")
@@ -34,7 +34,7 @@ const {
           </span>
         ))
     }
-  </div>
+  </p>
 </div>
 
 <style>

@@ -127,14 +127,14 @@ const projectsData: ProjectProps[] = [
 ---
 
 <section id="projects">
-  <article class="flex flex-col items-end my-6 p-12 pr-12">
+  <article class="flex flex-col items-end mb-6 pb-12 pr-12">
     <h3 class="text-4xl uppercase text-accent">Projects</h3>
   </article>
   <article>
     {
       projectsData.map((data, index) => (
         <div
-          class={`${index % 2 === 0 ? "" : "flex-row-reverse"} flex justify-around my-12`}
+          class={`${index % 2 === 0 ? "" : "flex-row-reverse"} md:flex justify-around my-12`}
         >
           <ProjectDescription
             title={data.description.title}

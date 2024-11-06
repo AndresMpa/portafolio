@@ -197,10 +197,14 @@ const entries = [
 <section id="education">
   <article class="flex flex-col items-start my-6 p-6 pr-12">
     <h3 class="text-4xl uppercase text-accent">Education</h3>
-    <div class="mx-auto">
-      <TableIterator headers={headers} entries={entries} />
+    <div class="mx-auto md:w-8/12 w-full">
+      <div class="mx-auto overflow-x-auto">
+        <TableIterator headers={headers} entries={entries} />
+      </div>
 
-      <div class="text-accent text-center align-middle mb-6 mt-0">
+      <div
+        class="flex justify-center w-full text-accent text-center align-middle mb-6 mt-0 mx-auto"
+      >
         <a
           class="p-2 mx-auto text-xl rounded-full font-semibold hover:bg-accent hover:text-text transition-colors duration-200"
           href="https://www.linkedin.com/in/andresmpa/details/certifications/"

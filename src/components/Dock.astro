@@ -12,9 +12,11 @@ const dockRoutes = [
 ];
 ---
 
-<aside class="absolute bottom-12 left-0 right-0 flex justify-center z-10">
+<aside
+  class="hidden md:flex justify-center absolute bottom-4 md:bottom-12 left-0 right-0 z-10"
+>
   <ul
-    class="flex rounded-lg border-white border-4 p-2 px-4 bg-white/80 backdrop-blur-sm"
+    class="flex rounded-lg border-white border-2 md:border-4 p-1 md:p-2 px-2 md:px-4 bg-white/80 backdrop-blur-sm"
   >
     {
       dockRoutes.map((data) => (
