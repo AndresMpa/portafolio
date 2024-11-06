@@ -5,6 +5,12 @@ this [ref](https://github.com/AndresMpa/portafolio) (Still on process).
 
 Anyway, you can take a look on this pages too.
 
+### TODO:
+
+- [ ] Fix Favicon
+- [ ] Fix OG meta data
+- [ ] Find provider for OG images
+
 ## Projects to add
 
 ### Oldest pieces of codes
