@@ -7,8 +7,7 @@ import netlify from "@astrojs/netlify";
 // https://astro.build/config
 export default defineConfig({
   image: {
-    domains: ["raw.githubusercontent.com"],
-    remotePatterns: [{ protocol: "https" }],
+    domains: ["github.com, raw.githubusercontent.com"],
   },
   integrations: [
     tailwind(),
@@ -21,9 +20,6 @@ export default defineConfig({
       },
     }),
   ],
-
   output: "server",
-  adapter: netlify({
-    edgeMiddleware: true,
-  }),
+  adapter: netlify(),
 });
