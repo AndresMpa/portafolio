@@ -20,6 +20,8 @@ const {
       src={image}
       width={450}
       height={300}
+      loading="lazy"
+      decoding="async"
       alt={`${alt}: ${url}`}
       class={`rounded single-img ${flip ? "flipped" : ""}`}
     />
