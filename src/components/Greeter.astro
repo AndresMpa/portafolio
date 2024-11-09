@@ -1,27 +1,29 @@
 ---
 // src/components/Greeter.astro
+
+import { t } from "i18n:astro"
 ---
 
 <section class="flex flex-col items-center justify-center md:min-h-screen min-h-80">
   <article class="mt-[-40px] sm:mt-[-80px]">
     <h1 class="text-4xl sm:text-5xl md:text-6xl mx-12 uppercase text-center">
-      Web, AI & FOSS Developer
+      {t("greeter.title")}
     </h1>
   </article>
   <article class="flex justify-center mt-12 md:pb-60">
     <h2
       class="text-lg sm:text-xl md:text-2xl w-full mx-5 sm:w-10/12 md:w-8/12 text-center"
     >
-      I&#39;m a software engineer focused on <strong
+      {t("greeter.description1")}<strong
         class="text-bold text-accent hover:brightness-125 hover:drop-shadow-[0_0_5px_#0bc7c3] transition duration-300"
-        >solving problems</strong
-      > through
+        > {t("greeter.key1")}</strong
+      > {t("greeter.description2")}
       <strong
         class="text-bold text-accent hover:brightness-125 hover:drop-shadow-[0_0_5px_#0bc7c3] transition duration-300"
-        >top-of-the-edge technologies</strong
-      >. I think out of code to <strong
+        > {t("greeter.key2")}</strong
+      >. {t("greeter.description3")} <strong
         class="text-bold text-accent hover:brightness-125 hover:drop-shadow-[0_0_5px_#0bc7c3] transition duration-300"
-        >focus on solutions</strong
+        >{t("greeter.key3")}</strong
       >
     </h2>
   </article>

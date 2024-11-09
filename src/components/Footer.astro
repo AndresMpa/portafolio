@@ -6,6 +6,7 @@ import linkedin from "../assets/linkedin.svg";
 import telegram from "../assets/telegram.svg";
 import github from "../assets/github.svg";
 import gmail from "../assets/gmail.svg";
+import { t } from "i18n:astro";
 
 const todayDate = new Date();
 const today = todayDate.toISOString().split("-")[0];
@@ -36,7 +37,8 @@ const socialMedia = [
 
 <footer id="contact" class="mx-auto bg-accent py-12">
   <p class="text-center">
-    &copy; Copyright {today}. All Rights Reserved. Made by <a
+    &copy; Copyright {today}. {t("footer.rights")}. {t("footer.made")}
+    <a
       href="https://github.com/AndresMpa"
       rel="noopener noreferrer"
       class="font-bold"

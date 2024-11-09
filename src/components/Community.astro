@@ -1,5 +1,7 @@
 ---
 // src/components/Community.astro
+import { t } from "i18n:astro";
+
 import Reference from "./Reference.astro";
 import TableIterator from "./TableIterator.astro";
 
@@ -33,7 +35,7 @@ const communitiesData = [
   },
 ];
 
-const headers = ["Conference", "Event", "Topic", "Link", "Year"];
+const headers = t("community.headers").split(" ");
 const entries: Array<TableItemProps[]> = [
   // 2021
   [
@@ -327,7 +329,7 @@ const entries: Array<TableItemProps[]> = [
       type: "chip",
       ref: false,
       bolder: false,
-      context: "FLISoL, FOSS, IA",
+      context: "FLISoL, FOSS, AI",
     },
     {
       type: "reference",
@@ -361,7 +363,7 @@ const entries: Array<TableItemProps[]> = [
       type: "chip",
       ref: false,
       bolder: false,
-      context: "FOSS, IA, Lyra",
+      context: "FOSS, AI, Lyra",
     },
     {
       type: "reference",
@@ -395,7 +397,7 @@ const entries: Array<TableItemProps[]> = [
       type: "chip",
       ref: false,
       bolder: false,
-      context: "FOSS, IA, Lyra",
+      context: "FOSS, AI, Lyra",
     },
     {
       type: "reference",
@@ -462,7 +464,7 @@ const entries: Array<TableItemProps[]> = [
       type: "chip",
       ref: false,
       bolder: false,
-      context: "IA, Lyra",
+      context: "AI, Lyra",
     },
     {
       type: "reference",
@@ -492,19 +494,24 @@ const entries: Array<TableItemProps[]> = [
       </h2>
     </article>
     <article class="flex flex-col items-end my-6 p-6 pr-12">
-      <h3 class="text-4xl mb-6 uppercase text-accent">Communities</h3>
+      <h3 class="text-4xl mb-6 uppercase text-accent">
+        {t("community.title")}
+      </h3>
       <p class="text-right w-10/12 text-2xl py-6">
-        I&#39;m <strong class="text-accent">not only a developer</strong>, I
-        truly believe that giving others to be heard makes devs the best
-        community in the world and <strong class="text-accent"
-          >gives my own voice</strong
-        >
-        space for <strong class="text-accent">an impact</strong> on those who want
-        me to talk to them, that's why <strong class="text-accent"
-          >I also do blogs</strong
-        > and sometimes when my schedule allows me to do it <strong
-          class="text-accent">I give talks</strong
-        > and those things I know
+        {t("community.description1")}
+        <strong class="text-accent">{t("community.key1")}</strong>, {
+          t("community.description2")
+        }
+        <strong class="text-accent">{t("community.key2")}</strong>
+        {t("community.description3")}<strong class="text-accent">
+          {t("community.key3")}
+        </strong>{t("community.description4")}
+        <strong class="text-accent">{t("community.key4")}</strong>
+        {t("community.description5")}
+        <strong class="text-accent">
+          {t("community.key5")}
+        </strong>
+        {t("community.description6")}
       </p>
       <div class="md:mt-auto mt-12 flex">
         {

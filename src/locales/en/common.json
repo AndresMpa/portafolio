@@ -1,0 +1,63 @@
+{
+  "title": "AndresMpa - FullStack Software Engineer",
+  "greeter": {
+    "title": "Web, AI & FOSS Developer",
+    "description1": "I'm a software engineer focused on",
+    "key1": "solving problems",
+    "description2": "through",
+    "key2": "top-of-the-edge technologies",
+    "description3": "I think out of code to",
+    "key3": "focus on solutions"
+  },
+  "dock": "Home Experience Projects Education Communities Contact",
+  "experience": {
+    "title": "Experience",
+    "description1": "I made a platform for a highschool institution, the project was a books administration system in which I made requirements engineering, design and development",
+    "description2": "I developed small web components, a marketing campaign for a cryptocurrency game and some other game components.",
+    "description3": "Secure voting project on Blockchain to manage elections with a cleaner process, providing electronic, secure voting free of modifications by third parties.",
+    "description4": "Company dedicated to creating and innovating in the Artificial Intelligence (AI) sector, focused on machine learning techniques to create solutions.",
+    "description5": "As a member of Ubuntu, I have participated in various conferences, symposiums, talks and similar events, both as a speaker and as an organizer, manager and administrator. My work with communities is considered voluntary and I participate when possible, but it has allowed me to develop various soft skills and some technical ones.",
+    "description6": "I have founded a community of developers in which we dedicate ourselves to teaching others about software, to participate in events where we can interact with other devs, companies, etc. FOREST is an initiative that arises from the desire to share with other people what we know.",
+    "description7": "I have worked as a Technical Advisor for several companies, these were dedicated to banking and the role I played for them was to restructure part of their company, specifically their IT area.",
+    "description8": "I have been working as a freelancer for a few years now, and during this time I have had the opportunity to work for various industries, including education, marketing and SME banking. I have also had the opportunity to work with older code bases and larger ones, and to create projects with various concurrencies."
+  },
+  "projects": {
+    "title": "Projects",
+    "context1": "Lyra is a virtual assistant designed to navigate the vast sea of information in GNU/Linux, making your computing experience harmonious and intuitive.",
+    "context2": "Mu Vim is a fast NeoVim and Vim implementation made to handle big and small projects everything from your terminal",
+    "context3": "Dotfiles are configuration files, scripts and documentation about an operative system; this repositorie contains my configuration files including scripts, my shell config, some setting for those tools that I use; also some recomendations and guides such as Corne which contain all the necessary materials for building your own Corne keyboard such as mine. I high recommend to check some of my daemons if you use systemctl and AMD GPU like Radeon or something like that",
+    "context4": "This is a re implementation from the classic rock, paper, scissors; I got the assets from frontendmentor and this project is a vanilla JS implementation, check the scr/util to see the logic behind it.",
+    "context5": "This is the classic TODO app crafted for browser, with a couple of extra features like, localstorage, drag&drop and themes",
+    "context6": "A random quotes generator using some cool staff from Less and JavaScript to create as much senteces as you want",
+    "context7": "This is a simple challenge from Frontend Mentor, it's this one. What you are finding here is a small example of a web component",
+    "context8": "Simple parking system hand crafted with Vue",
+    "context9": "Babylon is a collection of courses I have took or I'm taking; basically those folders up there are my notes some code and personal thoughts about different technologies, from Frontend to AI/ML, you can (Or will) find almost anything here. The aim of this repository is to have a set of tools for myself (Or you) to keep checking them, in order to remember of find topic. I'm also adding a reference list for tools I find useful"
+  },
+  "education": {
+    "title": "Education",
+    "headers": "Title Institution Topics Year",
+    "more": "See full list",
+    "description1": "MEng. in Artificial Intelligence",
+    "description2": "Eng. Software",
+    "description3": "Tech. Software"
+  },
+  "community": {
+    "title": "Communities",
+    "headers": "Conference Event Topic Link Year",
+    "description1": "I'm",
+    "key1": "not only a developer",
+    "description2": "I truly believe that giving others to be heard makes devs the best community in the world and",
+    "key2": "gives my own voice",
+    "description3": "space for",
+    "key3": "an impact",
+    "description4": "on those who want me to talk to them, that's why",
+    "key4": "I also do blogs",
+    "description5": "and sometimes when my schedule allows me to do it",
+    "key5": "I give talks",
+    "description6": "and those things I know"
+  },
+  "footer": {
+    "rights": "All Rights Reserved",
+    "made": "Made by"
+  }
+}

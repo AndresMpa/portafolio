@@ -1,0 +1,23 @@
+---
+import { t } from "i18n:astro";
+
+import Layout from "../layouts/Layout.astro";
+
+import Dock from "../components/Dock.astro";
+import Greeter from "../components/Greeter.astro";
+import Project from "../components/Project.astro";
+import Education from "../components/Education.astro";
+import Community from "../components/Community.astro";
+import Experience from "../components/Experience.astro";
+
+const title = `${t("title")}`;
+---
+
+<Layout title={title}>
+  <Greeter />
+  <Dock />
+  <Experience />
+  <Project />
+  <Education />
+  <Community />
+</Layout>

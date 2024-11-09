@@ -1,5 +1,6 @@
 ---
 // src/components/Experience.astro
+import { t } from "i18n:astro";
 
 import Timeline from "./Timeline.astro";
 
@@ -9,7 +10,7 @@ const timelineData = [
     company: "H.E. GME",
     title: "Junior Software Developer",
     description:
-      "I made a platform for a highschool institution, the project was a books administration system in which I made requirements engineering, design and development",
+    t("experience.description1"),
     topics:
       "Custom Software,Databases,Desktop Virtualization,Microsoft Access,SQL,Software Engineering,Software Infrastructure",
   },
@@ -18,7 +19,7 @@ const timelineData = [
     company: "Woldev SAS",
     title: "Junior Software Engineer",
     description:
-      "I developed small web components, a marketing campaign for a cryptocurrency game and some other game components.",
+    t("experience.description2"),
     topics:
       "C++,Web Development,Web 2.0,Bootstrap,CSS,Análisis web,HTML,JavaScript,GNU/Linux",
   },
@@ -27,7 +28,7 @@ const timelineData = [
     company: "Pulsatrix",
     title: "Blockchain Developer",
     description:
-      "Secure voting project on Blockchain to manage elections with a cleaner process, providing electronic, secure voting free of modifications by third parties.",
+    t("experience.description3"),
     topics:
       "GNU/Linux,Testing,Node.js,Blockchain,Docker,Bash,JavaScript,REST,Web RESTful",
   },
@@ -36,7 +37,7 @@ const timelineData = [
     company: "Delphi",
     title: "Software Engineer",
     description:
-      "Company dedicated to creating and innovating in the Artificial Intelligence (AI) sector, focused on machine learning techniques to create solutions.",
+    t("experience.description4"),
     topics:
       "Django,AI,Web Development,Lidership,JavaScript,Vue.js,React.js,GNU/Linux,Analysis,APIPython,Database,Docker,Software Development,Custom Software,Software Infraestructure,RESTful,Web RESTful",
   },
@@ -44,14 +45,17 @@ const timelineData = [
     year: "2023",
     company: "Ubuntu Colombia",
     title: "Project Development Manager",
-    description: `As a member of Ubuntu, I have participated in various conferences, symposiums, talks and similar events, both as a speaker and as an organizer, manager and administrator. My work with communities is considered voluntary and I participate when possible, but it has allowed me to develop various soft skills and some technical ones.`,
+    description: 
+
+    t("experience.description5"),
     topics: "JavaScript,Python,Lidership,Project management,Marketing",
   },
   {
     year: "2023",
     company: "Forest Software Community",
     title: "Co-Founder",
-    description: "I have founded a community of developers in which we dedicate ourselves to teaching others about software, to participate in events where we can interact with other devs, companies, etc. FOREST is an initiative that arises from the desire to share with other people what we know.",
+    description: 
+    t("experience.description6"),
     topics:
       "Web Development,Lidership,GNU/Linux,Analysis,FOSS,Open Source,Software Development,Python,JavaScript,React.js,Vue.js,Astro.js",
   },
@@ -59,7 +63,8 @@ const timelineData = [
     year: "2023",
     company: "Freelancer",
     title: "Technical Advisor",
-    description: "I have worked as a Technical Advisor for several companies, these were dedicated to banking and the role I played for them was to restructure part of their company, specifically their IT area.",
+    description: 
+    t("experience.description7"),
     topics:
       "HTML5,CSS,GNU/Linux,Software Development,Software Infraestructure,Docker,JavaScript,Python",
   },
@@ -67,7 +72,8 @@ const timelineData = [
     year: "2024",
     company: "Freelancer",
     title: "Software Developer",
-    description: "I have been working as a freelancer for a few years now, and during this time I have had the opportunity to work for various industries, including education, marketing and SME banking. I have also had the opportunity to work with older code bases and larger ones, and to create projects with various concurrencies.",
+    description:
+    t("experience.description8"),
     topics:
       "Software Development,React.js,Vue.js,JavaScript,TypeScript,GNU/Linux,Docker,Git,Python,Software Infraestructure,Marketing,Lidership",
   },
@@ -76,7 +82,9 @@ const timelineData = [
 
 <section id="experience">
   <article class="flex flex-col items-start mt-6 px-6 pr-12">
-    <h3 class="text-4xl uppercase text-accent mb-12">Experience</h3>
+    <h3 class="text-4xl uppercase text-accent mb-12">
+      {t("experience.title")}
+      </h3>
     <div
       class="flex overflow-x-auto space-x-4 py-4 max-w-full scrollbar-hidden"
     >

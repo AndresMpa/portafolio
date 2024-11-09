@@ -1,16 +1,16 @@
 ---
 // src/components/Education.astro
+import { t } from "i18n:astro";
 import TableIterator from "./TableIterator.astro";
 
-const headers = ["Title", "Institution", "Topics", "Year"];
-
+const headers = t("education.headers").split(" ");
 const entries = [
   [
     {
       type: "title",
       ref: false,
       border: true,
-      context: "MEng. in Artificial Intelligence",
+      context: t("education.description1"),
     },
     {
       type: "reference",
@@ -22,7 +22,7 @@ const entries = [
       type: "chip",
       ref: false,
       border: false,
-      context: "Architecture,Artificial Intelligence",
+      context: "Architecture,AI",
     },
     {
       type: "title",
@@ -36,7 +36,7 @@ const entries = [
       type: "title",
       ref: false,
       border: true,
-      context: "Eng. Software",
+      context: t("education.description2"),
     },
     {
       type: "reference",
@@ -62,7 +62,7 @@ const entries = [
       type: "title",
       ref: false,
       border: true,
-      context: "Tech. Software",
+      context: t("education.description3"),
     },
     {
       type: "reference",
@@ -155,7 +155,7 @@ const entries = [
       type: "chip",
       ref: false,
       border: false,
-      context: "Python,Artifical Intelligence",
+      context: "Python,AI",
     },
     {
       type: "title",
@@ -196,7 +196,9 @@ const entries = [
 
 <section id="education">
   <article class="flex flex-col items-start my-6 p-6 pr-12">
-    <h3 class="text-4xl uppercase text-accent">Education</h3>
+    <h3 class="text-4xl uppercase text-accent">
+      {t("education.title")}
+    </h3>
     <div class="mx-auto md:w-8/12 w-full">
       <div class="mx-auto overflow-x-auto">
         <TableIterator headers={headers} entries={entries} />
@@ -211,7 +213,7 @@ const entries = [
           rel="noopener noreferrer"
           target="_blank"
         >
-          See full list
+          {t("education.more")}
         </a>
       </div>
     </div>

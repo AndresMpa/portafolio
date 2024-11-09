@@ -1,0 +1,32 @@
+---
+import { getLocale, getSwitcherData } from "i18n:astro";
+
+const locale = getLocale();
+const data = getSwitcherData();
+---
+
+<div class="inline-block relative mx-3">
+  <select
+    class="appearance-none w-full bg-accent hover:bg-accent active:bg-accent focus:outline-none focus:ring focus:ring-accent text-gray-700 py-2 px-4 pr-8 rounded-full shadow leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+    onchange="location = this.value;"
+  >
+    {
+      data.map((e) => (
+        <option value={e.href} selected={e.locale === locale}>
+          {e.locale}
+        </option>
+      ))
+    }
+  </select>
+  <div
+    class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"
+  >
+    <svg
+      class="fill-current h-4 w-4 text-gray-500"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+    >
+      <path d="M5.5 8l4.5 4.5L14.5 8z"></path>
+    </svg>
+  </div>
+</div>

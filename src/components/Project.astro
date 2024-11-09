@@ -1,5 +1,6 @@
 ---
 // src/components/Project.astro
+import { t } from "i18n:astro";
 import type { ProjectProps } from "../types";
 
 import ProjectDescription from "./ProjectDescription.astro";
@@ -9,8 +10,7 @@ const projectsData: ProjectProps[] = [
   {
     description: {
       title: "Lyra: Your Cosmic Companion",
-      context:
-        "Lyra is a virtual assistant designed to navigate the vast sea of information in GNU/Linux, making your computing experience harmonious and intuitive.",
+      context: t("projects.context1"),
       authors: [
         { link: "https://github.com/AndresMpa", user: "AndresMpa" },
         { link: "https://github.com/xcerock", user: "xcerock" },
@@ -27,8 +27,7 @@ const projectsData: ProjectProps[] = [
   {
     description: {
       title: "MuVim",
-      context:
-        "Mu Vim is a fast NeoVim and Vim implementation made to handle big and small projects everything from your terminal",
+      context: t("projects.context2"),
     },
     link: {
       url: "https://github.com/AndresMpa/mu-vim",
@@ -41,8 +40,7 @@ const projectsData: ProjectProps[] = [
   {
     description: {
       title: "Dotfiles",
-      context:
-        "Dotfiles are configuration files, scripts and documentation about an operative system; this repositorie contains my configuration files including scripts, my shell config, some setting for those tools that I use; also some recomendations and guides such as Corne which contain all the necessary materials for building your own Corne keyboard such as mine. I high recommend to check some of my daemons if you use systemctl and AMD GPU like Radeon or something like that",
+      context: t("projects.context3"),
     },
     link: {
       url: "https://github.com/AndresMpa/dotfiles",
@@ -55,8 +53,7 @@ const projectsData: ProjectProps[] = [
   {
     description: {
       title: "Rock, Paper, Scissors, Spock, Lizard",
-      context:
-        "This is a re implementation from the classic rock, paper, scissors; I got the assets from frontendmentor and this project is a vanilla JS implementation, check the scr/util to see the logic behind it.",
+      context: t("projects.context4"),
     },
     link: {
       url: "https://github.com/AndresMpa/rock-paper-scissors-spock-lizard",
@@ -69,8 +66,7 @@ const projectsData: ProjectProps[] = [
   {
     description: {
       title: "TODO App",
-      context:
-        "This is the classic TODO app crafted for browser, with a couple of extra features like, localstorage, drag&drop and themes",
+      context: t("projects.context5"),
     },
     link: {
       url: "https://github.com/AndresMpa/todo-app",
@@ -83,8 +79,7 @@ const projectsData: ProjectProps[] = [
   {
     description: {
       title: "Advice Generator App",
-      context:
-        "A random quotes generator using some cool staff from Less and JavaScript to create as much senteces as you want",
+      context: t("projects.context6"),
     },
     link: {
       url: "https://github.com/AndresMpa/advice-generator-app",
@@ -97,8 +92,7 @@ const projectsData: ProjectProps[] = [
   {
     description: {
       title: "NFT-Card Preview",
-      context:
-        "This is a simple challenge from Frontend Mentor, it's this one. What you are finding here is a small example of a web component",
+      context: t("projects.context7"),
     },
     link: {
       url: "https://andresmpa.github.io/NFT-card-preview/",
@@ -111,22 +105,20 @@ const projectsData: ProjectProps[] = [
   {
     description: {
       title: "Parking system",
-      context: `Simple parking system hand crafted with Vue`,
+      context: t("projects.context8"),
     },
     link: {
       url: "https://github.com/AndresMpa/parking-system",
       topics: "UI,Vue,Vuex,Vue Router",
       alt: "Parking system",
       image:
-      "https://raw.githubusercontent.com/AndresMpa/parking-system/refs/heads/main/.doc/example.png",
+        "https://raw.githubusercontent.com/AndresMpa/parking-system/refs/heads/main/.doc/example.png",
     },
   },
   {
     description: {
       title: "Babylon: Resources for developers",
-      context: `Babylon is a collection of courses I have took or I'm taking; basically those folders up there are my notes some code and personal thoughts about different technologies, from Frontend to AI/ML, you can (Or will) find almost anything here.
-
-      The aim of this repository is to have a set of tools for myself (Or you) to keep checking them, in order to remember of find topic. I\'m also adding a reference list for tools I find useful`,
+      context: t("projects.context9"),
     },
     link: {
       url: "https://github.com/AndresMpa/babylon",
@@ -141,7 +133,9 @@ const projectsData: ProjectProps[] = [
 
 <section id="projects">
   <article class="flex flex-col items-end mb-6 pb-12 pr-12">
-    <h3 class="text-4xl uppercase text-accent">Projects</h3>
+    <h3 class="text-4xl uppercase text-accent">
+      {t("projects.title")}
+    </h3>
   </article>
   <article>
     {

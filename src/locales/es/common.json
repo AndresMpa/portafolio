@@ -1,0 +1,63 @@
+{
+  "title": "AndresMpa - Ingeniero de Software Fullstack",
+  "greeter": {
+    "title": "Desarrollador Web, IA & FOSS",
+    "description1": "Soy un desarrollador de software enfocado a",
+    "key1": "resolver problemas",
+    "description2": "usando",
+    "key2": "tecnologias de punta",
+    "description3": "Pienso fuera de la caja para",
+    "key3": "enfocarme en soluciones"
+  },
+  "dock": "Home Experiencia Proyectos Educación Comunidades Contacto",
+  "experience": {
+    "title": "Experiencia",
+    "description1": "Realicé una plataforma para una institución de educación secundaria, el proyecto era un sistema de administración de libros en el que realicé ingeniería de requerimientos, diseño y desarrollo",
+    "description2": "Desarrollé pequeños componentes web, una campaña de marketing para un juego de criptomonedas y algunos otros componentes del juego.",
+    "description3": "Proyecto de votación segura sobre Blockchain para gestionar elecciones con un proceso más limpio, brindando votación electrónica, segura y libre de modificaciones por parte de terceros.",
+    "description4": "Empresa dedicada a crear e innovar en el sector de la Inteligencia Artificial (IA), enfocada en técnicas de aprendizaje automático para crear soluciones.",
+    "description5": "Como miembro de Ubuntu, he participado en diversas conferencias, simposios, charlas y eventos similares, tanto como ponente como organizador, gestor y administrador. Mi trabajo con comunidades se considera voluntario y participo cuando es posible, pero me ha permitido desarrollar diversas habilidades blandas y algunas técnicas.",
+    "description6": "He fundado una comunidad de desarrolladores en la que nos dedicamos a enseñar a otros sobre software, a participar en eventos donde podemos interactuar con otros desarrolladores, empresas, etc. FOREST es una iniciativa que surge de las ganas de compartir con otras personas lo que sabemos.",
+    "description7": "He trabajado como Asesor Técnico para varias empresas, estas se dedicaban a la banca y el rol que desempeñé para ellas fue reestructurar parte de su empresa, específicamente su área de IT.",
+    "description8": "He estado trabajando como freelance desde hace unos años, y durante este tiempo he tenido la oportunidad de trabajar para varias industrias, entre ellas educación, marketing y banca pyme. También he tenido la oportunidad de trabajar con bases de código antiguas y de mayor tamaño, y de crear proyectos con varias concurrencias."
+  },
+  "projects": {
+    "title": "Proyectos",
+    "context1": "Lyra es un asistente virtual diseñado para navegar el vasto mar de información en GNU/Linux, haciendo que tu experiencia informática sea armoniosa e intuitiva.",
+    "context2": "Mu Vim es una rápida implementación de NeoVim y Vim hecha para manejar proyectos grandes y pequeños, todo desde tu terminal",
+    "context3": "Los Dotfiles son archivos de configuración, scripts y documentación sobre un sistema operativo; este repositorio contiene mis archivos de configuración incluyendo scripts, mi configuración de shell, algunas configuraciones para aquellas herramientas que uso; también algunas recomendaciones y guías como Corne que contienen todos los materiales necesarios para construir tu propio teclado Corne como el mío. Recomiendo encarecidamente que revises algunos de mis daemons si usas systemctl y GPU AMD como Radeon o algo así",
+    "context4": "Esta es una re-implementación del clásico piedra, papel, tijera; obtuve los recursos de frontendmentor y este proyecto es una implementación de JS simple, revisa el scr/util para ver la lógica detrás de esto.",
+    "context5": "Esto es la clásica aplicación TODO creada para el navegador, con un par de funciones adicionales como almacenamiento local, arrastrar y soltar y temas",
+    "context6": "Un generador de citas aleatorias que utiliza algunos elementos geniales de Less y JavaScript para crear tantas oraciones como quieras",
+    "context7": "Este es un desafío simple de Frontend Mentor, es este. Lo que estás encontrando aquí es un pequeño ejemplo de un componente web",
+    "context8": "Sistema de estacionamiento simple creado a mano con Vue",
+    "context9": "Babylon es una colección de cursos que tomé o estoy tomando; básicamente, esas carpetas que están ahí arriba son mis notas, algunos códigos y pensamientos personales sobre diferentes tecnologías, desde Frontend hasta AI/ML, puedes (o encontrarás) casi cualquier cosa aquí. El objetivo de este repositorio es tener un conjunto de herramientas para mí (o para ti) para seguir revisándolas, para recordar o encontrar un tema. También estoy agregando una lista de referencia para las herramientas que encuentro útiles"
+  },
+  "education": {
+    "title": "Educación",
+    "headers": "Titulo Institución Temas Año",
+    "more": "Ver lista completa",
+    "description1": "Maestría en Ingeniería de sistemas y computación con enfasis en Inteligencia Artificial",
+    "description2": "Ingeniería de sistemas de computación",
+    "description3": "Tecnología de desarrollo de software con enfoque al desarrollo web"
+  },
+  "community": {
+    "title": "Comunidades",
+    "headers": "Conferencia Evento Temas Link Año",
+    "description1": "No soy",
+    "key1": "solo un desarollador más",
+    "description2": "realmente creo que darle la oportunidad a otros de ser escuchados hace de la comunidad de devs, la mejor comunidad del mundo y",
+    "key2": "darle a mi propia voz",
+    "description3": "el espacio para poder",
+    "key3": "impactar a quienes me escuchen",
+    "description4": "impactar a quienes me escuchen",
+    "key4": "tambien escribo blogs",
+    "description5": "y algunas veces cuando mi agenda me lo permite",
+    "key5": "doy conferencias y charlas",
+    "description6": "sobre aquellas cosas de las que sé o voy aprendiendo"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "made": "Hecho por"
+  }
+}
