@@ -7,8 +7,7 @@ import netlify from "@astrojs/netlify";
 // https://astro.build/config
 export default defineConfig({
   image: {
-    domains: ["github.com, raw.githubusercontent.com"],
-    remotePatterns: [{ protocol: "https" }],
+    domains: ["raw.githubusercontent.com"],
   },
   integrations: [
     tailwind(),

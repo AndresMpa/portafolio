@@ -6,6 +6,16 @@ import type { ProjectProps } from "../types";
 import ProjectDescription from "./ProjectDescription.astro";
 import ProjectLink from "./ProjectLink.astro";
 
+import Lyra from "../assets/projects/Lyra.png";
+import MuVim from "../assets/projects/muvim.png";
+import NFT from "../assets/projects/NFT.png";
+import Game from "../assets/projects/game.png";
+import Babylon from "../assets/projects/babylon.jpg";
+import Advice from "../assets/projects/advice.png";
+import Parking from "../assets/projects/parking.png";
+import TODO from "../assets/projects/todo.png";
+import Dotfiles from "../assets/projects/dotfiles.png";
+
 const projectsData: ProjectProps[] = [
   {
     description: {
@@ -20,8 +30,7 @@ const projectsData: ProjectProps[] = [
       url: "https://github.com/AndresMpa/lyra",
       topics: "AI,JavaScript,Python",
       alt: "Lyra's proyect",
-      image:
-        "https://raw.githubusercontent.com/AndresMpa/lyra/main/.doc/assets/banner.png",
+      image: Lyra,
     },
   },
   {
@@ -33,8 +42,7 @@ const projectsData: ProjectProps[] = [
       url: "https://github.com/AndresMpa/mu-vim",
       topics: "GNU/Linux,Shell,Dockerfile,JavaScript,Lua",
       alt: "MuVim",
-      image:
-        "https://raw.githubusercontent.com/AndresMpa/mu-vim/refs/heads/main/.examples/nvim_0.png",
+      image: MuVim,
     },
   },
   {
@@ -46,8 +54,7 @@ const projectsData: ProjectProps[] = [
       url: "https://github.com/AndresMpa/dotfiles",
       topics: "GNU/Linux,Shell,Dockerfile,Python,Lua,C/C++",
       alt: "Dotfile",
-      image:
-        "https://raw.githubusercontent.com/AndresMpa/dotfiles/main/examples/i3.png",
+      image: Dotfiles,
     },
   },
   {
@@ -59,8 +66,7 @@ const projectsData: ProjectProps[] = [
       url: "https://github.com/AndresMpa/rock-paper-scissors-spock-lizard",
       topics: "JavaScript,SCSS,HTML",
       alt: "Rock, Paper, Scissors, Spock, Lizard",
-      image:
-        "https://raw.githubusercontent.com/AndresMpa/rock-paper-scissors-spock-lizard/main/.doc/asset_1.png",
+      image: Game
     },
   },
   {
@@ -72,8 +78,7 @@ const projectsData: ProjectProps[] = [
       url: "https://github.com/AndresMpa/todo-app",
       topics: "JavaScript,Stylus,HTML",
       alt: "TODO App",
-      image:
-        "https://raw.githubusercontent.com/AndresMpa/todo-app/main/doc/example_dark.png",
+      image: TODO,
     },
   },
   {
@@ -85,8 +90,7 @@ const projectsData: ProjectProps[] = [
       url: "https://github.com/AndresMpa/advice-generator-app",
       topics: "JavaScript,Less,CSS,HTML",
       alt: "Advice Generator App",
-      image:
-        "https://raw.githubusercontent.com/AndresMpa/advice-generator-app/main/doc/advice-preview.png",
+      image: Advice,
     },
   },
   {
@@ -98,8 +102,7 @@ const projectsData: ProjectProps[] = [
       url: "https://andresmpa.github.io/NFT-card-preview/",
       topics: "SCSS,HTML",
       alt: "NFT-Card Preview",
-      image:
-        "https://raw.githubusercontent.com/AndresMpa/NFT-card-preview/main/doc/example.png",
+      image: NFT,
     },
   },
   {
@@ -111,8 +114,7 @@ const projectsData: ProjectProps[] = [
       url: "https://github.com/AndresMpa/parking-system",
       topics: "UI,Vue,Vuex,Vue Router",
       alt: "Parking system",
-      image:
-        "https://raw.githubusercontent.com/AndresMpa/parking-system/refs/heads/main/.doc/example.png",
+      image: Parking,
     },
   },
   {
@@ -124,8 +126,7 @@ const projectsData: ProjectProps[] = [
       url: "https://github.com/AndresMpa/babylon",
       topics: "JavaScript,TypeScript,HTML,SCSS,CSS,Stylus,Less",
       alt: "Babylon: Resources for developers",
-      image:
-        "https://raw.githubusercontent.com/AndresMpa/babylon/refs/heads/main/.assets/logo.png",
+      image: Babylon,
     },
   },
 ];
