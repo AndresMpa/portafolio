@@ -18,5 +18,5 @@ export default defineConfig({
     }),
   ],
   site: "https://andresmpa.github.io/",
-  base: "/",
+  base: "/portafolio/",
 });
