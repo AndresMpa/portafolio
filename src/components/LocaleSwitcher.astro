@@ -1,4 +1,5 @@
 ---
+// src/components/LocaleSwitcher.astro
 import { getLocale, getSwitcherData } from "i18n:astro";
 
 const locale = getLocale();
@@ -8,7 +9,7 @@ const data = getSwitcherData();
 <div class="inline-block relative mx-3">
   <select
     class="appearance-none w-full bg-accent hover:bg-accent active:bg-accent focus:outline-none focus:ring focus:ring-accent text-gray-700 py-2 px-4 pr-8 rounded-full shadow leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-    onchange="location = this.value;"
+    onchange="location = '/portafolio' + this.value;"
   >
     {
       data.map((e) => (
