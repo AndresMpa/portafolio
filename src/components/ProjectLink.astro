@@ -1,8 +1,6 @@
 ---
 // src/components/ProjectLink.astro
 
-import { Image } from "astro:assets";
-
 import type { ProjectLinkProps } from "../types";
 
 const {
@@ -16,7 +14,7 @@ const {
 
 <div>
   <a href={url} target="_blank" rel="noopener noreferrer">
-    <Image
+    <img
       src={image}
       width={450}
       height={300}
