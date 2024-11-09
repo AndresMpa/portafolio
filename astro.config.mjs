@@ -8,6 +8,7 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   image: {
     domains: ["github.com, raw.githubusercontent.com"],
+    remotePatterns: [{ protocol: "https" }],
   },
   integrations: [
     tailwind(),
