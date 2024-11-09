@@ -5,6 +5,8 @@ import tailwind from "@astrojs/tailwind";
 
 import liciousI18n from "@astrolicious/i18n";
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -14,9 +16,13 @@ export default defineConfig({
       locales: ["en", "es"],
       client: {
         data: true,
+        translations: true,
       },
     }),
   ],
+
   site: "https://andresmpa.github.io/",
   base: "/",
+  output: "server",
+  adapter: netlify(),
 });
