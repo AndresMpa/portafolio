@@ -7,7 +7,7 @@ Anyway, you can take a look on this pages too.
 
 ### TODO:
 
-- [ ] Fix Favicon
+- [x] Fix Favicon
 - [ ] Fix OG meta data
 - [ ] Find provider for OG images
 
