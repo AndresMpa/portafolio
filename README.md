@@ -13,9 +13,6 @@ Anyway, you can take a look on this pages too.
 
 ### TODO:
 
-- [x] Fix Favicon
-- [x] Fix OG meta data
-- [x] Find provider for OG images
 - [ ] Replace OG image
 
 ## Projects to add
