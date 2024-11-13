@@ -14,6 +14,7 @@ Anyway, you can take a look on this pages too.
 ### TODO:
 
 - [ ] Replace OG image
+- [ ] Find better formato for OG imagen
 
 ## Projects to add
 
