@@ -25,10 +25,16 @@ const buttonData = [
 ---
 
 <nav id="home" class="flex justify-between p-4">
-  <img src={icon.src} alt={"Menu icon"} width={45} class="ml-2"><img/>
+  <img src={icon.src} alt={"Menu icon"} width={45} class="ml-2" /><img />
 
   <div class="flex items-center">
     <LocaleSwitcher />
-    {buttonData.map((data) => <HeaderBtn icon={data.icon.src} alt={data.alt} />)}
+    <!--
+    {
+      buttonData.map((data) => (
+        <HeaderBtn icon={data.icon.src} alt={data.alt} />
+      ))
+    }
+    -->
   </div>
 </nav>
