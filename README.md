@@ -13,6 +13,7 @@ Anyway, you can take a look on this pages too.
 
 ### TODO:
 
+- [ ] Add functions to header buttons
 - [ ] Replace OG image
 - [ ] Find better formato for OG imagen
 
