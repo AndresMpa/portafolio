@@ -16,7 +16,7 @@ Anyway, you can take a look on this pages too.
 - [ ] Add functions to header buttons
 - [ ] Replace OG image
 - [ ] Find better formato for OG imagen
-- [ ] Update data about DB
+- [ ] Update data about DailyBot
 
 ## Projects to add
 
