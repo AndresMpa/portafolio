@@ -14,7 +14,7 @@ I'm Andres M. Prieto, a fullstack developer focused on JavaScript, passionate ab
 - [ ] Replace OG image
 - [ ] Find better formato for OG imagen
 - [ ] Update data about DailyBot (Check task history)
-- [x] Check i18n support 
+- [ ] Check i18n support 
 
 ## Projects to add
 
