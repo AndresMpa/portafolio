@@ -11,7 +11,7 @@ I'm Andres M. Prieto, a fullstack developer focused on JavaScript, passionate ab
 ### TODO:
 
 - [ ] Add functions to header buttons (See download & v18n)
-- [ ] Replace OG image
+- [ ] Replace OG images
 - [ ] Find better format for OG imagen
 - [ ] Update data about DailyBot (Check task history)
 - [ ] Check i18n support 
