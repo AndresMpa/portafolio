@@ -6,7 +6,7 @@
 
 </div>
 
-I'm Andres M. Prieto, a fullstack developer focused on JavaScript, passionate about open source and a Linux enthusiast. This portfolio showcases both personal and professional projects that reflect my drive to build efficient solutions—from CLI tools to modern web applications. I enjoy exploring new technologies, automating workflows, and contributing to open communities. Every line of code here is part of my journey as a developer who never stops learning.
+I'm Andres M. Prieto, a fullstack developer focused on JavaScript, passionate about open source and a Linux enthusiast. This portfolio showcases both personal and professional projects that reflect my drive to build efficient solutions—from CLI tools to modern web applications. I enjoy exploring new technologies, automating workflows, and contributing to open communities. Every line of code here is part of my journey as a developer who never stops learning
 
 ### TODO:
 
