@@ -16,7 +16,7 @@ I'm Andres M. Prieto, a fullstack developer focused on JavaScript, passionate ab
 - [ ] Update data about DailyBot (Check task history)
 - [ ] Check i18n support
 - [ ] Update brand (Try green)
-- [ ] Add investment notes
+- [ ] Add investment notes (Create repo)
 
 ## Projects to add
 
