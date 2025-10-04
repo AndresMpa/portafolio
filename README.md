@@ -13,7 +13,7 @@ I'm Andres M. Prieto, a fullstack developer focused on JavaScript, passionate ab
 - [ ] Add functions to header buttons (See download & i18n)
 - [ ] Find better format for OG imagen
 - [ ] Update data about DailyBot (Check task history)
-- [ ] Check i18n support
+- [x] Check i18n support
 - [ ] Update brand (Try green/black)
 - [ ] Add investment notes
 - [ ] Add Cartago talk + QA Conf + Hackathon
