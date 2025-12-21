@@ -17,6 +17,7 @@ I'm Andres M. Prieto, a fullstack developer focused on JavaScript, passionate ab
 - [ ] Update brand (Try green/black)
 - [ ] Add investment notes
 - [ ] Add Cartago talk + QA Conf + Hackathon
+- [ ] Add IG links
 - [ ] Add IG account 
 
 ## Projects to add
