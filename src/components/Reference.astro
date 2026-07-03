@@ -9,6 +9,7 @@ const {
   icon,
   link,
   alt,
+  ariaLabel,
   width = 35,
   useSvg = true,
   useAlt = false,
@@ -20,6 +21,7 @@ const {
 <a
   href={link}
   target="_blank"
+  aria-label={alt}
   rel="noopener noreferrer"
   class={`${useSvg ? "flex" : "flex items-center justify-center mx-2"} ${styledClass}`}
 >
