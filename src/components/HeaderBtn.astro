@@ -11,14 +11,5 @@ const { icon, alt } = Astro.props as HeaderBtnProps;
 <button
   class="p-0 mr-1 rounded-full bg-accent hover:bg-accent active:bg-accent focus:outline-none focus:ring focus:ring-accent"
 >
-  <Image src={icon} alt={alt} width={15} class="white-svg" />
+  <Image alt={alt} src={icon} width={15} loading="eager" class="text-gray-700 hover:text-black" />
 </button>
-
-<style>
-  .white-svg {
-    filter: brightness(0) invert(1);
-    &:hover {
-      filter: brightness(1.5) invert(1) drop-shadow(0 0 5px #ffffff);
-    }
-  }
-</style>

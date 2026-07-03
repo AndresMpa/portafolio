@@ -21,7 +21,7 @@ const dockData = dockName.map((data, index) => {
   class="hidden md:flex justify-center absolute bottom-4 md:bottom-12 left-0 right-0 z-10"
 >
   <ul
-    class="flex rounded-lg border-white border-2 md:border-4 p-1 md:p-2 px-2 md:px-4 bg-white/80 backdrop-blur-sm"
+    class="flex rounded-lg border-white border-2 md:border-4 p-1 md:p-2 px-2 md:px-4 backdrop-blur-sm"
   >
     {dockData.map((data) => <DockRoute name={data.name} ref={data.route} />)}
   </ul>
