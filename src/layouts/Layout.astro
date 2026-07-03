@@ -57,6 +57,23 @@ const ogImage = "https://andresmpa.netlify.app/og-image.png";
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:site" content="@AndresMpa" />
     <meta name="twitter:creator" content="@AndresMpa" />
+
+    <!-- Structured data for search engines and AI agents -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Andrés M. Prieto",
+      "url": "https://andresmpa.netlify.app/",
+      "jobTitle": "Senior Software Engineer",
+      "description": "Senior software engineer — AI infrastructure and fullstack development on GNU/Linux.",
+      "sameAs": [
+        "https://github.com/AndresMpa",
+        "https://www.linkedin.com/in/andresmpa/",
+        "https://stackoverflow.com/users/15334340",
+        "https://andresprieto-25116.medium.com/"
+      ]
+    })} />
+
     <I18nClient />
   </head>
   <body class="bg-background text-text">
