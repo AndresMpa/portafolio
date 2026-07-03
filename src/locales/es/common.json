@@ -47,21 +47,21 @@
   },
   "community": {
     "title": "Comunidades",
-    "headers": "Conferencia Evento Temas Link Año",
-    "description1": "No soy",
-    "key1": "solo un desarollador más",
-    "description2": "realmente creo que darle la oportunidad a otros de ser escuchados hace de la comunidad de devs, la mejor comunidad del mundo y",
-    "key2": "darle a mi propia voz",
-    "description3": "el espacio para poder",
-    "key3": "impactar a quienes me escuchen",
-    "description4": "impactar a quienes me escuchen",
-    "key4": "tambien escribo blogs",
-    "description5": "y algunas veces cuando mi agenda me lo permite",
-    "key5": "doy conferencias y charlas",
-    "description6": "sobre aquellas cosas de las que sé o voy aprendiendo"
+    "headers": " Conferencia Evento Temas Link Año",
+    "description1": " No soy",
+    "key1": " solo un desarollador más",
+    "description2": " realmente creo que darle la oportunidad a otros de ser escuchados hace de la comunidad de devs, la mejor comunidad del mundo y",
+    "key2": " darle a mi propia voz",
+    "description3": " el espacio para poder",
+    "key3": " impactar a quienes me escuchen",
+    "description4": " impactar a quienes me escuchen",
+    "key4": " tambien escribo blogs",
+    "description5": " y algunas veces cuando mi agenda me lo permite",
+    "key5": " doy conferencias y charlas",
+    "description6": " sobre aquellas cosas de las que sé o voy aprendiendo"
   },
   "footer": {
     "rights": "Todos los derechos reservados",
-    "made": "Hecho por"
+    "made": "Hecho por "
   }
 }

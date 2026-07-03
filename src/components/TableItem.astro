@@ -20,14 +20,14 @@ const { type, ref, bolder, context } = Astro.props as TableItemProps;
       </>
     ) : (
       <div
-        class={`${type === "title" ? "text-white font-bold" : ""} ${bolder ? "text-bold" : ""} p-6`}
+        class={`${type === "title" ? "text-neutral-900 font-bold" : ""} ${bolder ? "text-bold" : ""} p-6`}
       >
         {ref ? (
           <>
             <Reference
               icon={link}
               link={context}
-              styledClass={`${type === "reference" ? "text-white/80 hover:text-accent relative transition-colors duration-200" : ""}`}
+              styledClass={`${type === "reference" ? "text-neutral-900 hover:text-accent relative transition-colors duration-200" : ""}`}
               alt={
                 context
                   .replace(/(^\w+:|^)\/\//, "")

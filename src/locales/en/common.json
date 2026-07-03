@@ -50,19 +50,19 @@
     "title": "Communities",
     "headers": "Conference Event Topic Link Year",
     "description1": "I'm",
-    "key1": "not only a developer",
-    "description2": "I truly believe that giving others to be heard makes devs the best community in the world and",
-    "key2": "gives my own voice",
-    "description3": "space for",
-    "key3": "an impact",
-    "description4": "on those who want me to talk to them, that's why",
-    "key4": "I also do blogs",
-    "description5": "and sometimes when my schedule allows me to do it",
-    "key5": "I give talks",
-    "description6": "and those things I know"
+    "key1": " not only a developer",
+    "description2": " I truly believe that giving others to be heard makes devs the best community in the world and",
+    "key2": " gives my own voice",
+    "description3": " space for",
+    "key3": " an impact",
+    "description4": " on those who want me to talk to them, that's why",
+    "key4": " I also do blogs",
+    "description5": " and sometimes when my schedule allows me to do it",
+    "key5": " I give talks",
+    "description6": " and those things I know"
   },
   "footer": {
     "rights": "All Rights Reserved",
-    "made": "Made by"
+    "made": "Made by "
   }
 }
