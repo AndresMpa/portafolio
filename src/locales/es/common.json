@@ -1,13 +1,13 @@
 {
-  "title": "AndresMpa - Ingeniero de Software Fullstack",
+  "title": "AndresMpa - Ingeniero Senior, Infraestructura de IA & Fullstack",
   "greeter": {
-    "title": "Desarrollador Web, IA & FOSS",
-    "description1": "Soy un desarrollador de software enfocado a",
-    "key1": "resolver problemas",
-    "description2": "usando",
-    "key2": "tecnologias de punta",
-    "description3": "Pienso fuera de la caja para",
-    "key3": "enfocarme en soluciones"
+    "title": "Ingeniero de Infraestructura de IA & Fullstack",
+    "description1": "Soy un ingeniero de software senior con cerca de 10 años de experiencia, construyendo",
+    "key1": "infraestructura de IA y sistemas fullstack",
+    "description2": "en",
+    "key2": "GNU/Linux",
+    "description3": "con un enfoque en",
+    "key3": "resolución de problemas a nivel de sistemas"
   },
   "dock": "Inicio Experiencia Proyectos Educación Comunidades Contacto",
   "experience": {
@@ -33,13 +33,13 @@
     "context8": "Sistema de estacionamiento simple creado a mano con Vue",
     "context9": "Babylon es una colección de cursos que tomé o estoy tomando; básicamente, esas carpetas que están ahí arriba son mis notas, algunos códigos y pensamientos personales sobre diferentes tecnologías, desde Frontend hasta AI/ML, puedes (o encontrarás) casi cualquier cosa aquí. El objetivo de este repositorio es tener un conjunto de herramientas para mí (o para ti) para seguir revisándolas, para recordar o encontrar un tema. También estoy agregando una lista de referencia para las herramientas que encuentro útiles",
     "context10": "Este proyecto fue un workshop sobre tecnologias web, en el cual se mostraba un caso de uso sencillo sobre como usar la web speech API",
-    "context11": "Plataforma educativa pensada para dar a los docenter del instituto de lengua ILEX estrategias para mejorar en la enseñanza de la escritura academica universitaria"
+    "context11": "Plataforma educativa pensada para dar a los docentes del instituto de lengua ILEX estrategias para mejorar en la enseñanza de la escritura academica universitaria"
   },
   "education": {
     "title": "Educación",
     "headers": "Titulo Institución Temas Año",
     "more": "Ver lista completa",
-    "description1": "Maestría en Ingeniería de sistemas y computación con enfasis en Inteligencia Artificial",
+    "description1": "Maestría en Ingeniería de sistemas y computación con énfasis en Inteligencia Artificial",
     "description2": "Ingeniería de sistemas de computación",
     "description3": "Tecnología de desarrollo de software con enfoque al desarrollo web"
   },

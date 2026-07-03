@@ -1,13 +1,13 @@
 {
-  "title": "AndresMpa - FullStack Software Engineer",
+  "title": "AndresMpa - Senior Engineer, AI Infrastructure & Fullstack",
   "greeter": {
-    "title": "Web, AI & FOSS Developer",
-    "description1": "I'm a software engineer focused on",
-    "key1": "solving problems",
-    "description2": "through",
-    "key2": "top-of-the-edge technologies",
-    "description3": "I think out of code to",
-    "key3": "focus on solutions"
+    "title": "AI Infrastructure & Fullstack Engineer",
+    "description1": "I'm a senior software engineer with ~10 years of experience, building",
+    "key1": "AI infrastructure and fullstack systems",
+    "description2": "on",
+    "key2": "GNU/Linux",
+    "description3": "with a focus on",
+    "key3": "systems-level problem solving"
   },
   "dock": "Home Experience Projects Education Communities Contact",
   "experience": {
@@ -25,15 +25,15 @@
     "title": "Projects",
     "context1": "Lyra is a virtual assistant designed to navigate the vast sea of information in GNU/Linux, making your computing experience harmonious and intuitive.",
     "context2": "Mu Vim is a fast NeoVim and Vim implementation made to handle big and small projects everything from your terminal",
-    "context3": "Dotfiles are configuration files, scripts and documentation about an operative system; this repositorie contains my configuration files including scripts, my shell config, some setting for those tools that I use; also some recomendations and guides such as Corne which contain all the necessary materials for building your own Corne keyboard such as mine. I high recommend to check some of my daemons if you use systemctl and AMD GPU like Radeon or something like that",
+    "context3": "Dotfiles are configuration files, scripts and documentation about an operative system; this repository contains my configuration files including scripts, my shell config, some settings for those tools that I use; also some recommendations and guides such as Corne which contain all the necessary materials for building your own Corne keyboard such as mine. I highly recommend checking some of my daemons if you use systemctl and an AMD GPU like Radeon.",
     "context4": "This is a re implementation from the classic rock, paper, scissors; I got the assets from frontendmentor and this project is a vanilla JS implementation, check the scr/util to see the logic behind it.",
     "context5": "This is the classic TODO app crafted for browser, with a couple of extra features like, localstorage, drag&drop and themes",
     "context6": "A random quotes generator using some cool staff from Less and JavaScript to create as much senteces as you want",
     "context7": "This is a simple challenge from Frontend Mentor, it's this one. What you are finding here is a small example of a web component",
     "context8": "Simple parking system hand crafted with Vue",
-    "context9": "Babylon is a collection of courses I have took or I'm taking; basically those folders up there are my notes some code and personal thoughts about different technologies, from Frontend to AI/ML, you can (Or will) find almost anything here. The aim of this repository is to have a set of tools for myself (Or you) to keep checking them, in order to remember of find topic. I'm also adding a reference list for tools I find useful",
-    "context10": "This is a workshop about web, showing how to use web speech API through some examples",
-    "context11": "Educational platform thought to give teachers strategies to improve their writing teaching strategies"
+    "context9": "Babylon is a collection of courses I have taken or I'm taking; these folders are my notes, code and personal thoughts about different technologies, from Frontend to AI/ML. The aim of this repository is to have a set of tools for myself to keep checking, in order to remember or find a topic. I'm also adding a reference list for tools I find useful.",
+    "context10": "This is a workshop about web, showing how to use the Web Speech API through some examples.",
+    "context11": "Educational platform designed to give teachers strategies to improve their writing teaching methods."
   },
   "education": {
     "title": "Education",

@@ -1,27 +1,9 @@
 ---
 import icon from "../assets/icon.svg";
-import theme from "../assets/theme.svg";
-import share from "../assets/share.svg";
+import cv from "../assets/AndresMpa_CV.pdf";
 import download from "../assets/download.svg";
 
-import HeaderBtn from "./HeaderBtn.astro";
 import LocaleSwitcher from "./LocaleSwitcher.astro";
-
-const buttonData = [
-  {
-    icon: theme,
-    alt: "Theme",
-  },
-
-  {
-    icon: download,
-    alt: "Download",
-  },
-  {
-    icon: share,
-    alt: "Share",
-  },
-];
 ---
 
 <nav id="home" class="flex justify-between p-4">
@@ -29,12 +11,21 @@ const buttonData = [
 
   <div class="flex items-center">
     <LocaleSwitcher />
-    <!--
-    {
-      buttonData.map((data) => (
-        <HeaderBtn icon={data.icon.src} alt={data.alt} />
-      ))
-    }
-    -->
+    <a
+      href={cv.src}
+      download="AndresMpa_CV.pdf"
+      class="p-2 mr-2 rounded-full bg-accent hover:bg-accent active:bg-accent focus:outline-none focus:ring focus:ring-accent flex items-center justify-center"
+    >
+      <img src={download.src} alt="Download CV" width={15} class="white-svg" />
+    </a>
   </div>
 </nav>
+
+<style>
+  .white-svg {
+    filter: brightness(0) invert(1);
+    &:hover {
+      filter: brightness(1.5) invert(1) drop-shadow(0 0 5px #ffffff);
+    }
+  }
+</style>
