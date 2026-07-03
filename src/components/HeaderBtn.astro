@@ -1,15 +1,17 @@
 ---
 // src/components/HeaderBtn.astro
 
+import { Image } from "astro:assets";
+
 import type { HeaderBtnProps } from "../types";
 
 const { icon, alt } = Astro.props as HeaderBtnProps;
 ---
 
 <button
-  class="p-2 mr-2 rounded-full bg-accent hover:bg-accent active:bg-accent focus:outline-none focus:ring focus:ring-accent"
+  class="p-0 mr-1 rounded-full bg-accent hover:bg-accent active:bg-accent focus:outline-none focus:ring focus:ring-accent"
 >
-  <img src={icon} alt={alt} width={15} class="white-svg" />
+  <Image src={icon} alt={alt} width={15} class="white-svg" />
 </button>
 
 <style>
