@@ -6,10 +6,9 @@ import { Image } from "astro:assets";
 import type { ReferenceProps } from "../types";
 
 const {
+  alt,
   icon,
   link,
-  alt,
-  ariaLabel,
   width = 35,
   useSvg = true,
   useAlt = false,
@@ -33,8 +32,8 @@ const {
     )
   }
   <Image
-    src={icon}
     alt={alt}
+    src={icon}
     width={width}
     class={`${useSvg ? "white-svg mx-5" : ""} m-auto`}
   />
