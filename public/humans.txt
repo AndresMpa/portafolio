@@ -1,0 +1,39 @@
+/* TEAM */
+
+Name:
+Andrés M. Prieto
+
+Role:
+Senior Software Engineer
+
+Website:
+https://andresmpa.netlify.app/
+
+GitHub:
+https://github.com/AndresMpa
+
+LinkedIn:
+https://www.linkedin.com/in/andresmpa/
+
+Technologies:
+Astro
+Vue
+Lua
+Git
+HTML
+CSS
+React
+Next
+Nest
+Nust
+AWS
+Azure
+Python
+JavaScript
+TypeScript
+Docker
+GNU/Linux
+AI
+LLM
+SLM
+
