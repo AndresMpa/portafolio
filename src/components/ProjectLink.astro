@@ -15,15 +15,15 @@ const {
 ---
 
 <div>
-  <a href={url} target="_blank" rel="noopener noreferrer">
+  <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`Open project: ${alt}`}>
     <Image
+      alt={alt}
       src={image}
       width={450}
       height={300}
       format="avif"
       loading="lazy"
       decoding="async"
-      alt={`${alt}: ${url}`}
       class={`rounded single-img ${flip ? "flipped" : ""}`}
     />
   </a>
