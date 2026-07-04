@@ -3,8 +3,11 @@
 
 import { getCollection, render } from "astro:content";
 
+import BreadcrumbJsonLd from "../../components/seo/BreadcrumbJsonLd.astro";
+
 import Layout from "../../layouts/Layout.astro";
-import SEO from "../../components/seo/SEO.astro";
+
+import { site } from "../../data/site";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -28,10 +31,21 @@ const { Content } = await render(project);
   title={project.data.title}
   description={project.data.description}
 >
-  <SEO
-    title={project.data.title}
-    description={project.data.description}
-    includeProjects
+  <BreadcrumbJsonLd
+    items={[
+      {
+        name: "Home",
+        url: site.url,
+      },
+      {
+        name: "Projects",
+        url: `${site.url}/projects`,
+      },
+      {
+        name: project.data.title,
+        url: `${site.url}/projects/${project.data.slug}`,
+      },
+    ]}
   />
 
   <article class="prose prose-invert mx-auto py-16">

@@ -7,17 +7,15 @@ import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
 import SEO from "../components/seo/SEO.astro";
 
-interface Props {
-  title: string;
-  description?: string;
-  image?: string;
-}
+import type { SEOProps } from "../types"
+
+const props = Astro.props as SEOProps;
 
 const {
   title,
   description = "Senior software engineer — AI infrastructure and fullstack development on GNU/Linux.",
   image = "https://andresmpa.netlify.app/og-image.png",
-} = Astro.props;
+} = props;
 ---
 
 <!doctype html>

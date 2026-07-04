@@ -1,10 +1,14 @@
 ---
-import { getCollection } from "astro:content";
+// src/pages/about.astro
+
+import { getCollection, render } from "astro:content";
 import { getLocale } from "i18n:astro";
 
-import { render } from "astro:content";
+import BreadcrumbJsonLd from "../components/seo/BreadcrumbJsonLd.astro";
 
 import Layout from "../layouts/Layout.astro";
+
+import { site } from "../data/site";
 
 const locale = getLocale();
 
@@ -21,6 +25,20 @@ const { Content } = await render(page);
 
 <Layout
   title={page.data.title}
-  description={page.data.description}>
-    <Content />
+  description={page.data.description}
+>
+  <BreadcrumbJsonLd
+    items={[
+      {
+        name: "Home",
+        url: site.url,
+      },
+      {
+        name: "About",
+        url: `${site.url}/about`,
+      },
+    ]}
+  />
+
+  <Content />
 </Layout>

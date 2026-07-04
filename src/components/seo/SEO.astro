@@ -9,25 +9,19 @@ import OrganizationsJsonLd from "./OrganizationsJsonLd.astro";
 
 import { person } from "../../data/person";
 
-interface Props {
-  title: string;
-  description: string;
-  image?: string;
-  canonical?: string;
-  entryType?: "website" | "profile" | "article";
-  includeProjects?: boolean;
-  includeOrganizations?: boolean;
-}
+import type { SEOProps } from "../../types"
+
+const props = Astro.props as SEOProps;
 
 const {
   title,
   description,
-  image = person?.image ?? "https://andresmpa.netlify.app/og-image.png",
+  image = person.image,
   canonical = Astro.url.href,
   entryType = "website",
   includeProjects = false,
   includeOrganizations = false,
-} = Astro.props;
+} = props;
 
 const isMainPage = ["website", "profile"].includes(entryType);
 const isArticle = entryType === "article";
