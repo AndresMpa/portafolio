@@ -3,6 +3,16 @@ interface HeaderBtnProps {
   alt: string;
 }
 
+interface SEOProps {
+  title: string;
+  description: string;
+  image?: string;
+  canonical?: string;
+  entryType?: "website" | "profile" | "article";
+  includeProjects?: boolean;
+  includeOrganizations?: boolean;
+}
+
 interface DockRouteProps {
   name: string;
   ref: string;
@@ -63,6 +73,7 @@ interface TimelineProps {
 
 export type {
   HeaderBtnProps,
+  SEOProps,
   DockRouteProps,
   ProjectProps,
   ProjectDescriptionProps,

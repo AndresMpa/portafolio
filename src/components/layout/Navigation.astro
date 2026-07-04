@@ -1,0 +1,30 @@
+---
+// src/components/layout/Dock.astro
+
+import { t } from "i18n:astro";
+
+import DockRoute from "./DockRoute.astro";
+
+const dockName = t("dock").split(" ");
+const dockRoutes = [
+  "home",
+  "experience",
+  "projects",
+  "education",
+  "communities",
+  "contact",
+];
+const dockData = dockName.map((data, index) => {
+  return { name: data, route: dockRoutes[index] };
+});
+---
+
+<aside
+  class="hidden md:flex justify-center absolute bottom-4 md:bottom-12 left-0 right-0 z-10"
+>
+  <ul
+    class="flex rounded-lg border-white border-2 md:border-4 p-1 md:p-2 px-2 md:px-4 backdrop-blur-sm"
+  >
+    {dockData.map((data) => <DockRoute name={data.name} ref={data.route} />)}
+  </ul>
+</aside>

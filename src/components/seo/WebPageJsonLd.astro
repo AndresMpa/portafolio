@@ -1,0 +1,43 @@
+---
+// src/components/seo/WebPageJsonLd.astro
+
+import { person } from "../../data/person";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+} = Astro.props;
+---
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context":"https://schema.org",
+
+    "@type":"WebPage",
+
+    "@id":canonical,
+
+    url:canonical,
+
+    name:title,
+
+    description,
+
+    isPartOf:{
+      "@id":"https://andresmpa.netlify.app/#website"
+    },
+
+    about:{
+      "@id":person.id
+    }
+  })}
+/>

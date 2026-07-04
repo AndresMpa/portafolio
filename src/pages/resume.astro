@@ -1,0 +1,27 @@
+---
+// src/pages/resume.astro
+
+import BreadcrumbJsonLd from "../components/seo/BreadcrumbJsonLd.astro";
+
+import Layout from "../layouts/Layout.astro";
+
+import { site } from "../data/site";
+---
+
+<Layout
+  title="Resume"
+  description="Resume of Andrés M. Prieto"
+>
+  <BreadcrumbJsonLd
+    items={[
+      {
+        name: "Home",
+        url: site.url,
+      },
+      {
+        name: "Resume",
+        url: `${site.url}/resume`,
+      },
+    ]}
+  />
+</Layout>

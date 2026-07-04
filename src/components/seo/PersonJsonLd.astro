@@ -1,0 +1,31 @@
+---
+//src/components/seo/PersonJsonLd.astro
+
+import { person } from "../../data/person";
+---
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+
+    "@id": person.id,
+
+    name: person.name,
+    alternateName: person.alternateName,
+
+    url: person.url,
+
+    image: person.image,
+
+    jobTitle: person.jobTitle,
+
+    description: person.description,
+
+    sameAs: person.sameAs,
+
+    knowsAbout: person.knowsAbout,
+  })}
+/>

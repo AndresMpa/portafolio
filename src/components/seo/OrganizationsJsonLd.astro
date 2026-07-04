@@ -1,0 +1,48 @@
+---
+// src/components/seo/OrganizationsJsonLd.astro
+
+import { organizations } from "../../data/organizations";
+import { person } from "../../data/person";
+---
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+
+    "@graph": organizations.map((organization) => ({
+      "@type": "Organization",
+
+      "@id": `${organization.url}#organization`,
+
+      name: organization.name,
+
+      url: organization.url,
+
+      description: organization.description,
+
+      ...(organization.logo && {
+        logo: organization.logo,
+      }),
+
+      ...(organization.sameAs && {
+        sameAs: organization.sameAs,
+      }),
+
+      employee: {
+        "@id": `${person.url}#person`,
+      },
+
+      ...(organization.role && {
+        member: {
+          "@type": "Role",
+          roleName: organization.role,
+          member: {
+            "@id": `${person.url}#person`,
+          },
+        },
+      }),
+    })),
+  })}
+/>

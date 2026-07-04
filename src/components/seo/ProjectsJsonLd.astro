@@ -1,0 +1,49 @@
+---
+// src/components/seo/ProjectsJsonLd.astro
+
+import { projects } from "../../data/projects";
+---
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+
+    "@graph": [
+      {
+        "@type": "ItemList",
+
+        "@id": "https://andresmpa.netlify.app/#projects",
+
+        name: "Open Source Projects",
+
+        itemListElement: projects.map((project, index) => ({
+          "@type": "ListItem",
+
+          position: index + 1,
+
+          item: {
+            "@id": `https://andresmpa.netlify.app/projects/${project.slug}#software`
+          }
+        }))
+      },
+
+      ...projects.map(project => ({
+        "@type": "SoftwareSourceCode",
+
+        "@id": `https://andresmpa.netlify.app/projects/${project.slug}#software`,
+
+        name: project.name,
+
+        description: project.description,
+
+        codeRepository: project.repository,
+
+        programmingLanguage: project.technologies,
+
+        license: project.license
+      }))
+    ]
+  })}
+/>

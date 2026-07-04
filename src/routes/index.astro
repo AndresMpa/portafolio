@@ -1,23 +1,26 @@
 ---
+// src/routes/index.astro
+
 import { t } from "i18n:astro";
 
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro"
 
-import Dock from "../components/Dock.astro";
-import Greeter from "../components/Greeter.astro";
-import Project from "../components/Project.astro";
-import Education from "../components/Education.astro";
-import Community from "../components/Community.astro";
-import Experience from "../components/Experience.astro";
+import Navigation from "../components/layout/Navigation.astro";
+
+import Greeter from "../components/home/Greeter.astro";
+import Projects from "../components/home/Projects.astro";
+import Education from "../components/home/Education.astro";
+import Community from "../components/home/Community.astro";
+import Experience from "../components/home/Experience.astro";
 
 const title = `${t("title")}`;
 ---
 
 <Layout title={title}>
   <Greeter />
-  <Dock />
+  <Navigation />
   <Experience />
-  <Project />
+  <Projects />
   <Education />
   <Community />
 </Layout>

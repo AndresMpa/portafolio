@@ -1,0 +1,106 @@
+---
+// src/components/seo/SEO.astro
+
+import PersonJsonLd from "./PersonJsonLd.astro";
+import WebsiteJsonLd from "./WebsiteJsonLd.astro";
+import WebPageJsonLd from "./WebPageJsonLd.astro";
+import ProjectsJsonLd from "./ProjectsJsonLd.astro";
+import OrganizationsJsonLd from "./OrganizationsJsonLd.astro";
+
+import { person } from "../../data/person";
+
+import type { SEOProps } from "../../types"
+
+const props = Astro.props as SEOProps;
+
+const {
+  title,
+  description,
+  image = person.image,
+  canonical = Astro.url.href,
+  entryType = "website",
+  includeProjects = false,
+  includeOrganizations = false,
+} = props;
+
+const isMainPage = ["website", "profile"].includes(entryType);
+const isArticle = entryType === "article";
+
+const portfolioKeywords = "Senior Software Engineer, AI Infrastructure, Fullstack, Python, JavaScript, TypeScript, GNU/Linux, Docker, AWS, LLM, AI Agents";
+const articleKeywords = "Software Engineering, Web Development, System Design, DevOps, Cloud Architecture, Artificial Intelligence, Technical Tutorial, Programming Best Practices";
+
+const keyWords = isMainPage 
+  ? portfolioKeywords 
+  : isArticle 
+    ? articleKeywords 
+    : "";
+---
+
+<meta charset="UTF-8" />
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+/>
+
+<meta name="robots" content="index,follow,max-image-preview:large" />
+
+<title>{title}</title>
+
+<meta
+  name="description"
+  content={description}
+/>
+
+<link
+  rel="canonical"
+  href={canonical}
+/>
+
+<meta name="author" content="Andrés M. Prieto" />
+<meta name="creator" content="Andrés M. Prieto" />
+
+{
+  person.sameAs.map((url) => (
+    <link rel="me" href={url} />
+  ))
+}
+
+<link
+  rel="icon"
+  href="/favicon.ico"
+/>
+
+<meta
+  name="theme-color"
+  content="#09090d"
+/>
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={image} />
+<meta property="og:site_name" content="AndresMpa" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+<meta name="twitter:site" content="@AndresMpa" />
+<meta name="twitter:creator" content="@AndresMpa" />
+
+{keyWords && <meta name="keywords" content={keyWords} />}
+
+<PersonJsonLd />
+
+<WebsiteJsonLd />
+
+<WebPageJsonLd
+  title={title}
+  description={description}
+  canonical={canonical}
+/>
+
+{includeProjects && <ProjectsJsonLd />}
+{includeOrganizations && <OrganizationsJsonLd />}
