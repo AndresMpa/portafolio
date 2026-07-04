@@ -1,22 +1,24 @@
 ---
-// src/components/Project.astro
+// src/components/home/Projects.astro
+
 import { t } from "i18n:astro";
-import type { ProjectProps } from "../types";
 
-import ProjectDescription from "./ProjectDescription.astro";
-import ProjectLink from "./ProjectLink.astro";
+import type { ProjectProps } from "../../types";
 
-import Lyra from "../assets/projects/Lyra.png";
-import WritingLab from "../assets/projects/WritingLab.png";
-import MuVim from "../assets/projects/muvim.png";
-import NFT from "../assets/projects/NFT.png";
-import Game from "../assets/projects/game.png";
-import Babylon from "../assets/projects/babylon.jpg";
-import Advice from "../assets/projects/advice.png";
-import Parking from "../assets/projects/parking.png";
-import TODO from "../assets/projects/todo.png";
-import Dotfiles from "../assets/projects/dotfiles.png";
-import Ball from "../assets/projects/ball.png";
+import ProjectDescription from "../project/ProjectDescription.astro";
+import ProjectLink from "../project/ProjectLink.astro";
+
+import Lyra from "../../assets/projects/Lyra.png";
+import WritingLab from "../../assets/projects/WritingLab.png";
+import MuVim from "../../assets/projects/muvim.png";
+import NFT from "../../assets/projects/NFT.png";
+import Game from "../../assets/projects/game.png";
+import Babylon from "../../assets/projects/babylon.jpg";
+import Advice from "../../assets/projects/advice.png";
+import Parking from "../../assets/projects/parking.png";
+import TODO from "../../assets/projects/todo.png";
+import Dotfiles from "../../assets/projects/dotfiles.png";
+import Ball from "../../assets/projects/ball.png";
 
 interface RawProject {
   title: string;

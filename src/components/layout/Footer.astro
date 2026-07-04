@@ -1,13 +1,14 @@
 ---
-// src/components/Footer.astro
+// src/components/layout/Footer.astro
 
-import Reference from "./Reference.astro";
-
-import linkedin from "../assets/linkedin.svg";
-import telegram from "../assets/telegram.svg";
-import github from "../assets/github.svg";
-import gmail from "../assets/gmail.svg";
 import { t } from "i18n:astro";
+
+import SocialLink from "../shared/SocialLink.astro";
+
+import linkedin from "../../assets/linkedin.svg";
+import telegram from "../../assets/telegram.svg";
+import github from "../../assets/github.svg";
+import gmail from "../../assets/gmail.svg";
 
 const todayDate = new Date();
 const today = todayDate.toISOString().split("-")[0];
@@ -53,7 +54,7 @@ const socialMedia = [
   <div class="flex justify-center">
     {
       socialMedia.map((data) => (
-        <Reference icon={data.icon} link={data.link} alt={data.alt} />
+        <SocialLink icon={data.icon} link={data.link} alt={data.alt} />
       ))
     }
   </div>

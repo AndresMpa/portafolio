@@ -1,16 +1,17 @@
 ---
-// src/components/Community.astro
+// src/components/home/Community.astro
+
 import { t } from "i18n:astro";
 
-import Reference from "./Reference.astro";
-import TableIterator from "./TableIterator.astro";
+import SocialLink from "../shared/SocialLink.astro";
+import BadgeList from "../shared/BadgeList.astro";
 
-import arch from "../assets/arch.png";
-import ubuco from "../assets/ubuco.png";
-import flisol from "../assets/flisol.png";
-import forest from "../assets/forest.png";
+import arch from "../../assets/arch.png";
+import ubuco from "../../assets/ubuco.png";
+import flisol from "../../assets/flisol.png";
+import forest from "../../assets/forest.png";
 
-import type { TableItemProps } from "../types";
+import type { TableItemProps } from "../../types";
 
 const communitiesData = [
   {
@@ -213,7 +214,7 @@ const entries: Array<TableItemProps[]> = talks.map(buildEntry);
       <div class="md:mt-auto mt-12 flex">
         {
           communitiesData.map((data) => (
-            <Reference
+            <SocialLink
               icon={data.icon}
               link={data.link}
               alt={data.alt}
@@ -227,6 +228,6 @@ const entries: Array<TableItemProps[]> = talks.map(buildEntry);
   </div>
 
   <article class="overflow-x-auto mx-auto">
-    <TableIterator headers={headers} entries={entries} />
+    <BadgeList headers={headers} entries={entries} />
   </article>
 </section>

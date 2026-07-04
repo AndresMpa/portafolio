@@ -1,7 +1,9 @@
 ---
-// src/components/Education.astro
+// src/components/home/Education.astro
+
 import { t } from "i18n:astro";
-import TableIterator from "./TableIterator.astro";
+
+import BadgeList from "../shared/BadgeList.astro";
 
 const headers = t("education.headers").split(" ");
 
@@ -76,7 +78,7 @@ const entries = education.map(buildEntry);
     </h3>
     <div class="mx-auto md:w-8/12 w-full">
       <div class="mx-auto overflow-x-auto">
-        <TableIterator headers={headers} entries={entries} />
+        <BadgeList headers={headers} entries={entries} />
       </div>
 
       <div

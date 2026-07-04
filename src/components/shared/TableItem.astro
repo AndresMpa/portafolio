@@ -1,9 +1,10 @@
 ---
-// src/components/TableItem.astro
-import link from "../assets/link.svg";
-import Reference from "./Reference.astro";
+// src/components/shared/TableItem.astro
 
-import type { TableItemProps } from "../types";
+import link from "../../assets/link.svg";
+import SocialLink from "./SocialLink.astro";
+
+import type { TableItemProps } from "../../types";
 
 const { type, ref, bolder, context } = Astro.props as TableItemProps;
 ---
@@ -24,7 +25,7 @@ const { type, ref, bolder, context } = Astro.props as TableItemProps;
       >
         {ref ? (
           <>
-            <Reference
+            <SocialLink
               icon={link}
               link={context}
               styledClass={`${type === "reference" ? "hover:text-accent relative transition-colors duration-200" : ""}`}

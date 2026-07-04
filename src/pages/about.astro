@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import { getLocale } from "i18n:astro";
+
+import Layout from "../layouts/Layout.astro";
+
+const locale = getLocale();
+
+const page = (await getCollection("about")).find(
+  (entry) => entry.data.locale === locale
+);
+
+if (!page) {
+  throw new Error(`No about page for locale "${locale}"`);
+}
+
+const { Content } = await page.render();
+---
+
+<Layout
+  title={page.data.title}
+  description={page.data.description}>
+    <Content />
+</Layout>
