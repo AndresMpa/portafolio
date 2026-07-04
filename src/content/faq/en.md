@@ -1,5 +1,6 @@
 ---
 locale: en
+title: FAQ
 ---
 
 - question: What technologies does Andrés specialize in?

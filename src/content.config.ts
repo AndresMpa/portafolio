@@ -1,9 +1,11 @@
 import { defineCollection } from "astro:content";
+import { glob } from "astro/loaders";
 import { z } from "astro:schema";
 
-const availableLanguages = ["en", "es"]
+const availableLanguages = ["en", "es"];
 
 const about = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/about" }),
   schema: z.object({
     locale: z.enum(availableLanguages),
     title: z.string(),
@@ -12,6 +14,7 @@ const about = defineCollection({
 });
 
 const projects = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
   schema: z.object({
     locale: z.enum(availableLanguages),
     slug: z.string(),
@@ -21,6 +24,7 @@ const projects = defineCollection({
 });
 
 const experience = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/experience" }),
   schema: z.object({
     locale: z.enum(availableLanguages),
     slug: z.string(),
@@ -31,6 +35,7 @@ const experience = defineCollection({
 });
 
 const community = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/community" }),
   schema: z.object({
     locale: z.enum(availableLanguages),
     slug: z.string(),
@@ -40,6 +45,7 @@ const community = defineCollection({
 });
 
 const faq = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/faq" }),
   schema: z.object({
     locale: z.enum(availableLanguages),
     title: z.string(),
@@ -47,10 +53,4 @@ const faq = defineCollection({
   }),
 });
 
-export const collections = {
-  about,
-  projects,
-  experience,
-  community,
-  faq,
-};
+export const collections = { about, projects, experience, community, faq };

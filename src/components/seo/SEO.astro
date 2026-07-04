@@ -8,7 +8,7 @@ interface Props {
   description: string;
   image?: string;
   canonical?: string;
-  type?: "website" | "profile" | "article";
+  entryType?: "website" | "profile" | "article";
   includeProjects?: boolean;
   includeOrganizations?: boolean;
 }
@@ -16,9 +16,9 @@ interface Props {
 const {
   title,
   description,
-  image = "https://andresmpa.netlify.app/og-image.png",
+  image = person.image || "https://andresmpa.netlify.app/og-image.png",
   canonical = Astro.url.href,
-  type = "website",
+  entryType = "website",
   includeProjects = false,
   includeOrganizations = false,
 } = Astro.props;

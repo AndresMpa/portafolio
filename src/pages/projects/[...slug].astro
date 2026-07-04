@@ -1,0 +1,40 @@
+---
+// src/pages/projects/[...slug].astro
+
+import { getCollection, render } from "astro:content";
+
+import Layout from "../../layouts/Layout.astro";
+import SEO from "../../components/seo/SEO.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project) => ({
+    params: {
+      slug: project.data.slug,
+    },
+    props: {
+      project,
+    },
+  }));
+}
+
+const { project } = Astro.props;
+
+const { Content } = await render(project);
+---
+
+<Layout
+  title={project.data.title}
+  description={project.data.description}
+>
+  <SEO
+    title={project.data.title}
+    description={project.data.description}
+    includeProjects
+  />
+
+  <article class="prose prose-invert mx-auto py-16">
+    <Content />
+  </article>
+</Layout>
