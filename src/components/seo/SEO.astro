@@ -1,35 +1,74 @@
 ---
 // src/components/seo/SEO.astro
 
+import { person } from "../../data/person";
+
 interface Props {
   title: string;
   description: string;
   image?: string;
   canonical?: string;
+  type?: "website" | "article" | "profile";
+  includeProjects?: boolean;
+  includeOrganizations: boolean;
 }
 
 const {
   title,
   description,
-  image = "https://andresmpa.netlify.app/og-image.png",
+  image = person.image,
   canonical = Astro.url.href,
+  type = "website",
+  includeProjects: false,
+  includeOrganizations: false,
 } = Astro.props;
+
+import PersonJsonLd from "./PersonJsonLd.astro";
+import WebsiteJsonLd from "./WebsiteJsonLd.astro";
+import WebPageJsonLd from "./WebPageJsonLd.astro";
+import ProjectsJsonLd from "./ProjectsJsonLd.astro";
+import OrganizationsJsonLd from "./OrganizationsJsonLd.astro";
 ---
 
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+/>
+
+<meta name="robots" content="index,follow,max-image-preview:large" />
 
 <title>{title}</title>
 
-<meta name="description" content={description} />
+<meta
+  name="description"
+  content={description}
+/>
 
-<link rel="canonical" href={canonical} />
+<link
+  rel="canonical"
+  href={canonical}
+/>
 
-<link rel="me" href="https://github.com/AndresMpa" />
-<link rel="me" href="https://www.linkedin.com/in/andresmpa/" />
+<meta name="author" content="Andrés M. Prieto" />
+<meta name="creator" content="Andrés M. Prieto" />
 
-<link rel="icon" href="/favicon.ico" />
-<meta name="theme-color" content="#09090d" />
+{
+  person.sameAs.map((url) => (
+    <link rel="me" href={url} />
+  ))
+}
+
+<link
+  rel="icon"
+  href="/favicon.ico"
+/>
+
+<meta
+  name="theme-color"
+  content="#09090d"
+/>
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content={title} />
@@ -45,61 +84,20 @@ const {
 <meta name="twitter:site" content="@AndresMpa" />
 <meta name="twitter:creator" content="@AndresMpa" />
 
-<script
-  is:inline
-  type="application/ld+json"
-  set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://andresmpa.netlify.app/#person",
-        name: "Andrés M. Prieto",
-        url: "https://andresmpa.netlify.app/",
-        jobTitle: "Senior Software Engineer",
-        description,
-        image,
-        sameAs: [
-          "https://github.com/AndresMpa",
-          "https://www.linkedin.com/in/andresmpa/",
-          "https://stackoverflow.com/users/15334340",
-          "https://andresprieto-25116.medium.com/",
-        ],
-        knowsAbout: [
-          "Artificial Intelligence",
-          "Python",
-          "JavaScript",
-          "TypeScript",
-          "GNU/Linux",
-          "Docker",
-          "AWS",
-          "Vue.js",
-          "Astro",
-          "Agent Engineering",
-          "LLMs",
-          "RAG",
-        ],
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://andresmpa.netlify.app/#website",
-        url: "https://andresmpa.netlify.app/",
-        name: "Andrés M. Prieto Portfolio",
-        description,
-        publisher: {
-          "@id": "https://andresmpa.netlify.app/#person",
-        },
-      },
-      {
-        "@type": "WebPage",
-        "@id": canonical,
-        url: canonical,
-        name: title,
-        description,
-        isPartOf: {
-          "@id": "https://andresmpa.netlify.app/#website",
-        },
-      },
-    ],
-  })}
+<meta
+  name="keywords"
+  content="Senior Software Engineer, AI Infrastructure, Fullstack, Python, JavaScript, TypeScript, GNU/Linux, Docker, AWS, LLM, AI Agents"
 />
+
+<PersonJsonLd />
+
+<WebsiteJsonLd />
+
+<WebPageJsonLd
+  title={title}
+  description={description}
+  canonical={canonical}
+/>
+
+{includeProjects && <ProjectsJsonLd />}
+{includeOrganizations && <OrganizationsJsonLd />}

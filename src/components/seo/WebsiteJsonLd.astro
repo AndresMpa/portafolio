@@ -1,0 +1,25 @@
+---
+// src/components/seo/WebsiteJsonLd.astro
+
+import { person } from "../../data/person";
+---
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context":"https://schema.org",
+
+    "@type":"WebSite",
+
+    "@id":"https://andresmpa.netlify.app/#website",
+
+    url:person.url,
+
+    name:"Andrés M. Prieto Portfolio",
+
+    publisher:{
+      "@id":person.id
+    }
+  })}
+/>
