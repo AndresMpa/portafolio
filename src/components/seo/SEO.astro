@@ -1,6 +1,12 @@
 ---
 // src/components/seo/SEO.astro
 
+import PersonJsonLd from "./PersonJsonLd.astro";
+import WebsiteJsonLd from "./WebsiteJsonLd.astro";
+import WebPageJsonLd from "./WebPageJsonLd.astro";
+import ProjectsJsonLd from "./ProjectsJsonLd.astro";
+import OrganizationsJsonLd from "./OrganizationsJsonLd.astro";
+
 import { person } from "../../data/person";
 
 interface Props {
@@ -16,18 +22,24 @@ interface Props {
 const {
   title,
   description,
-  image = person.image || "https://andresmpa.netlify.app/og-image.png",
+  image = person?.image ?? "https://andresmpa.netlify.app/og-image.png",
   canonical = Astro.url.href,
   entryType = "website",
   includeProjects = false,
   includeOrganizations = false,
 } = Astro.props;
 
-import PersonJsonLd from "./PersonJsonLd.astro";
-import WebsiteJsonLd from "./WebsiteJsonLd.astro";
-import WebPageJsonLd from "./WebPageJsonLd.astro";
-import ProjectsJsonLd from "./ProjectsJsonLd.astro";
-import OrganizationsJsonLd from "./OrganizationsJsonLd.astro";
+const isMainPage = ["website", "profile"].includes(entryType);
+const isArticle = entryType === "article";
+
+const portfolioKeywords = "Senior Software Engineer, AI Infrastructure, Fullstack, Python, JavaScript, TypeScript, GNU/Linux, Docker, AWS, LLM, AI Agents";
+const articleKeywords = "Software Engineering, Web Development, System Design, DevOps, Cloud Architecture, Artificial Intelligence, Technical Tutorial, Programming Best Practices";
+
+const keyWords = isMainPage 
+  ? portfolioKeywords 
+  : isArticle 
+    ? articleKeywords 
+    : "";
 ---
 
 <meta charset="UTF-8" />
@@ -84,10 +96,7 @@ import OrganizationsJsonLd from "./OrganizationsJsonLd.astro";
 <meta name="twitter:site" content="@AndresMpa" />
 <meta name="twitter:creator" content="@AndresMpa" />
 
-<meta
-  name="keywords"
-  content="Senior Software Engineer, AI Infrastructure, Fullstack, Python, JavaScript, TypeScript, GNU/Linux, Docker, AWS, LLM, AI Agents"
-/>
+{keyWords && <meta name="keywords" content={keyWords} />}
 
 <PersonJsonLd />
 
