@@ -8,19 +8,19 @@ interface Props {
   description: string;
   image?: string;
   canonical?: string;
-  type?: "website" | "article" | "profile";
+  type?: "website" | "profile" | "article";
   includeProjects?: boolean;
-  includeOrganizations: boolean;
+  includeOrganizations?: boolean;
 }
 
 const {
   title,
   description,
-  image = person.image,
+  image = "https://andresmpa.netlify.app/og-image.png",
   canonical = Astro.url.href,
   type = "website",
-  includeProjects: false,
-  includeOrganizations: false,
+  includeProjects = false,
+  includeOrganizations = false,
 } = Astro.props;
 
 import PersonJsonLd from "./PersonJsonLd.astro";

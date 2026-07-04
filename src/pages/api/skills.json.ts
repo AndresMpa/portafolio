@@ -1,5 +1,4 @@
-import { skills } from "../../data/skills";
-import { site } from "../../data/site";
+import { site, skills } from "../../data";
 
 export const GET = () =>
   Response.json({

@@ -1,5 +1,4 @@
-import { site } from "../../data/site";
-import { person } from "../../data/person";
+import { site, person } from "../../data";
 
 export const GET = () =>
   Response.json({
