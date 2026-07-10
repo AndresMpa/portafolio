@@ -2,25 +2,27 @@
 // src/routes/index.astro
 
 import { t } from "i18n:astro";
-
-import Layout from "../layouts/Layout.astro"
-
+import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/layout/Navigation.astro";
-
-import Greeter from "../components/home/Greeter.astro";
-import Projects from "../components/home/Projects.astro";
-import Education from "../components/home/Education.astro";
-import Community from "../components/home/Community.astro";
+import Hero from "../components/home/Hero.astro";
 import Experience from "../components/home/Experience.astro";
+import FeaturedProjects from "../components/home/FeaturedProjects.astro";
+import Community from "../components/home/Community.astro";
+import Skills from "../components/home/Skills.astro";
+import Writing from "../components/home/Writing.astro";
+import AboutPreview from "../components/home/AboutPreview.astro";
+import ResumePreview from "../components/home/ResumePreview.astro";
 
 const title = `${t("title")}`;
 ---
-
 <Layout title={title}>
-  <Greeter />
   <Navigation />
+  <Hero />
+  <FeaturedProjects />
   <Experience />
-  <Projects />
-  <Education />
   <Community />
+  <Writing />
+  <Skills />
+  <AboutPreview />
+  <ResumePreview />
 </Layout>

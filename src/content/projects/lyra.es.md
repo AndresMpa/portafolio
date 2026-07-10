@@ -1,26 +1,6 @@
 ---
 locale: es
-slug: lyra-es
-title: Lyra - Your cosmic companion
-description: Lyra is an assistant though for GNU/Linux, it's main idea is to get information from your OS (Without telemetry), to give you the best answers using light SLMs.
-image: ../../assets/projects/Lyra.png
-repository: https://github.com/lyra-ai-assistant
-website: https://github.com/lyra-ai-assistant/page
-languages:
-  - TypeScript
-  - JavaScript
-  - Python
-  - Bash
-topics:
-  - AI
-  - IPC
-  - SLMs
-  - Linux
-  - Agents
-featured: true
-opensource: true
+slug: lyra
+title: Lyra - Tu compañera cósmica
+description: Lyra es un asistente virtual diseñado para navegar el vasto mar de información en GNU/Linux, haciendo que tu experiencia informática sea armoniosa e intuitiva.
 ---
-
-# Lyra
-
-Long markdown description...

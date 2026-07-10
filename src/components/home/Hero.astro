@@ -1,0 +1,31 @@
+---
+// src/components/home/Hero.astro
+
+import { getEntry } from "astro:content";
+import { locale } from "i18n:astro";
+
+import HeroTerminal from "./HeroTerminal.astro";
+import HeroMetrics from "./HeroMetrics.astro";
+
+const lang = Astro.currentLocale ?? "en";
+const about = await getEntry("about", lang);
+---
+
+<section class="min-h-screen flex items-center">
+  <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12">
+    <div>
+      <h1 class="mt-6 text-5xl md:text-7xl font-black leading-tight">
+        {about.data.title}
+      </h1>
+      <p class="mt-8 max-w-3xl text-xl text-zinc-300">
+        {about.data.description}
+      </p>
+      <div class="mt-8 flex gap-4">
+        <a href="/projects" class="btn-primary">View Projects</a>
+        <a href="/resume" class="btn-secondary">Download Resume</a>
+      </div>
+    </div>
+    <HeroTerminal entry={about} />
+  </div>
+  <HeroMetrics />
+</section>

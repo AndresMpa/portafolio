@@ -1,9 +1,6 @@
 ---
 locale: es
-slug: dailybot-es
-company: dailybot
-role: AI engineer & Fullstack developer
-description: ""
+slug: dailybot
+role: Desarrolladora de Software IA
+description: "Trabajo para un SAS que prioriza Agentic como ingeniero de IA y desarrollador Fullstack. Hago agentes y componentes de alto rendimiento utilizados por millones de usuarios."
 ---
-
-# Empty

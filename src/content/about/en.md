@@ -2,6 +2,12 @@
 locale: en
 title: About Andrés M. Prieto
 description: Senior Software Engineer specializing in AI infrastructure.
+whoami:
+  role: AI Infrastructure & Fullstack Engineer
+  location: "Colombia (LatAm)"
+  focus: Building AI products, developer tools and infrastructure
+  passion: "Linux, Open Source, Automation, Developer Experience"
+excerpt: "I'm an engineer who loves building things that make an impact. For more than 10 years I've been building software across different domains, from web applications to AI-powered systems and developer tools, working close to the metal, automating everything I can and sharing knowledge with the community. Currently exploring AI agents, local LLMs and the future of human + machine collaboration."
 ---
 
 # About Andrés M. Prieto

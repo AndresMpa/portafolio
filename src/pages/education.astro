@@ -1,0 +1,26 @@
+---
+// pages/education.astro
+import Layout from "../layouts/Layout.astro";
+import { getEducation } from "../lib/education";
+import { t } from "i18n:astro";
+
+const lang = Astro.currentLocale ?? "en";
+const entries = await getEducation(lang);
+---
+
+<Layout title={t("education.title")}>
+  <section class="max-w-7xl mx-auto px-6 py-24">
+    <h1 class="text-4xl uppercase text-accent mb-12">{t("education.title")}</h1>
+    <div class="space-y-8">
+      {entries.map((item) => (
+        <div class="border-b border-zinc-800 pb-6">
+          <p class="text-accent text-sm">
+            {item.startDate.slice(0, 4)} — {item.endDate ? item.endDate.slice(0, 4) : t("experience.present")}
+          </p>
+          <h3 class="font-bold text-lg">{item.degree}</h3>
+          <p class="text-zinc-500">{item.institution}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

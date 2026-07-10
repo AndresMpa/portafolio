@@ -1,0 +1,44 @@
+---
+// src/components/project/ProjectsList.astro
+
+import { getLangFromUrl } from "../../i18n/utils";
+import { getProjects } from "../../lib/projects";
+import { t } from "i18n:astro";
+
+import ProjectDescription from "./ProjectDescription.astro";
+import ProjectLink from "./ProjectLink.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const projectsData = await getProjects(lang);
+---
+
+<section id="projects">
+  <article class="flex flex-col items-end mb-6 pb-12 pr-12">
+    <h3 class="text-4xl uppercase text-accent">
+      {t("projects.title")}
+    </h3>
+  </article>
+  <article>
+    {
+      projectsData.map((data, index) => (
+        <div
+          class={`${index % 2 === 0 ? "" : "flex-row-reverse"} md:flex justify-around my-12`}
+        >
+          <ProjectDescription
+            title={data.title}
+            context={data.description}
+            authors={data.authors}
+          />
+
+          <ProjectLink
+            url={data.repository ?? data.website}
+            image={data.image}
+            topics={data.languages.join(",")}
+            alt={data.title}
+            flip={index % 2 === 0}
+          />
+        </div>
+      ))
+    }
+  </article>
+</section>

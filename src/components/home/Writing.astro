@@ -1,0 +1,35 @@
+---
+// components/home/Writing.astro
+
+import { getCollection } from "astro:content";
+import { t } from "i18n:astro";
+
+const lang = Astro.currentLocale ?? "en";
+const posts = (await getCollection("writing", (e) => e.data.locale === lang))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 4);
+---
+
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-sm uppercase text-accent mb-8">// 05_latest_writing</h3>
+    {posts.length === 0 ? (
+      <p class="text-zinc-600 text-sm">No posts yet.</p>
+    ) : (
+      <div class="divide-y divide-zinc-800">
+        {posts.map((post) => (
+        <a href={`/writing/${post.data.locale}/${post.data.slug}`} class="flex justify-between items-center py-4 group">
+            <div class="flex gap-6 items-center">
+              <span class="text-zinc-500 text-sm w-32">
+                {post.data.date?.toLocaleDateString(lang) ?? ""}
+              </span>
+              <span class="text-accent text-xs uppercase w-32">{post.data.tag}</span>
+              <span class="group-hover:text-accent">{post.data.title}</span>
+            </div>
+            <span class="text-accent">→</span>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

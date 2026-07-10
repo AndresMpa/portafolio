@@ -5,47 +5,93 @@ import { z } from "astro/zod";
 const availableLanguages = ["en", "es"];
 
 const about = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/about" }),
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/about",
+    generateId: ({ entry }) => entry.replace(/\.md$/, "")
+  }),
   schema: z.object({
     locale: z.enum(availableLanguages),
     title: z.string(),
     description: z.string(),
+    excerpt: z.string(),
+    whoami: z.object({
+      role: z.string(),
+      location: z.string(),
+      focus: z.string(),
+      passion: z.string(),
+    }),
   }),
 });
 
 const projects = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/projects",
+    generateId: ({ entry }) => entry.replace(/\.md$/, "")
+  }),
   schema: z.object({
     locale: z.enum(availableLanguages),
     slug: z.string(),
     title: z.string(),
     description: z.string(),
+    caseStudy: z.object({
+      problem: z.string(),
+      architecture: z.string(),
+      tradeoffs: z.string().optional(),
+      lessons: z.string().optional(),
+    }).optional(),
   }),
 });
 
 const experience = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/experience" }),
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/experience",
+    generateId: ({ entry }) => entry.replace(/\.md$/, "")
+  }),
   schema: z.object({
     locale: z.enum(availableLanguages),
     slug: z.string(),
-    company: z.string(),
     role: z.string(),
     description: z.string(),
   }),
 });
 
 const community = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/community" }),
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/community",
+    generateId: ({ entry }) => entry.replace(/\.md$/, "")
+  }),
   schema: z.object({
     locale: z.enum(availableLanguages),
     slug: z.string(),
-    organization: z.string(),
+    role: z.string(),
+    description: z.string(),
+  }),
+});
+
+const writing = defineCollection({
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/writing",
+    generateId: ({ entry }) => entry.replace(/\.md$/, "")
+  }),
+  schema: z.object({
+    locale: z.enum(availableLanguages),
+    slug: z.string(),
+    title: z.string(),
     description: z.string(),
   }),
 });
 
 const faq = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/faq" }),
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/faq",
+    generateId: ({ entry }) => entry.replace(/\.md$/, "")
+  }),
   schema: z.object({
     locale: z.enum(availableLanguages),
     title: z.string(),
@@ -53,4 +99,19 @@ const faq = defineCollection({
   }),
 });
 
-export const collections = { about, projects, experience, community, faq };
+const education = defineCollection({
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/education",
+    generateId: ({ entry }) => entry.replace(/\.md$/, "")
+  }),
+  schema: z.object({
+    locale: z.enum(availableLanguages),
+    slug: z.string(),
+    degree: z.string(),
+    institution: z.string(),
+    description: z.string().optional(),
+  }),
+});
+
+export const collections = { about, projects, experience, community, faq, writing, education };

@@ -1,0 +1,35 @@
+---
+// src/components/home/HeroTerminal.astro
+
+import { render } from "astro:content";
+
+interface Props {
+  entry: {
+    data: {
+      whoami: {
+        role: string;
+        location: string;
+        focus: string;
+        passion: string;
+      };
+    };
+  };
+}
+const { entry } = Astro.props as Props;
+const { whoami } = entry.data;
+---
+<div class="border border-zinc-800 rounded-lg bg-black/40 p-6 font-mono text-sm">
+  <div class="flex gap-2 mb-4 text-zinc-500">
+    <span class="w-3 h-3 rounded-full bg-red-500"></span>
+    <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+    <span class="w-3 h-3 rounded-full bg-green-500"></span>
+    <span class="ml-2">~/about.me</span>
+  </div>
+  <p><span class="text-accent">andres@dev</span>:-$ whoami</p>
+  <p class="mt-2 text-zinc-400">name: Andrés M. Prieto</p>
+  <p class="text-zinc-400">role: {whoami.role}</p>
+  <p class="text-zinc-400">location: {whoami.location}</p>
+  <p class="text-zinc-400">focus: {whoami.focus}</p>
+  <p class="text-zinc-400">passion: {whoami.passion}</p>
+  <p class="mt-4"><span class="text-accent">andres@dev</span>:-$ <span class="animate-pulse">▌</span></p>
+</div>
