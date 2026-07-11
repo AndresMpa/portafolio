@@ -19,7 +19,7 @@ export const projects: ProjectMeta[] = [
   {
     slug: "lyra",
     image: "Lyra.png",
-    repository: "https://github.com/AndresMpa/lyra",
+    repository: "https://github.com/lyra-ai-assistant",
     languages: ["AI", "JavaScript", "Python"],
     authors: [
       { user: "AndresMpa", link: "https://github.com/AndresMpa" },

@@ -11,6 +11,25 @@
     "resume": "Currículum"
   },
   "hero": {
+    "title": "Construyo sistemas de IA que piensan, aprenden y escalan.",
+    "description": "Construyo productos de IA, herramientas para desarrolladores e infraestructura que escala. Apasionado por Linux, el código abierto y la intersección entre IA e ingeniería de software.",
+    "actions": {
+      "viewProjects": "Ver Proyectos",
+      "downloadResume": "Descargar CV"
+    },
+    "metrics": {
+      "experience": "Años de Experiencia",
+      "projects": "Proyectos",
+      "openSource": "Código Abierto",
+      "contributor": "Colaborador",
+      "basedIn": "Ubicado en"
+    },
+    "whoami": {
+      "role": "Ingeniero de IA & Fullstack",
+      "location": "Colombia (LatAm)",
+      "focus": "Agentes de IA, LLMs locales, MCP",
+      "passion": "Linux, Código Abierto, DX"
+    },
     "actions": {
       "viewProjects": "Ver Proyectos",
       "downloadResume": "Descargar Currículum"
@@ -22,6 +41,12 @@
       "contributor": "Colaborador",
       "basedIn": "Ubicado en"
     }
+  },
+  "projects": {
+    "title": "PROYECTOS DESTACADOS",
+    "caseStudy": "Caso de estudio",
+    "github": "GitHub",
+    "viewAll": "Ver todos los proyectos"
   },
   "skills": {
     "title": "Habilidades",
@@ -37,12 +62,6 @@
     "viewAll": "Ver toda la experiencia"
   },
   "education": { "title": "Educación" },
-  "projects": {
-    "title": "Proyectos Destacados",
-    "caseStudy": "Caso de estudio",
-    "github": "GitHub",
-    "viewAll": "Ver todos los proyectos"
-  },
   "community": {
     "title": "Código Abierto & Comunidad",
     "andMore": "Y más",
@@ -60,7 +79,10 @@
     "download": "Descargar resume.pdf"
   },
   "footer": {
-    "rights": "Todos los derechos reservados",
-    "made": "Hecho por "
+    "tagline_1": "",
+    "tagline_2": "",
+    "tagline_3": "",
+    "name": "Portafolio",
+    "made": "Hecho en "
   }
 }

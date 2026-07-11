@@ -3,7 +3,7 @@
 
 import { Image } from "astro:assets";
 import { getEntry } from "astro:content";
-import { locale } from "i18n:astro";
+import { t, locale } from "i18n:astro";
 
 import HeroTerminal from "./HeroTerminal.astro";
 import HeroMetrics from "./HeroMetrics.astro";
@@ -16,7 +16,7 @@ const about = await getEntry("about", lang);
 ---
 
 <section class="min-h-screen flex flex-col items-center">
-  <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12">
+  <div class="max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center">
     <div>
       <h1 class="mt-6 text-5xl md:text-7xl font-black leading-tight">
         {about.data.title}
@@ -25,15 +25,19 @@ const about = await getEntry("about", lang);
         {about.data.description}
       </p>
       <div class="mt-8 flex gap-4">
-        <a href="/projects" class="btn-primary">View Projects</a>
-            <a
-      href={cv}
-      download="AndresMpa_CV.pdf"
-      class="p-2 mr-2 rounded-full bg-accent hover:bg-accent active:bg-accent focus:outline-none focus:ring focus:ring-accent flex items-center justify-center"
-    >
-      <Image src={download} alt="Download CV" width={15} loading="eager" class="text-gray-700 hover:text-black" />
-      <span class="ml-1">Download resume</span>
-   </a>
+        <a href="/projects" class="btn-primary mt-2">
+          {t("hero.actions.viewProjects")}
+        </a>
+        <a
+          href={cv}
+          download="AndresMpa_CV.pdf"
+          class="p-2 mr-2 rounded-full bg-accent hover:bg-accent active:bg-accent focus:outline-none focus:ring focus:ring-accent flex items-center justify-center"
+        >
+          <Image src={download} alt="Download CV" width={15} loading="eager" class="text-white hover:text-black" />
+          <span class="ml-1">
+            {t("hero.actions.downloadResume")}
+          </span>
+       </a>
       </div>
     </div>
     <HeroTerminal entry={about} />
