@@ -6,13 +6,14 @@ import { Image } from "astro:assets";
 import icon from "../../assets/icon.svg";
 
 import Navigation from "./Navigation.astro";
+import BrandLogo from "../shared/BrandLogo.astro";
 import LocaleSwitcher from "./LocaleSwitcher.astro";
 ---
 
 <nav id="home" class="flex justify-between p-4">
   <div class="flex items-center">
-    <Image src={icon} alt="Andrés M. Prieto Álvarez" width={45} class="ml-2" loading="eager" />
-    <p class="p-2 mb-1"><span class="text-accent">andres@dev</span>:-$ whoami</p>
+    <Image src={icon} alt="Andrés M. Prieto Álvarez" width={45} class="mx-2" loading="eager" />
+    <BrandLogo />
   </div>
 
   <div class="flex items-center">

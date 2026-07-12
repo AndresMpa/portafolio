@@ -3,7 +3,10 @@
 
 import { t } from "i18n:astro";
 
+import Navigation from "./Navigation.astro";
+import BrandLogo from "../shared/BrandLogo.astro";
 import SocialLink from "../shared/SocialLink.astro";
+
 import linkedin from "../../assets/linkedin.svg";
 import telegram from "../../assets/telegram.svg";
 import github from "../../assets/github.svg";
@@ -18,55 +21,21 @@ const socialMedia = [
   { icon: linkedin, link: "https://www.linkedin.com/in/andresmpa/", alt: "LinkedIn" },
   { icon: gmail, link: "mailto:ing.andres.m.prieto@gmail.com", alt: "Correo: ing.andres.m.prieto@gmail.com" },
 ];
-
-const navigation = [
-  { label: "01_Home", href: "/" },
-  { label: "02_Projects", href: "/projects" },
-  { label: "03_Experience", href: "/experience" },
-  { label: "04_Writing", href: "/writing" },
-  { label: "05_About", href: "/about" },
-  { label: "06_Resume", href: "/resume" },
-];
-const navItems = [
-  { key: "home", href: "/" },
-  { key: "projects", href: "/projects" },
-  { key: "experience", href: "/experience" },
-  { key: "writing", href: "/writing" },
-  { key: "about", href: "/about" },
-  { key: "resume", href: "/resume" },
-];
-
 ---
 
 <footer id="contact" class="bg-neutral-950 text-neutral-400 font-mono py-16 px-6">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr_1fr_auto] gap-10">
-    <div>
-      <p class="text-accent">
-        andres<span class="text-accent">@</span>dev<span class="text-white">:~$</span>
-      </p>
-      <p class="mt-4 text-sm leading-relaxed text-neutral-500">
-        {t("footer.tagline_1")}<br />
-        {t("footer.tagline_2")}<br />
-        {t("footer.tagline_3")}
-      </p>
+  <div class="max-w-6xl mx-auto flex justify-between items-end">
+    <BrandLogo />
+    
+    <div class="hidden md:flex flex-col">
+      <div class="flex items-center">
+        <Navigation />
+      </div>
     </div>
 
-    <nav aria-label="Navigation">
-      <h3 class="text-neutral-200 text-sm mb-4">NAVIGATION</h3>
-      <ul class="space-y-2 text-sm">
-        {navigation.map((item) => (
-          <li>
-            <a href={item.href} class="hover:text-green-400 transition-colors">
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-
-    <div>
-      <h3 class="text-neutral-200 text-sm mb-4">CONNECT</h3>
-      <div class="flex gap-3">
+    <div class="flex flex-col">
+      <h3 class="text-accent text-sm mb-4">LET'S CONNECT</h3>
+      <div class="flex">
         {socialMedia.map((data) => (
           <SocialLink icon={data.icon} link={data.link} alt={data.alt} />
         ))}
