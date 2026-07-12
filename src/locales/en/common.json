@@ -60,7 +60,10 @@
     "andMoreDescription1": "Speaker, mentor and open source enthusiast",
     "andMoreDescription2": "talks and events"
   },
-  "education": { "title": "Education" },
+  "education": {
+    "title": "Education",
+    "viewAll": "View all degrees"
+  },
   "writing": {
     "title": "Latest Writing"
   },

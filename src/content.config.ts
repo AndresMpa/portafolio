@@ -107,12 +107,11 @@ const education = defineCollection({
     base: "./src/content/education",
     generateId: ({ entry }) => entry.replace(/\.md$/, "")
   }),
-  schema: z.object({
+schema: z.object({
     locale: z.enum(availableLanguages),
     slug: z.string(),
     degree: z.string(),
-    institution: z.string(),
-    description: z.string().optional(),
+    tags: z.array(z.string()),
   }),
 });
 

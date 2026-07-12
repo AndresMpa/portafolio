@@ -1,6 +1,6 @@
 ---
 locale: es
 slug: meng-ai
-degree: "MEng. in Artificial Intelligence"
-institution: "Universidad Tecnológica de Pereira"
+degree: "Maestría en Inteligencia Artificial y Ciencia de datos"
+tags: ["Architecture", "AI", "DS"]
 ---

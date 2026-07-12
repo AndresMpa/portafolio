@@ -1,0 +1,49 @@
+---
+// src/components/education/EducationSummary.astro
+
+import { t } from "i18n:astro";
+
+import { getEducation } from "../../lib/education";
+
+import compass from "../../assets/compass.svg?raw";
+import layers from "../../assets/layers.svg?raw";
+import chip from "../../assets/chip.svg?raw";
+
+const icons: Record<string, string> = { compass, layers, chip };
+
+const lang = Astro.currentLocale ?? "en";
+const entries = await getEducation(lang);
+---
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-sm uppercase text-accent mb-8">// 04 {t("education.title")}</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {entries.map((item) => (
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="relative border border-zinc-800 hover:border-accent rounded-lg p-6 flex flex-col justify-between min-h-[180px] transition-colors group overflow-hidden"
+        >
+          <div
+            class="absolute top-4 right-4 w-7 h-7 text-accent drop-shadow-[0_0_8px_rgba(45,212,191,0.5)]"
+            set:html={icons[item.icon]}
+          />
+          <div>
+            <h4 class="font-bold group-hover:text-accent transition-colors pr-8">{item.degree}</h4>
+            <p class="text-zinc-500 text-sm">{item.institution}</p>
+            <div class="flex gap-2 mt-2 flex-wrap">
+              {item.tags.map((tag) => (
+                <span class="text-zinc-400 text-xs">{tag}</span>
+              ))}
+            </div>
+            <p class="text-zinc-600 text-xs mt-2">{item.year}</p>
+          </div>
+        </a>
+      ))}
+      <a href="/education" class="border border-zinc-800 hover:border-accent rounded-lg p-6 flex flex-col justify-end min-h-[180px] transition-colors text-accent">
+        <span>{t("education.viewAll")} →</span>
+      </a>
+    </div>
+  </div>
+</section>

@@ -60,7 +60,10 @@
     "andMoreDescription1": "Ponente, mentor y entusiasta del código abierto",
     "andMoreDescription2": "charlar y eventos"
   },
-  "education": { "title": "Educación" },
+  "education": {
+    "title": "Educación",
+    "viewAll": "Ver todo"
+  },
   "writing": {
     "title": "Últimos Escritos"
   },
