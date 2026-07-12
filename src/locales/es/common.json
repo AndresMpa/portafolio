@@ -53,6 +53,17 @@
     "present": "Presente",
     "viewAll": "Ver toda la experiencia"
   },
+  "community": {
+    "title": "Código Abierto & Comunidad",
+    "present": "Presente",
+    "andMore": "Y más",
+    "andMoreDescription1": "Ponente, mentor y entusiasta del código abierto",
+    "andMoreDescription2": "charlar y eventos"
+  },
+  "education": { "title": "Educación" },
+  "writing": {
+    "title": "Últimos Escritos"
+  },
   "skills": {
     "title": "Habilidades",
     "languages": "Lenguajes",
@@ -60,15 +71,6 @@
     "frontend": "Frontend",
     "ai": "IA / LLMs",
     "infrastructure": "Infraestructura"
-  },
-  "education": { "title": "Educación" },
-  "community": {
-    "title": "Código Abierto & Comunidad",
-    "andMore": "Y más",
-    "andMoreDescription": "Ponente, mentor y entusiasta del código abierto"
-  },
-  "writing": {
-    "title": "Últimos Escritos"
   },
   "about": {
     "title": "Acerca de"

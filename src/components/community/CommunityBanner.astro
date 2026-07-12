@@ -30,15 +30,15 @@ const entries = await getCommunity(lang);
             <h4 class="font-bold">{entry.company}</h4>
             <p class="text-accent text-sm">{entry.role}</p>
             <p class="text-zinc-500 text-xs">
-              {entry.startDate}{entry.endDate ? ` — ${entry.endDate}` : " — Present"}
+              {entry.startDate}{entry.endDate ? ` — ${entry.endDate}` : ` — ${t("community.present")}`}
             </p>
           </div>
         </article>
       ))}
       <article class="border border-zinc-800 p-6 rounded">
-        <h4 class="font-bold">And more</h4>
+        <h4 class="font-bold">{t("community.andMore")}</h4>
         <p class="text-zinc-400 text-sm">
-          Speaker, mentor and open source enthusiast — {talks.length} talks and events
+          {t("community.andMoreDescription1")} — {talks.length} {t("community.andMoreDescription2")}
         </p>
       </article>
     </div>
