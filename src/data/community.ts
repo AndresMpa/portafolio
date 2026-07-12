@@ -7,7 +7,7 @@ export interface CommunityMeta {
 }
 
 export const community: CommunityMeta[] = [
-  { slug: "ubuntu-colombia", startDate: "2019-01", endDate: null },
-  { slug: "forest", startDate: "2022-01", endDate: null },
-  { slug: "flisol", startDate: "2019-01", endDate: null },
+  { slug: "ubuntu-colombia", startDate: "2019", endDate: null },
+  { slug: "flisol", startDate: "2019", endDate: null },
+  { slug: "forest", startDate: "2022", endDate: null },
 ];

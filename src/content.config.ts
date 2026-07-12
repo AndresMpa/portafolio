@@ -55,6 +55,7 @@ const experience = defineCollection({
     slug: z.string(),
     role: z.string(),
     description: z.string(),
+    company: z.string(),
   }),
 });
 
@@ -67,6 +68,7 @@ const community = defineCollection({
   schema: z.object({
     locale: z.enum(availableLanguages),
     slug: z.string(),
+    company: z.string(),
     role: z.string(),
     description: z.string(),
   }),

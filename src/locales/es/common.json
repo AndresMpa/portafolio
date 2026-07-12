@@ -48,6 +48,11 @@
     "github": "GitHub",
     "viewAll": "Ver todos los proyectos"
   },
+  "experience": {
+    "title": "Experiencia",
+    "present": "Presente",
+    "viewAll": "Ver toda la experiencia"
+  },
   "skills": {
     "title": "Habilidades",
     "languages": "Lenguajes",
@@ -55,11 +60,6 @@
     "frontend": "Frontend",
     "ai": "IA / LLMs",
     "infrastructure": "Infraestructura"
-  },
-  "experience": {
-    "title": "Experiencia",
-    "present": "Presente",
-    "viewAll": "Ver toda la experiencia"
   },
   "education": { "title": "Educación" },
   "community": {

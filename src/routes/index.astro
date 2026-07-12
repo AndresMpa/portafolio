@@ -4,10 +4,10 @@
 import { t } from "i18n:astro";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/hero/Hero.astro";
-import Experience from "../components/experience/Experience.astro";
+import ExperienceTimeline from "../components/experience/ExperienceTimeline.astro";
 import EducationSummary from "../components/education/EducationSummary.astro";
 import ProjectFeatured from "../components/project/ProjectFeatured.astro";
-import Community from "../components/community/Community.astro";
+import CommunityBanner from "../components/community/CommunityBanner.astro";
 import Skills from "../components/home/Skills.astro";
 import Writing from "../components/home/Writing.astro";
 
@@ -16,9 +16,9 @@ const title = `${t("title")}`;
 <Layout title={title}>
   <Hero />
   <ProjectFeatured />
-  <Experience />
+  <ExperienceTimeline />
   <EducationSummary />
-  <Community />
+  <CommunityBanner />
   <Writing />
   <Skills />
 </Layout>

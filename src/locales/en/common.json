@@ -48,6 +48,20 @@
     "github": "GitHub",
     "viewAll": "View all projects"
   },
+  "experience": {
+    "title": "Experience",
+    "present": "Present",
+    "viewAll": "View all experience"
+  },
+  "community": {
+    "title": "Open Source & Community",
+    "andMore": "And more",
+    "andMoreDescription": "Speaker, mentor and open source enthusiast"
+  },
+  "education": { "title": "Education" },
+  "writing": {
+    "title": "Latest Writing"
+  },
   "skills": {
     "title": "Skills",
     "languages": "Languages",
@@ -55,20 +69,6 @@
     "frontend": "Frontend",
     "ai": "AI / LLMs",
     "infrastructure": "Infrastructure"
-  },
-  "experience": {
-    "title": "Experience",
-    "present": "Present",
-    "viewAll": "View all experience"
-  },
-  "education": { "title": "Education" },
-  "community": {
-    "title": "Open Source & Community",
-    "andMore": "And more",
-    "andMoreDescription": "Speaker, mentor and open source enthusiast"
-  },
-  "writing": {
-    "title": "Latest Writing"
   },
   "about": {
     "title": "About"
