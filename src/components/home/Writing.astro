@@ -1,8 +1,8 @@
 ---
 // components/home/Writing.astro
 
-import { getCollection } from "astro:content";
 import { t } from "i18n:astro";
+import { getCollection } from "astro:content";
 
 const lang = Astro.currentLocale ?? "en";
 const posts = (await getCollection("writing", (e) => e.data.locale === lang))

@@ -1,6 +1,7 @@
 ---
 // src/components/home/Community.astro
-import { locale, t } from "i18n:astro";
+
+import { t } from "i18n:astro";
 import { getCommunity } from "../../lib/community";
 import { talks } from "../../data/talks";
 
@@ -14,7 +15,8 @@ const iconMap: Record<string, ImageMetadata> = {
   flisol: flisol,
 };
 
-const entries = await getCommunity(locale);
+const lang = Astro.currentLocale ?? "en";
+const entries = await getCommunity(lang);
 ---
 
 <section id="open-source" class="py-4">
@@ -22,13 +24,15 @@ const entries = await getCommunity(locale);
     <h3 class="text-sm uppercase text-accent mb-8">// 04_open_source_&_community</h3>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
       {entries.map((entry) => (
-        <article class="border border-zinc-800 p-6 rounded">
-          <img src={iconMap[entry.slug].src} alt={entry.organization} class="w-10 h-10 mb-4" />
-          <h4 class="font-bold">{entry.organization}</h4>
-          <p class="text-accent text-sm">{entry.role}</p>
-          <p class="text-zinc-500 text-xs">
-            {entry.startDate}{entry.endDate ? ` — ${entry.endDate}` : " — Present"}
-          </p>
+        <article class="border border-zinc-800 p-6 rounded flex items-center">
+          <img src={iconMap[entry.slug].src} alt={entry.organization} class="w-12 h-12" />
+          <div class="ml-5">
+            <h4 class="font-bold">{entry.organization}</h4>
+            <p class="text-accent text-sm">{entry.role}</p>
+            <p class="text-zinc-500 text-xs">
+              {entry.startDate}{entry.endDate ? ` — ${entry.endDate}` : " — Present"}
+            </p>
+          </div>
         </article>
       ))}
       <article class="border border-zinc-800 p-6 rounded">

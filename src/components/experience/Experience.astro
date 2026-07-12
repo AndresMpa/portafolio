@@ -1,15 +1,12 @@
 ---
 // src/components/home/Experience.astro
 
-import { locale } from "i18n:astro";
-
 import { t } from "i18n:astro";
 
 import { getExperience } from "../../lib/experience";
 
 const lang = Astro.currentLocale ?? "en";
 const merged = (await getExperience(lang));
-console.log(merged)
 ---
 
 <section id="experience" class="py-4">
