@@ -3,11 +3,11 @@ locale: es
 title: Sobre Andrés M. Prieto
 description: Desarrollo productos basados en inteligencia artificial, herramientas para desarrolladores e infraestructura escalable. Me apasionan Linux, el código abierto y la intersección entre la inteligencia artificial y la ingeniería de software.
 whoami:
-  role: AI Infrastructure & Fullstack Engineer
-  location: "Colombia (LatAm)"
-  focus: Building AI products, developer tools and infrastructure
-  passion: "Linux, Open Source, Automation, Developer Experience"
-excerpt: "I'm an engineer who loves building things that make an impact. For more than 10 years I've been building software across different domains, from web applications to AI-powered systems and developer tools, working close to the metal, automating everything I can and sharing knowledge with the community. Currently exploring AI agents, local LLMs and the future of human + machine collaboration."
+  role: Ingeniero de infraestructura de IA y Fullstack
+  location: Colombia (LatAm)
+  focus: Creando de productos de IA, herramientas de desarrollo e infraestructura
+  passion: Linux, código abierto, automatización, experiencia de desarrollador
+excerpt: Soy un ingeniero al que le encanta construir cosas que generen impacto. Durante más de 10 años he estado creando software en diferentes dominios, desde aplicaciones web hasta sistemas impulsados por IA y herramientas para desarrolladores, trabajando cerca del metal, automatizando todo lo que puedo y compartiendo conocimientos con la comunidad. Actualmente estamos explorando agentes de IA, LLM locales y el futuro de la colaboración entre humanos y máquinas.
 ---
 
 # Sobre Andrés M. Prieto

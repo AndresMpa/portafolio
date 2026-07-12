@@ -4,10 +4,10 @@ title: About Andrés M. Prieto
 description: I build AI-powered products, developer tools and infrastructure that scale. Passionate about Linux, open source and the intersection of AI and software engineering.
 whoami:
   role: AI Infrastructure & Fullstack Engineer
-  location: "Colombia (LatAm)"
+  location: Colombia (LatAm)
   focus: Building AI products, developer tools and infrastructure
-  passion: "Linux, Open Source, Automation, Developer Experience"
-excerpt: "I'm an engineer who loves building things that make an impact. For more than 10 years I've been building software across different domains, from web applications to AI-powered systems and developer tools, working close to the metal, automating everything I can and sharing knowledge with the community. Currently exploring AI agents, local LLMs and the future of human + machine collaboration."
+  passion: Linux, Open Source, Automation, Developer Experience
+excerpt: I'm an engineer who loves building things that make an impact. For more than 10 years I've been building software across different domains, from web applications to AI-powered systems and developer tools, working close to the metal, automating everything I can and sharing knowledge with the community. Currently exploring AI agents, local LLMs and the future of human + machine collaboration.
 ---
 
 # About Andrés M. Prieto
