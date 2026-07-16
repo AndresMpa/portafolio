@@ -33,16 +33,19 @@ const projects = defineCollection({
     generateId: ({ entry }) => entry.replace(/\.md$/, "")
   }),
   schema: z.object({
-    locale: z.enum(availableLanguages),
+    locale: z.string(),
     slug: z.string(),
     title: z.string(),
     description: z.string(),
-    caseStudy: z.object({
-      problem: z.string(),
-      architecture: z.string(),
-      tradeoffs: z.string().optional(),
-      lessons: z.string().optional(),
-    }).optional(),
+    keywords: z.array(z.string()).default([]),
+    projectType: z.string().optional(),
+    status: z.string().optional(),
+    featured: z.boolean().default(false),
+    repository: z.array(z.string()).default([]),
+    skills: z.array(z.string()).default([]),
+    aiTopics: z.array(z.string()).default([]),
+    expertise: z.array(z.string()).default([]),
+    intent: z.array(z.string()).default([]),
   }),
 });
 

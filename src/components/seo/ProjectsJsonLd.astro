@@ -1,7 +1,11 @@
 ---
 // src/components/seo/ProjectsJsonLd.astro
 
-import { projects } from "../../data/projects";
+import { getCollection } from "astro:content";
+
+import { site } from "../../data/site";
+
+const projects = await getCollection("projects");
 ---
 
 <script
@@ -14,9 +18,9 @@ import { projects } from "../../data/projects";
       {
         "@type": "ItemList",
 
-        "@id": "https://andresmpa.netlify.app/#projects",
+        "@id": `${site.url}/projects`,
 
-        name: "Open Source Projects",
+        name: "Software Engineering Projects",
 
         itemListElement: projects.map((project, index) => ({
           "@type": "ListItem",
@@ -24,7 +28,8 @@ import { projects } from "../../data/projects";
           position: index + 1,
 
           item: {
-            "@id": `https://andresmpa.netlify.app/projects/${project.slug}#software`
+            "@id":
+              `${site.url}/${project.data.locale}/projects/${project.data.slug}#software`
           }
         }))
       },
@@ -32,17 +37,41 @@ import { projects } from "../../data/projects";
       ...projects.map(project => ({
         "@type": "SoftwareSourceCode",
 
-        "@id": `https://andresmpa.netlify.app/projects/${project.slug}#software`,
+        "@id":
+          `${site.url}/${project.data.locale}/projects/${project.data.slug}#software`,
 
-        name: project.name,
+        url:
+          `${site.url}/${project.data.locale}/projects/${project.data.slug}`,
 
-        description: project.description,
+        name: project.data.title,
 
-        codeRepository: project.repository,
+        description: project.data.description,
 
-        programmingLanguage: project.technologies,
+        abstract:
+          project.data.intent?.join(". "),
 
-        license: project.license
+        keywords: project.data.keywords,
+
+        codeRepository: project.data.repository,
+
+        creativeWorkStatus: project.data.status,
+
+        inLanguage: project.data.locale,
+
+        about: project.data.aiTopics.map(topic => ({
+          "@type": "Thing",
+          name: topic,
+        })),
+
+        teaches: project.data.skills.map(skill => ({
+          "@type": "DefinedTerm",
+          name: skill,
+        })),
+
+        audience: project.data.expertise.map(exp => ({
+          "@type": "Audience",
+          audienceType: exp,
+        })),
       }))
     ]
   })}

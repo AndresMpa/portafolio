@@ -4,6 +4,7 @@
 import PersonJsonLd from "./PersonJsonLd.astro";
 import WebsiteJsonLd from "./WebsiteJsonLd.astro";
 import WebPageJsonLd from "./WebPageJsonLd.astro";
+import ProjectJsonLd from "./ProjectJsonLd.astro";
 import ProjectsJsonLd from "./ProjectsJsonLd.astro";
 import OrganizationsJsonLd from "./OrganizationsJsonLd.astro";
 
@@ -18,22 +19,13 @@ const {
   description,
   image = person.image,
   canonical = Astro.url.href,
-  entryType = "website",
   includeProjects = false,
   includeOrganizations = false,
+  keywords = [],
+  project,
 } = props;
 
-const isMainPage = ["website", "profile"].includes(entryType);
-const isArticle = entryType === "article";
-
-const portfolioKeywords = "Senior Software Engineer, AI Infrastructure, Fullstack, Python, JavaScript, TypeScript, GNU/Linux, Docker, AWS, LLM, AI Agents";
-const articleKeywords = "Software Engineering, Web Development, System Design, DevOps, Cloud Architecture, Artificial Intelligence, Technical Tutorial, Programming Best Practices";
-
-const keyWords = isMainPage 
-  ? portfolioKeywords 
-  : isArticle 
-    ? articleKeywords 
-    : "";
+const keywordsContent = (keywords ?? []).join(", ");
 ---
 
 <meta charset="UTF-8" />
@@ -90,7 +82,14 @@ const keyWords = isMainPage
 <meta name="twitter:site" content="@AndresMpa" />
 <meta name="twitter:creator" content="@AndresMpa" />
 
-{keyWords && <meta name="keywords" content={keyWords} />}
+{
+  keywordsContent && (
+    <meta
+      name="keywords"
+      content={keywordsContent}
+    />
+  )
+}
 
 <PersonJsonLd />
 
@@ -103,4 +102,7 @@ const keyWords = isMainPage
 />
 
 {includeProjects && <ProjectsJsonLd />}
+
+{project && <ProjectJsonLd project={project} />}
+
 {includeOrganizations && <OrganizationsJsonLd />}

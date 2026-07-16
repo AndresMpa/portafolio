@@ -6,9 +6,12 @@ import { Image } from "astro:assets";
 
 import translate from "../../assets/translate.svg";
 
-
 const locale = getLocale();
 const data = getSwitcherData();
+
+// 👇 temporal, para depurar
+console.log("URL actual:", Astro.url.pathname);
+console.log("Switcher data:", JSON.stringify(data, null, 2));
 ---
 
 <div class="relative mx-3 mb-1" id="locale-switcher">

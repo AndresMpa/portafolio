@@ -1,7 +1,10 @@
 ---
 // src/components/layout/Navigation.astro
 
-import { t } from "i18n:astro";
+import { t, getLocale } from "i18n:astro";
+
+const locale = getLocale();
+const defaultLocale = "en";
 
 const navItems = [
   { key: "home", href: "/" },
@@ -14,15 +17,28 @@ const navItems = [
 ];
 
 const currentPath = Astro.url.pathname;
+
+function localize(path: string) {
+  if (locale === defaultLocale) return path;
+  return path === "/" ? `/${locale}` : `/${locale}${path}`;
+}
 ---
 
 <nav class="hidden md:flex gap-8 text-xs uppercase tracking-wider mt-0">
   {navItems.map((item) => {
-    const isActive = item.href === "/" ? currentPath === "/" : currentPath.startsWith(item.href);
+    const href = localize(item.href);
+    const isActive =
+      item.href === "/"
+        ? currentPath === "/" || currentPath === `/${locale}` || currentPath === `/${locale}/`
+        : currentPath.startsWith(item.href) || currentPath.startsWith(`/${locale}${item.href}`);
     return (
       <a
-        href={item.href}
-        class={`pb-1 border-b-2 ${isActive ? "border-accent text-accent" : "border-transparent text-zinc-400 hover:text-zinc-200"}`}
+        href={href}
+        class={`pb-1 border-b-2 ${
+          isActive
+            ? "border-accent text-accent"
+            : "border-transparent text-zinc-400 hover:text-zinc-200"
+        }`}
       >
         {t(`nav.${item.key}`)}
       </a>

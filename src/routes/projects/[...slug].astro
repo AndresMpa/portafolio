@@ -1,0 +1,108 @@
+---
+// src/pages/projects/[...slug].astro
+
+import { getCollection, render } from "astro:content";
+
+import BreadcrumbJsonLd from "../../components/seo/BreadcrumbJsonLd.astro";
+
+import Layout from "../../layouts/Layout.astro";
+
+import { site } from "../../data/site";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project) => ({
+    params: {
+      locale: project.data.locale,
+      slug: project.data.slug,
+    },
+
+    props: {
+      project,
+    },
+  }));
+}
+
+const { project } = Astro.props;
+
+const { Content } = await render(project);
+---
+
+<Layout
+  title={project.data.title}
+  description={project.data.description}
+  keywords={project.data.keywords}
+  project={project}
+>
+  <BreadcrumbJsonLd
+    items={[
+      {
+        name: "Home",
+        url: `${site.url}/${project.data.locale}`,
+      },
+      {
+        name: "Projects",
+        url: `${site.url}/${project.data.locale}/projects`,
+      },
+      {
+        name: project.data.title,
+        url: `${site.url}/${project.data.locale}/projects/${project.data.slug}`,
+      },
+    ]}
+  />
+
+  <article class="prose prose-invert mx-auto py-6 pb-24">
+    <Content />
+  </article>
+
+  {
+    project.data.skills.length > 0 && (
+      <section class="mx-auto max-w-4xl mt-12">
+        <h2>Skills Demonstrated</h2>
+
+        <ul>
+          {project.data.skills.map((skill) => (
+            <li>{skill}</li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    project.data.aiTopics.length > 0 && (
+      <section class="mx-auto max-w-4xl mt-12">
+        <h2>Knowledge Areas</h2>
+
+        <ul>
+          {project.data.aiTopics.map((topic) => (
+            <li>{topic}</li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    project.data.repository.length > 0 && (
+      <section class="mx-auto max-w-4xl mt-12">
+        <h2>Repositories</h2>
+
+        <ul>
+          {project.data.repository.map((repo) => (
+            <li>
+              <a
+                href={repo}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {repo}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</Layout>

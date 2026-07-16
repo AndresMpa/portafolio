@@ -8,9 +8,10 @@ interface SEOProps {
   description: string;
   image?: string;
   canonical?: string;
-  entryType?: "website" | "profile" | "article";
   includeProjects?: boolean;
   includeOrganizations?: boolean;
+  keywords?: string[];
+  project?: any;
 }
 
 interface DockRouteProps {
