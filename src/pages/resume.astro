@@ -1,27 +1,49 @@
 ---
 // src/pages/resume.astro
 
-import BreadcrumbJsonLd from "../components/seo/BreadcrumbJsonLd.astro";
+import { t } from "i18n:astro";
 
 import Layout from "../layouts/Layout.astro";
 
+import BreadcrumbJsonLd from "../components/seo/BreadcrumbJsonLd.astro";
+
 import { site } from "../data/site";
+import { person } from "../data/person";
+
+import cv from "../assets/AndresMpa_CV.pdf";
+
+const title = `${person.name} | ${t("resume.title")}`;
 ---
 
-<Layout
-  title="Resume"
-  description="Resume of Andrés M. Prieto"
->
+<Layout title={title} description={t("resume.description")}>
   <BreadcrumbJsonLd
     items={[
-      {
-        name: "Home",
-        url: site.url,
-      },
-      {
-        name: "Resume",
-        url: `${site.url}/resume`,
-      },
+      { name: "Home", url: site.url },
+      { name: "Resume", url: `${site.url}/resume` },
     ]}
   />
+  <section class="max-w-5xl mx-auto px-6 py-24">
+    <div class="flex justify-between items-center mb-8">
+      <h1 class="text-4xl md:text-5xl font-black leading-tight">
+        {t("resume.title")}
+      </h1>
+      <a
+        href={cv}
+        download="AndresMpa_CV.pdf"
+        class="text-accent text-sm hover:underline flex items-center gap-1"
+      >
+        {t("resume.download")} ↓
+      </a>
+    </div>
+    <div class="border border-zinc-800 rounded-lg overflow-hidden bg-black/40" style="height: 85vh;">
+      <object data={cv} type="application/pdf" width="100%" height="100%">
+        <p class="p-6 text-zinc-400">
+          {t("resume.fallback")}
+          <a href={cv} download="AndresMpa_CV.pdf" class="text-accent hover:underline">
+            {t("resume.download")}
+          </a>
+        </p>
+      </object>
+    </div>
+  </section>
 </Layout>

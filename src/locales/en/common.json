@@ -52,7 +52,8 @@
   "experience": {
     "title": "Experience",
     "present": "Present",
-    "viewAll": "View all experience"
+    "viewAll": "View all experience",
+    "current": "Currently"
   },
   "community": {
     "title": "Open Source & Community",
@@ -85,7 +86,8 @@
   "resume": {
     "title": "Resume",
     "description": "Download my resume to get the full picture of my experience, skills and journey.",
-    "download": "Download resume.pdf"
+    "download": "Download resume.pdf",
+    "fallback": "Your browser can't preview PDFs inline."
   },
   "footer": {
     "name": "Portfolio",

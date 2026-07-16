@@ -52,7 +52,8 @@
   "experience": {
     "title": "Experiencia",
     "present": "Presente",
-    "viewAll": "Ver toda la experiencia"
+    "viewAll": "Ver toda la experiencia",
+    "current": "Actualmente"
   },
   "community": {
     "title": "Código Abierto & Comunidad",
@@ -85,7 +86,8 @@
   "resume": {
     "title": "Currículum",
     "description": "Descarga mi currículum para conocer el panorama completo de mi experiencia, habilidades y trayectoria.",
-    "download": "Descargar resume.pdf"
+    "download": "Descargar resume.pdf",
+    "fallback": "Tu navegador no puede previsualizar PDFs en línea."
   },
   "footer": {
     "name": "Portafolio",
