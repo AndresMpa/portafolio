@@ -11,7 +11,7 @@ export interface ExperienceMeta {
 export const experience: ExperienceMeta[] = [
   { slug: "dailybot", company: "DailyBot", startDate: "2024-06", endDate: null,
     stack: ["AWS", "GNU/Linux", "Docker", "TypeScript", "Vue.js", "Python", "Django"] },
-  { slug: "freelancer-dev", company: "Freelancer", startDate: "2024-01", endDate: "2024-06",
+  { slug: "freelancer-dev", company: "Freelancer", startDate: "2023-01", endDate: null,
     stack: ["React.js", "Vue.js", "TypeScript", "GNU/Linux", "Docker"] },
   { slug: "freelancer-advisor", company: "Freelancer", startDate: "2023-06", endDate: "2023-12",
     stack: ["HTML5", "CSS", "GNU/Linux", "Docker"] },

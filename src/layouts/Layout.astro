@@ -19,24 +19,20 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <SEO
       title={title}
       description={description}
       image={image}
     />
-
     <I18nClient />
   </head>
-
-  <body class="bg-background text-text">
+  <body class="bg-background text-text min-h-screen flex flex-col">
     <Header />
-
-    <main>
+    <main class="flex-1">
       <slot />
     </main>
-
     <Footer />
   </body>
 </html>
