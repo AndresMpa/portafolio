@@ -1,9 +1,13 @@
 ---
-// src/pages/writing/index.astro
-import Layout from "../../layouts/Layout.astro";
-import { getAllWriting } from "../../lib/writing";
-import { person } from "../../data/person";
+// src/routes/writing/index.astro
+
 import { t } from "i18n:astro";
+
+import Layout from "../../layouts/Layout.astro";
+
+import { getAllWriting } from "../../lib/writing";
+
+import { person } from "../../data/person";
 
 const lang = Astro.currentLocale ?? "en";
 const posts = await getAllWriting(lang);

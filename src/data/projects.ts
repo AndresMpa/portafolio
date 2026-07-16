@@ -57,10 +57,14 @@ export const projects: ProjectMeta[] = [
     featured: false,
   },
   {
-    slug: "rock-paper-scissors-spock-lizard",
-    image: "game.png",
-    repository: "https://github.com/AndresMpa/rock-paper-scissors-spock-lizard",
-    languages: ["JavaScript", "SCSS", "HTML"],
+    slug: "poc-driven-development",
+    image: "pocdd.png",
+    repository: "https://github.com/DailybotHQ/pocdd-skill",
+    languages: ["Context Engineering", "Open Agent Skill", "Technical Lead", "AI Engineer", "Agentic Development"],
+    authors: [
+      { user: "AndresMpa", link: "https://github.com/AndresMpa" },
+      { user: "DailybotHQ", link: "https://github.com/DailybotHQ" },
+    ],
     featured: false,
   },
   {
@@ -68,6 +72,27 @@ export const projects: ProjectMeta[] = [
     image: "todo.png",
     repository: "https://github.com/AndresMpa/todo-app",
     languages: ["JavaScript", "Stylus", "HTML"],
+    featured: false,
+  },
+  {
+    slug: "magic-ball-workshop",
+    image: "ball.png",
+    repository: "https://github.com/AndresMpa/magic-ball-workshop",
+    languages: ["JavaScript", "HTML", "CSS", "Web Speech API"],
+    featured: false,
+  },
+  {
+    slug: "rock-paper-scissors-spock-lizard",
+    image: "game.png",
+    repository: "https://github.com/AndresMpa/rock-paper-scissors-spock-lizard",
+    languages: ["JavaScript", "SCSS", "HTML"],
+    featured: false,
+  },
+  {
+    slug: "euphoria",
+    image: "euphoria.jpg",
+    repository: "https://github.com/AndresMpa/Euphoria",
+    languages: ["POO", "POE", "Python", "Pygame"],
     featured: false,
   },
   {
@@ -83,20 +108,6 @@ export const projects: ProjectMeta[] = [
     repository: "https://github.com/AndresMpa/NFT-card-preview",
     website: "https://andresmpa.github.io/NFT-card-preview/",
     languages: ["SCSS", "HTML"],
-    featured: false,
-  },
-  {
-    slug: "parking-system",
-    image: "parking.png",
-    repository: "https://github.com/AndresMpa/parking-system",
-    languages: ["UI", "Vue", "Vuex", "Vue Router"],
-    featured: false,
-  },
-  {
-    slug: "magic-ball-workshop",
-    image: "ball.png",
-    repository: "https://github.com/AndresMpa/magic-ball-workshop",
-    languages: ["JavaScript", "HTML", "CSS", "Web Speech API"],
     featured: false,
   },
 ];

@@ -1,6 +1,7 @@
 ---
-// src/pages/projects/[...slug].astro
+// src/routes/projects/[...slug].astro
 
+import { getLocalePlaceholder } from "i18n:astro";
 import { getCollection, render } from "astro:content";
 
 import BreadcrumbJsonLd from "../../components/seo/BreadcrumbJsonLd.astro";
@@ -10,14 +11,16 @@ import Layout from "../../layouts/Layout.astro";
 import { site } from "../../data/site";
 
 export async function getStaticPaths() {
-  const projects = await getCollection("projects");
+  const locale = getLocalePlaceholder();
+  const projects = await getCollection(
+    "projects",
+    (project) => project.data.locale === locale
+  );
 
   return projects.map((project) => ({
     params: {
-      locale: project.data.locale,
-      slug: project.data.slug,
+    slug: project.data.slug,
     },
-
     props: {
       project,
     },
@@ -25,7 +28,6 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-
 const { Content } = await render(project);
 ---
 
