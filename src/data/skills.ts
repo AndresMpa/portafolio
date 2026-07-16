@@ -1,4 +1,5 @@
 // src/data/skills.ts
+
 export const skills = {
   languages: [
     { name: "JavaScript", icon: "javascript" },

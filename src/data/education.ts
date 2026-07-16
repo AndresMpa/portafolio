@@ -1,3 +1,5 @@
+// src/data/education.ts
+
 export interface EducationMeta {
   slug: string;
   institution: string;

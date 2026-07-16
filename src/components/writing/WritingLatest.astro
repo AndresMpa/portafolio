@@ -11,8 +11,6 @@ const lang = Astro.currentLocale ?? "en";
 const posts = await getLatestWriting(lang);
 import { getCollection } from "astro:content";
 const all = await getCollection("writing");
-console.log("ALL WRITING ENTRIES:", JSON.stringify(all.map(e => ({ id: e.id, locale: e.data.locale })), null, 2));
-console.log("[posts data]: " + posts)
 
 const { order, id } = Astro.props as HomeComponentsProps;
 ---
@@ -39,7 +37,9 @@ const { order, id } = Astro.props as HomeComponentsProps;
               </div>
               <pre class="bg-black/60 text-xs p-4 overflow-x-auto text-zinc-400 border-b border-zinc-800"><code><span class="text-purple-400">class</span> <span class="text-accent">{className}</span>(<span class="text-yellow-300">{topicsArgs}</span>):
     <span class="text-purple-400">def</span> <span class="text-blue-300">__init__</span>(self, content):
-        self.authors: [{post.data.authors.map((a) => `"${a}"`).join(", ")}]{post.data.event ? `
+        self.authors: [
+{post.data.authors.map((a, i) => `            "${a}"${i < post.data.authors.length - 1 ? "," : ""}`).join("\n")}
+        ]{post.data.event ? `
         self.event: "${post.data.event}"` : ""}{post.data.attendees ? `
         self.attendees: ${post.data.attendees}` : ""}</code></pre>
               <div class="p-5 text-sm">

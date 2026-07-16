@@ -7,6 +7,7 @@
     "projects": "Projects",
     "experience": "Experience",
     "writing": "Writing",
+    "community": "Community",
     "about": "About",
     "resume": "Resume"
   },
@@ -55,16 +56,16 @@
     "viewAll": "View all experience",
     "current": "Currently"
   },
+  "education": {
+    "title": "Education",
+    "viewAll": "View all degrees"
+  },
   "community": {
     "title": "Open Source & Community",
     "present": "Present",
     "andMore": "And more",
     "andMoreDescription1": "Speaker, mentor and open source enthusiast",
     "andMoreDescription2": "talks and events"
-  },
-  "education": {
-    "title": "Education",
-    "viewAll": "View all degrees"
   },
   "writing": {
     "title": "Latest Writing",

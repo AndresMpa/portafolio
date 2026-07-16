@@ -22,7 +22,7 @@ const resolvedImage = images[`../../assets/projects/${image}`]?.default;
 ---
 
 <div>
-  <a href={`/projects/${slug}`} aria-label={`View case study: ${alt}`}>
+  <a href={`/projects/${slug}`} aria-label={`View case study: ${alt}`} class="block p-4">
     {resolvedImage && (
       <Image
         alt={alt}
@@ -36,9 +36,9 @@ const resolvedImage = images[`../../assets/projects/${image}`]?.default;
       />
     )}
   </a>
-  <p class={`${flip ? "flex justify-end" : ""} px-5 mt-5`}>
+  <p class={`flex flex-wrap gap-2 ${flip ? "justify-end" : ""} px-5 mt-5`}>
     {topics.split(",").map((topic) => (
-      <span class="bg-accent/30 text-accent text-sm text-center px-3 py-1 mx-2 rounded-full font-semibold hover:bg-accent hover:text-text transition-colors duration-200">
+      <span class="whitespace-nowrap bg-accent/30 text-accent text-sm text-center px-3 py-1 rounded-full font-semibold hover:bg-accent hover:text-text transition-colors duration-200">
         {topic}
       </span>
     ))}
@@ -47,6 +47,8 @@ const resolvedImage = images[`../../assets/projects/${image}`]?.default;
 
 <style>
   .single-img {
+    max-width: 85%;
+    height: auto;
     box-shadow:
       rgba(155, 156, 159, 0.42) 0px 60px 123px -25px,
       rgba(155, 156, 159, 0.08) 0px 35px 75px -35px;
@@ -62,5 +64,23 @@ const resolvedImage = images[`../../assets/projects/${image}`]?.default;
   }
   .flipped:hover {
     transform: perspective(800px) rotateY(15deg) translateY(-50px) rotateX(10deg) scale(1);
+  }
+
+  @media (max-width: 767px) {
+    a {
+      display: flex;
+      justify-content: center;
+    }
+    .single-img,
+    .flipped {
+      transform: none;
+      box-shadow:
+        rgba(155, 156, 159, 0.42) 0px 20px 50px -20px,
+        rgba(155, 156, 159, 0.08) 0px 12px 25px -15px;
+    }
+    .single-img:hover,
+    .flipped:hover {
+      transform: none;
+    }
   }
 </style>

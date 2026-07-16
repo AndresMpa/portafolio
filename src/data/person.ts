@@ -1,3 +1,5 @@
+// src/data/person.ts
+
 export const stats = {
   yearsExperience: 10,
   projectsCount: 20,

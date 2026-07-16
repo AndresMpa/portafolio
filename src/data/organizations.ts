@@ -1,3 +1,5 @@
+// src/data/organizations.ts
+
 export interface Organization {
   id: string;
   name: string;

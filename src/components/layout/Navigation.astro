@@ -8,6 +8,7 @@ const navItems = [
   { key: "projects", href: "/projects" },
   { key: "experience", href: "/experience" },
   { key: "writing", href: "/writing" },
+  { key: "community", href: "/community" },
   { key: "about", href: "/about" },
   { key: "resume", href: "/resume" },
 ];
@@ -16,14 +17,14 @@ const currentPath = Astro.url.pathname;
 ---
 
 <nav class="hidden md:flex gap-8 text-xs uppercase tracking-wider mt-0">
-  {navItems.map((item, i) => {
+  {navItems.map((item) => {
     const isActive = item.href === "/" ? currentPath === "/" : currentPath.startsWith(item.href);
     return (
       <a
         href={item.href}
         class={`pb-1 border-b-2 ${isActive ? "border-accent text-accent" : "border-transparent text-zinc-400 hover:text-zinc-200"}`}
       >
-        {String(i + 1).padStart(2, "0")}_{t(`nav.${item.key}`)}
+        {t(`nav.${item.key}`)}
       </a>
     );
   })}

@@ -1,3 +1,5 @@
+// src/data/talks.ts
+
 export interface Talk {
   title: string;
   kind: string;
