@@ -65,7 +65,10 @@
     "viewAll": "Ver todo"
   },
   "writing": {
-    "title": "Últimos Escritos"
+    "title": "Últimos escritos",
+    "readFull": "Leer post completo",
+    "curlText": "Link de referencia",
+    "empty": "No hay post recientes."
   },
   "skills": {
     "title": "Habilidades",

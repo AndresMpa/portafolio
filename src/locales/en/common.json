@@ -65,7 +65,10 @@
     "viewAll": "View all degrees"
   },
   "writing": {
-    "title": "Latest Writing"
+    "title": "Latest Writing",
+    "readFull": "Read full post",
+    "curlText": "Reference link",
+    "empty": "No recent post to show."
   },
   "skills": {
     "title": "Skills",
