@@ -46,7 +46,8 @@
     "title": "FEATURED PROJECTS",
     "caseStudy": "Case study",
     "github": "GitHub",
-    "viewAll": "View all projects"
+    "viewAll": "View all projects",
+    "caseStudy": "View case study"
   },
   "experience": {
     "title": "Experience",

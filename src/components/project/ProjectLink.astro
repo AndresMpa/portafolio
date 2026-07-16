@@ -1,7 +1,9 @@
 ---
 // src/components/project/ProjectLink.astro
 
+import { t } from "i18n:astro";
 import { Image } from "astro:assets";
+
 import type { ProjectLinkProps } from "../../types";
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
@@ -11,13 +13,14 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
 const {
   url,
+  slug,
   image,
   topics,
   alt = "Project link",
   flip = true,
 } = Astro.props as ProjectLinkProps;
 
-const resolvedImage = images[image]?.default;
+const resolvedImage = images[`../../assets/projects/${image}`]?.default;
 ---
 
 <div>
@@ -35,14 +38,22 @@ const resolvedImage = images[image]?.default;
       />
     )}
   </a>
-  <p class=`${flip ? "flex justify-end" : ""} px-5 mt-5`>
+  <p class={`${flip ? "flex justify-end" : ""} px-5 mt-5`}>
     {topics.split(",").map((topic) => (
       <span class="bg-accent/30 text-accent text-sm text-center px-3 py-1 mx-2 rounded-full font-semibold hover:bg-accent hover:text-text transition-colors duration-200">
         {topic}
       </span>
     ))}
   </p>
+  {slug && (
+    <p class={`${flip ? "flex justify-end" : ""} px-5 mt-3`}>
+      <a href={`/projects/${slug}`} class="text-accent text-sm hover:underline">
+        {t("projects.caseStudy")} →
+      </a>
+    </p>
+  )}
 </div>
+
 <style>
   .single-img {
     box-shadow:
