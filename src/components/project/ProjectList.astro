@@ -28,9 +28,12 @@ const title =
           title={data.title}
           context={data.description}
           authors={data.authors}
+          url={data.repository ?? data.website}
+          flip={index % 2 === 0}
         />
         <ProjectLink
           url={data.repository ?? data.website}
+          slug={data.slug}
           image={data.image}
           topics={data.languages.join(",")}
           alt={data.title}
