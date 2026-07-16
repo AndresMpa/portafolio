@@ -5,13 +5,17 @@ import { t } from "i18n:astro";
 
 import { getExperience } from "../../lib/experience";
 
+import type { HomeComponentsProps } from "../../types"
+
 const lang = Astro.currentLocale ?? "en";
 const merged = (await getExperience(lang));
+
+const { order, id } = Astro.props as HomeComponentsProps;
 ---
 
-<section id="experience" class="py-4">
+<section id={id} class="py-4">
   <div class="max-w-7xl mx-auto px-6">
-    <h3 class="text-sm uppercase text-accent mb-8">// 03 {t("experience.title")}</h3>
+    <h3 class="text-sm uppercase text-accent mb-8">// {String(order).padStart(2, "0")} {t("experience.title")}</h3>
 
   <div id="experience-scroll" class="overflow-x-auto pb-4 scrollbar-none cursor-grab active:cursor-grabbing">
     <div class="relative flex min-w-max gap-16 pt-2">

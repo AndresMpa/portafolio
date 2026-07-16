@@ -8,17 +8,17 @@ import ExperienceTimeline from "../components/experience/ExperienceTimeline.astr
 import EducationSummary from "../components/education/EducationSummary.astro";
 import ProjectFeatured from "../components/project/ProjectFeatured.astro";
 import CommunityBanner from "../components/community/CommunityBanner.astro";
-import Skills from "../components/home/Skills.astro";
-import Writing from "../components/home/Writing.astro";
+import WritingLatest from "../components/writing/WritingLatest.astro";
+import SkillBanner from "../components/skill/SkillBanner.astro";
 
 const title = `${t("title")}`;
 ---
 <Layout title={title}>
   <Hero />
-  <ProjectFeatured />
-  <ExperienceTimeline />
-  <EducationSummary />
-  <CommunityBanner />
-  <Writing />
-  <Skills />
+  <ProjectFeatured order={1} />
+  <ExperienceTimeline order={2} />
+  <EducationSummary order={3} />
+  <CommunityBanner order={4} />
+  <WritingLatest order={5} />
+  <SkillBanner order={6} />
 </Layout>

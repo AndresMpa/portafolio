@@ -6,6 +6,8 @@ import { Image } from "astro:assets";
 
 import { getFeaturedProjects } from "../../lib/projects";
 
+import type { HomeComponentsProps } from "../../types"
+
 const images = import.meta.glob("../../assets/projects/*", {
   eager: true,
   import: "default",
@@ -13,12 +15,14 @@ const images = import.meta.glob("../../assets/projects/*", {
 
 const lang = Astro.currentLocale ?? "en";
 const featured = await getFeaturedProjects(lang);
+
+const { order, id } = Astro.props as HomeComponentsProps;
 ---
 
-<section id="projects" class="py-4">
+<section id={id} class="py-4">
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex justify-between items-center mb-8">
-      <h3 class="text-sm uppercase text-accent">// 02 {t("projects.title")}</h3>
+      <h3 class="text-sm uppercase text-accent">// {String(order).padStart(2, "0")} {t("projects.title")}</h3>
       <a href="/projects" class="text-sm text-zinc-500">{t("projects.viewAll")} +</a>
     </div>
     {featured.map((project, index) => (

@@ -71,6 +71,11 @@ interface TimelineProps {
   topics: string;
 }
 
+interface HomeComponentsProps {
+  order: number;
+  id: string;
+}
+
 export type {
   HeaderBtnProps,
   SEOProps,
@@ -82,4 +87,5 @@ export type {
   TableItemProps,
   TableHeadersProps,
   TimelineProps,
+  HomeComponentsProps,
 };

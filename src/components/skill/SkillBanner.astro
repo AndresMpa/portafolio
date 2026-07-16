@@ -5,6 +5,8 @@ import { t } from "i18n:astro";
 
 import { skills } from "../../data/skills";
 
+import type { HomeComponentsProps } from "../../types"
+
 const icons = import.meta.glob<{ default: ImageMetadata }>(
   "../../assets/skills/*.svg",
   { eager: true }
@@ -21,10 +23,13 @@ const groups = [
   { key: "ai", label: t("skills.ai") },
   { key: "infrastructure", label: t("skills.infrastructure") },
 ] as const;
+
+const { order, id } = Astro.props as HomeComponentsProps;
 ---
-<section class="py-4">
+
+<section id={id} class="py-4">
   <div class="max-w-7xl mx-auto px-6">
-    <h3 class="text-sm uppercase text-accent mb-8">// 06 {t("skills.title")}</h3>
+    <h3 class="text-sm uppercase text-accent mb-8">// {String(order).padStart(2, "0")} {t("skills.title")}</h3>
     <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
       {groups.map(({ key, label }) => (
         <div>

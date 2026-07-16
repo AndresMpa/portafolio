@@ -9,14 +9,19 @@ import compass from "../../assets/compass.svg?raw";
 import layers from "../../assets/layers.svg?raw";
 import chip from "../../assets/chip.svg?raw";
 
+import type { HomeComponentsProps } from "../../types"
+
 const icons: Record<string, string> = { compass, layers, chip };
 
 const lang = Astro.currentLocale ?? "en";
 const entries = await getEducation(lang);
+
+const { order, id } = Astro.props as HomeComponentsProps;
 ---
-<section class="py-24">
+
+<section id={id} class="py-24">
   <div class="max-w-7xl mx-auto px-6">
-    <h3 class="text-sm uppercase text-accent mb-8">// 04 {t("education.title")}</h3>
+    <h3 class="text-sm uppercase text-accent mb-8">// {String(order).padStart(2, "0")} {t("education.title")}</h3>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
       {entries.map((item) => (
         <a

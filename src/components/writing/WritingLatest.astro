@@ -4,15 +4,19 @@
 import { t } from "i18n:astro";
 import { getCollection } from "astro:content";
 
+import type { HomeComponentsProps } from "../../types"
+
 const lang = Astro.currentLocale ?? "en";
 const posts = (await getCollection("writing", (e) => e.data.locale === lang))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 4);
+
+const { order, id } = Astro.props as HomeComponentsProps;
 ---
 
-<section class="py-4">
+<section id={id} class="py-4">
   <div class="max-w-7xl mx-auto px-6">
-    <h3 class="text-sm uppercase text-accent mb-8">// 05_latest_writing</h3>
+    <h3 class="text-sm uppercase text-accent mb-8">// {String(order).padStart(2, "0")} {t("writing.title")}</h3>
     {posts.length === 0 ? (
       <p class="text-zinc-600 text-sm">No posts yet.</p>
     ) : (
