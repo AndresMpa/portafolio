@@ -1,7 +1,7 @@
 ---
 // src/routes/writing/index.astro
 
-import { t } from "i18n:astro";
+import { t, getLocale } from "i18n:astro";
 
 import Layout from "../../layouts/Layout.astro";
 
@@ -9,7 +9,7 @@ import { getAllWriting } from "../../lib/writing";
 
 import { person } from "../../data/person";
 
-const lang = Astro.currentLocale ?? "en";
+const lang = getLocale();
 const posts = await getAllWriting(lang);
 const title = `${person.name} | ${t("writing.title")}`;
 ---

@@ -1,7 +1,7 @@
 ---
 // src/components/home/Hero.astro
 
-import { t } from "i18n:astro";
+import { t, getLocale } from "i18n:astro";
 import { getEntry } from "astro:content";
 
 import HeroTerminal from "./HeroTerminal.astro";
@@ -9,7 +9,7 @@ import HeroMetrics from "./HeroMetrics.astro";
 
 import cv from "/AndresMpa_CV.pdf";
 
-const lang = Astro.currentLocale ?? "en";
+const lang = getLocale();
 const about = await getEntry("about", lang);
 ---
 

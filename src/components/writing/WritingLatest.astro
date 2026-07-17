@@ -1,13 +1,13 @@
 ---
 // components/home/Writing.astro
 
-import { t } from "i18n:astro";
+import { t, getLocale } from "i18n:astro";
 
 import { getLatestWriting } from "../../lib/writing";
 
 import type { HomeComponentsProps } from "../../types";
 
-const lang = Astro.currentLocale ?? "en";
+const lang = getLocale();
 const posts = await getLatestWriting(lang);
 import { getCollection } from "astro:content";
 const all = await getCollection("writing");

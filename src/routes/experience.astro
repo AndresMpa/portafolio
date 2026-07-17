@@ -1,7 +1,7 @@
 ---
 // src/routes/experience/index.astro
 
-import { t } from "i18n:astro";
+import { t, getLocale } from "i18n:astro";
 
 import Layout from "../layouts/Layout.astro";
 
@@ -9,13 +9,14 @@ import { getExperience } from "../lib/experience";
 
 import { person } from "../data/person";
 
-const lang = Astro.currentLocale ?? "en";
+const lang = getLocale();
 const entries = await getExperience(lang);
 const title = `${person.name} | ${t("experience.title")}`;
 
 const current = entries.filter((e) => e.endDate === null);
 const past = entries.filter((e) => e.endDate !== null);
 ---
+
 <Layout title={title}>
   <section class="max-w-7xl mx-auto px-6 py-6 pb-24">
     <h1 class="text-4xl md:text-5xl font-black leading-tight mb-12">

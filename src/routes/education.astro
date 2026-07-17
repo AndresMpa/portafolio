@@ -1,7 +1,7 @@
 ---
 // src/routes/education.astro
 
-import { t } from "i18n:astro";
+import { t, getLocale } from "i18n:astro";
 
 import Layout from "../layouts/Layout.astro";
 
@@ -9,7 +9,7 @@ import { getEducation } from "../lib/education";
 
 import { person } from "../data/person";
 
-const lang = Astro.currentLocale ?? "en";
+const lang = getLocale();
 const entries = await getEducation(lang);
 
 const title = `${person.name} | ${t("experience.title")}`;

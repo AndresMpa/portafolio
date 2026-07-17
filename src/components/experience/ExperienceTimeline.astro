@@ -1,13 +1,13 @@
 ---
 // src/components/home/Experience.astro
 
-import { t } from "i18n:astro";
+import { t, getLocale } from "i18n:astro";
 
 import { getExperience } from "../../lib/experience";
 
 import type { HomeComponentsProps } from "../../types"
 
-const lang = Astro.currentLocale ?? "en";
+const lang = getLocale();
 const merged = (await getExperience(lang));
 
 const { order, id } = Astro.props as HomeComponentsProps;
