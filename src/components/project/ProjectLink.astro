@@ -2,6 +2,7 @@
 // src/components/project/ProjectLink.astro
 
 import { Image } from "astro:assets";
+import { getLocale } from "i18n:astro";
 
 import type { ProjectLinkProps } from "../../types";
 
@@ -19,10 +20,16 @@ const {
 } = Astro.props as ProjectLinkProps;
 
 const resolvedImage = images[`../../assets/projects/${image}`]?.default;
+
+const locale = getLocale();
+const defaultLocale = "en";
+
+const href =
+  locale === defaultLocale ? `/projects/${slug}` : `/${locale}/projects/${slug}`;
 ---
 
 <div>
-  <a href={`/projects/${slug}`} aria-label={`View case study: ${alt}`} class="block p-4">
+  <a href={href} aria-label={`View case study: ${alt}`} class="block p-4">
     {resolvedImage && (
       <Image
         alt={alt}

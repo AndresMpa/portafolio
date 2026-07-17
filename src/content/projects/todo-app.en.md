@@ -23,6 +23,7 @@ featured: false
 
 repository:
   - https://github.com/AndresMpa/todo-app
+  - https://andresmpa.github.io/todo-app/
 
 skills:
   - Frontend Development

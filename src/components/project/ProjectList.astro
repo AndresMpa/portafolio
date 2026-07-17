@@ -1,14 +1,14 @@
 ---
 // src/components/project/ProjectsList.astro
 
-import { t } from "i18n:astro";
+import { t, getLocale } from "i18n:astro";
 
 import { getProjects } from "../../lib/projects";
 
 import ProjectLink from "./ProjectLink.astro";
 import ProjectDescription from "./ProjectDescription.astro";
 
-const lang = Astro.currentLocale ?? "en";
+const lang = getLocale();
 const projectsData = await getProjects(lang);
 const rawTitle = String(t("projects.title"));
 const title =

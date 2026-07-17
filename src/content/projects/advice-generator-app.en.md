@@ -25,6 +25,7 @@ featured: false
 
 repository:
   - https://github.com/AndresMpa/advice-generator-app
+  - https://andresmpa.github.io/advice-generator-app/
 
 skills:
   - JavaScript

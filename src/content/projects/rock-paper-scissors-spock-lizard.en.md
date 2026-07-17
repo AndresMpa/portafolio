@@ -23,6 +23,7 @@ featured: false
 
 repository:
   - https://github.com/AndresMpa/rock-paper-scissors-spock-lizard
+  - https://rock-paper-sissors-spock-lizard.netlify.app/
 
 skills:
   - Frontend Development

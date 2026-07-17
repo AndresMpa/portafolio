@@ -23,6 +23,7 @@ featured: false
 
 repository:
   - https://github.com/AndresMpa/magic-ball-workshop
+  - https://andresmpa.github.io/magic-ball-workshop/
 
 skills:
   - Frontend Development
