@@ -6,8 +6,7 @@
     "home": "Home",
     "projects": "Projects",
     "experience": "Experience",
-    "writing": "Writing",
-    "community": "Community",
+    "beyondCode": "Beyond Code",
     "about": "About",
     "resume": "Resume"
   },
@@ -72,6 +71,22 @@
     "readFull": "Read full post",
     "curlText": "Reference link",
     "empty": "No recent post to show."
+  },
+  "beyondCode": {
+    "title": "Beyond Code",
+    "search": "Search...",
+    "empty": "Nothing here yet.",
+    "upcoming": {
+      "label": "Next talk:",
+      "in": "in",
+      "on": "on",
+      "empty": "No upcoming talks right now — check back soon."
+    },
+    "filters": {
+      "all": "All",
+      "writing": "Writing",
+      "events": "Events"
+    }
   },
   "skills": {
     "title": "Skills",

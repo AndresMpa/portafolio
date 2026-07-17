@@ -6,8 +6,7 @@
     "home": "Inicio",
     "projects": "Proyectos",
     "experience": "Experiencia",
-    "community": "Comunidad",
-    "writing": "Escritos",
+    "beyondCode": "Más allá de código",
     "about": "Acerca de",
     "resume": "Currículum"
   },
@@ -72,6 +71,22 @@
     "readFull": "Leer post completo",
     "curlText": "Link de referencia",
     "empty": "No hay post recientes."
+  },
+  "beyondCode": {
+    "title": "Más allá del código",
+    "search": "Buscar...",
+    "empty": "Todavía no hay nada aquí.",
+    "upcoming": {
+      "label": "Próxima charla:",
+      "in": "en",
+      "on": "el",
+      "empty": "No hay charlas próximas por ahora — vuelve pronto."
+    },
+    "filters": {
+      "all": "Todo",
+      "writing": "Escritos",
+      "events": "Eventos"
+    }
   },
   "skills": {
     "title": "Habilidades",

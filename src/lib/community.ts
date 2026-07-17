@@ -1,4 +1,5 @@
 // src/lib/community.ts
+
 import { getCollection } from "astro:content";
 import { community as communityMeta } from "../data/community";
 

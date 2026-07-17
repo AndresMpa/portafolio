@@ -1,5 +1,5 @@
 ---
-locale: en
+locale: es
 slug: flisol
 company: FLISoL
 role: Lider organizador
