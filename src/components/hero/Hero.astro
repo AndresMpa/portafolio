@@ -6,10 +6,10 @@ import { getEntry } from "astro:content";
 
 import { localizeHref } from "../../lib/utils";
 
+import DownloadCV from "../shared/DownloadCV.astro"
+
 import HeroTerminal from "./HeroTerminal.astro";
 import HeroMetrics from "./HeroMetrics.astro";
-
-import cv from "/AndresMpa_CV.pdf";
 
 const lang = getLocale();
 const about = await getEntry("about", lang);
@@ -28,15 +28,7 @@ const about = await getEntry("about", lang);
         <a href={localizeHref("/projects", lang)} class="btn-primary mt-2">
           {t("hero.actions.viewProjects")}
         </a>
-        <a
-          href={cv}
-          download="AndresMpa_CV.pdf"
-          class="p-2 mr-2 rounded-full bg-accent hover:bg-accent active:bg-accent focus:outline-none focus:ring focus:ring-accent flex items-center justify-center"
-        >
-          <span class="ml-1 font-bold">
-            ↓ {t("hero.actions.downloadResume")}
-          </span>
-        </a>
+        <DownloadCV buttonLabel={t("hero.actions.downloadResume")} />
       </div>
     </div>
     <HeroTerminal entry={about} />

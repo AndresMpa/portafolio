@@ -26,7 +26,7 @@ const { order, id } = Astro.props as HomeComponentsProps;
       <h2 class="text-sm">
         <TermTitle order={order} title={t("projects.title")} />
       </h2>
-      <a href={localizeHref(`/projects/`, lang)} class="text-sm text-zinc-500">{t("projects.viewAll")} +</a>
+      <a href={localizeHref(`/projects/`, lang)} class="text-sm text-zinc-400">{t("projects.viewAll")} +</a>
     </div>
     {featured.map((project, index) => (
       <div class="grid md:grid-cols-2 gap-8 mb-12 border border-zinc-800 rounded-lg p-6">

@@ -39,7 +39,7 @@ const { order, id } = Astro.props as HomeComponentsProps;
           <div class="ml-5">
             <h3 class="font-bold">{entry.company}</h3>
             <p class="text-accent text-sm">{entry.role}</p>
-            <p class="text-zinc-500 text-xs">
+            <p class="text-zinc-400 text-xs">
               {entry.startDate}{entry.endDate ? ` — ${entry.endDate}` : ` — ${t("community.present")}`}
             </p>
           </div>

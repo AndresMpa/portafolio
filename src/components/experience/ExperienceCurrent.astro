@@ -20,7 +20,7 @@ const { items } = Astro.props;
         <div class="border border-zinc-800 rounded-lg p-6">
           <p class="text-accent text-sm">{item.startDate.slice(0, 4)} — {t("experience.present")}</p>
           <h4 class="font-bold text-lg mt-1">{item.role}</h4>
-          <p class="text-zinc-500">{item.company}</p>
+          <p class="text-zinc-400">{item.company}</p>
           {item.description && <p class="text-zinc-400 mt-2">{item.description}</p>}
           {(item.stack?.length ?? 0) > 0 && (
             <div class="flex gap-2 mt-3 flex-wrap">

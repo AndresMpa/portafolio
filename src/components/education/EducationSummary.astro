@@ -39,13 +39,13 @@ const { order, id } = Astro.props as HomeComponentsProps;
           />
           <div>
             <h3 class="font-bold group-hover:text-accent transition-colors pr-8">{item.degree}</h3>
-            <p class="text-zinc-500 text-sm">{item.institution}</p>
+            <p class="text-zinc-400 text-sm">{item.institution}</p>
             <div class="flex gap-2 mt-2 flex-wrap">
               {item.tags?.map((tag) => (
                 <span class="text-zinc-400 text-xs">{tag}</span>
               ))}
             </div>
-            <p class="text-zinc-600 text-xs mt-2">{item.year}</p>
+            <p class="text-zinc-400 text-xs mt-2">{item.year}</p>
           </div>
         </a>
       ))}

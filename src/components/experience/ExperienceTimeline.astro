@@ -33,7 +33,7 @@ const { order, id } = Astro.props as HomeComponentsProps;
               <p class="text-accent text-sm mt-3">
                 {item.startDate.slice(0, 4)} - {item.endDate ? item.endDate.slice(0, 4) : t("experience.present")}
               </p>
-              <p class="text-zinc-500 text-sm">({item.company})</p>
+              <p class="text-zinc-400 text-sm">({item.company})</p>
             </div>
           ))}
         </div>
