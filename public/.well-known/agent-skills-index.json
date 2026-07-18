@@ -1,0 +1,39 @@
+{
+  "$schema": "https://agentcommunity.org/schemas/agent-skills-index/v2.0.json",
+  "name": "Andrés M. Prieto — Portfolio",
+  "description": "Senior software engineer specializing in AI infrastructure, GNU/Linux and fullstack development.",
+  "skills": [
+    {
+      "name": "full-profile-markdown",
+      "type": "document",
+      "description": "Complete profile, experience, and projects as a single markdown document — cheapest way for an agent to ingest everything at once.",
+      "uri": "https://andresmpa.netlify.app/llms-full.md",
+      "sha256": "2f01c276adb8d5aca4029e8029dab97ab91c20b2dfab91367cf243ff9e5f36f4"
+    },
+    {
+      "name": "resume-pdf",
+      "type": "document",
+      "description": "Downloadable CV / resume as PDF.",
+      "uri": "https://andresmpa.netlify.app/AndresMpa_CV.pdf",
+      "sha256": "f16690352d8658c3ea5f340af5209e6025faa24bb52f2793cf354b5939f8e596"
+    },
+    {
+      "name": "get-projects",
+      "type": "api",
+      "description": "Structured project catalog with skills, AI-topic tags, and repository links. Content changes per deploy — no static digest; validate freshness via the `updated` field in the response.",
+      "uri": "https://andresmpa.netlify.app/api/projects.json"
+    },
+    {
+      "name": "get-experience",
+      "type": "api",
+      "description": "Structured work-experience history. Content changes per deploy — validate freshness via the `updated` field in the response.",
+      "uri": "https://andresmpa.netlify.app/api/experience.json"
+    },
+    {
+      "name": "get-skills",
+      "type": "api",
+      "description": "Structured skills/tools/languages list. Content changes per deploy — validate freshness via the `updated` field in the response.",
+      "uri": "https://andresmpa.netlify.app/api/skills.json"
+    }
+  ]
+}
