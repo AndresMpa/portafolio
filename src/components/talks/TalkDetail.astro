@@ -1,14 +1,9 @@
 ---
 // src/components/talks/TalkDetail.astro
 
-import type { CollectionEntry } from "astro:content";
+import type { TalkContentProps } from "../../types";
 
-interface Props {
-  post: CollectionEntry<"talks">;
-  Content: any;
-}
-
-const { post, Content } = Astro.props;
+const { post, Content } = Astro.props as TalkContentProps;
 const isTalk = post.data.kind === "Talk";
 ---
 

@@ -2,18 +2,13 @@
 // src/components/seo/WebPageJsonLd.astro
 
 import { person } from "../../data/person";
-
-interface Props {
-  title: string;
-  description: string;
-  canonical: string;
-}
+import type { WebPageJsonLdProps } from "../../types";
 
 const {
   title,
   description,
   canonical,
-} = Astro.props;
+} = Astro.props as WebPageJsonLdProps;
 ---
 
 <script

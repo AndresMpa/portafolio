@@ -4,15 +4,14 @@
 import { t, getLocale } from "i18n:astro";
 
 import { getProjects } from "../../lib/projects";
+import { titleCase } from "../../lib/utils";
 
 import ProjectLink from "./ProjectLink.astro";
 import ProjectDescription from "./ProjectDescription.astro";
 
 const lang = getLocale();
 const projectsData = await getProjects(lang);
-const rawTitle = String(t("projects.title"));
-const title =
-  rawTitle.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+const title = titleCase(String(t("projects.title")));
 ---
 
 <section id="projects">

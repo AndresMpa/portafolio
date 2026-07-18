@@ -1,6 +1,6 @@
 // src/data/experience.ts
 
-export interface ExperienceMeta {
+interface ExperienceMeta {
   slug: string;
   company: string;
   startDate: string;
