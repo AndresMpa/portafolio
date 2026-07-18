@@ -8,6 +8,8 @@ import type { HomeComponentsProps } from "../../types";
 import { getLatestTalks } from "../../lib/talks";
 import { localizeHref } from "../../lib/utils";
 
+import TermTitle from "../shared/TermTitle.astro"
+
 const lang = getLocale();
 const posts = await getLatestTalks(lang, 2);
 const { order, id } = Astro.props as HomeComponentsProps;
@@ -22,9 +24,9 @@ const entries = posts.map((post) => ({
 ---
 <section id={id} class="py-4">
   <div class="max-w-7xl mx-auto px-6">
-    <h3 class="text-sm uppercase text-accent mb-8">
-      // {String(order).padStart(2, "0")} {t("talks.title")}
-    </h3>
+    <h2 class="text-sm text-accent mb-8">
+      <TermTitle order={order} title={t("talks.title")} />
+    </h2>
     {entries.length === 0 ? (
       <p class="text-zinc-600 text-sm">No posts yet.</p>
     ) : (

@@ -1,0 +1,21 @@
+---
+// src/components/shared/TermTitle.astro
+
+interface TermTitleProps {
+  order: number,
+  title: string,
+}
+
+const {
+  order,
+  title
+} = Astro.props as TermTitleProps;
+---
+
+<Fragment>
+  <span class="text-accent">&lt;section@{String(order).padStart(2, "0")}&gt;</span>
+  <span class="text-purple-400">: ~/</span>
+  <span class="text-yellow-300 capitalize">&#40;{title}&#41;</span>
+</Fragment>
+
+

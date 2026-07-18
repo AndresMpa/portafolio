@@ -12,6 +12,8 @@ import flisol from "../../assets/flisol.png";
 
 import type { HomeComponentsProps } from "../../types"
 
+import TermTitle from "../shared/TermTitle.astro"
+
 const iconMap: Record<string, ImageMetadata> = {
   "ubuntu-colombia": ubuco,
   forest: forest,
@@ -27,13 +29,15 @@ const { order, id } = Astro.props as HomeComponentsProps;
 
 <section id={id} class="py-4">
   <div class="max-w-7xl mx-auto px-6">
-    <h3 class="text-sm uppercase text-accent mb-8">// {String(order).padStart(2, "0")} {t("community.title")}</h3>
+    <h2 class="text-sm text-accent mb-8">
+      <TermTitle order={order} title={t("community.title")} />
+    </h2>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
       {entries.map((entry) => (
         <article class="border border-zinc-800 p-6 rounded flex items-center">
           <img src={iconMap[entry.slug].src} alt={entry.company} class="w-12 h-12 shrink-0" />
           <div class="ml-5">
-            <h4 class="font-bold">{entry.company}</h4>
+            <h3 class="font-bold">{entry.company}</h3>
             <p class="text-accent text-sm">{entry.role}</p>
             <p class="text-zinc-500 text-xs">
               {entry.startDate}{entry.endDate ? ` — ${entry.endDate}` : ` — ${t("community.present")}`}
