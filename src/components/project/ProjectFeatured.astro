@@ -22,7 +22,7 @@ const { order, id } = Astro.props as HomeComponentsProps;
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex justify-between items-center mb-8">
       <h3 class="text-sm uppercase text-accent">// {String(order).padStart(2, "0")} {t("projects.title")}</h3>
-      <a href="/projects" class="text-sm text-zinc-500">{t("projects.viewAll")} +</a>
+      <a href={localizeHref(`/projects/`, lang)} class="text-sm text-zinc-500">{t("projects.viewAll")} +</a>
     </div>
     {featured.map((project, index) => (
       <div class="grid md:grid-cols-2 gap-8 mb-12 border border-zinc-800 rounded-lg p-6">

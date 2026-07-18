@@ -5,6 +5,7 @@ import { t, getLocale } from "i18n:astro";
 
 import { getCommunity } from "../../lib/community";
 
+import arch from "../../assets/arch.png";
 import ubuco from "../../assets/ubuco.png";
 import forest from "../../assets/forest.png";
 import flisol from "../../assets/flisol.png";
@@ -15,6 +16,7 @@ const iconMap: Record<string, ImageMetadata> = {
   "ubuntu-colombia": ubuco,
   forest: forest,
   flisol: flisol,
+  "arch-linux": arch,
 };
 
 const lang = getLocale();
