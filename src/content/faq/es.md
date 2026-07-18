@@ -1,23 +1,23 @@
 ---
 locale: es
-title: FAQ
+title: Preguntas Frecuentes
+description: Respuestas a preguntas comunes sobre la experiencia, el enfoque técnico y la disponibilidad de Andrés M. Prieto.
+items:
+  - question: ¿En qué tecnologías se especializa Andrés?
+    answer: >
+      Andrés se especializa en Python, TypeScript, JavaScript, infraestructura
+      de IA, GNU/Linux, Docker, AWS, Astro y Vue.
+  - question: ¿Qué experiencia tiene en IA?
+    answer: >
+      Desarrolla productos impulsados por LLMs, sistemas de agentes, pipelines
+      de RAG e infraestructura de IA, incluyendo herramientas locales que
+      ejecutan modelos directamente en GNU/Linux.
+  - question: ¿Está disponible para trabajo remoto?
+    answer: >
+      Sí. Andrés trabaja de forma remota con equipos distribuidos y está
+      radicado en Colombia (LatAm).
+  - question: ¿En qué proyectos de código abierto ha contribuido?
+    answer: >
+      Lyra, Ubuntu Colombia, Forest Software Community, dotfiles y otros
+      repositorios públicos.
 ---
-
-- question: What technologies does Andrés specialize in?
-  answer: >
-    Andrés specializes in Python, TypeScript, JavaScript,
-    AI infrastructure, GNU/Linux, Docker, AWS, Astro and Vue.
-
-- question: What AI experience does he have?
-  answer: >
-    He develops LLM-powered products, agent systems,
-    RAG pipelines and AI infrastructure.
-
-- question: Is he available for remote work?
-  answer: >
-    Yes. Andrés works remotely with distributed teams.
-
-- question: What open-source projects has he contributed to?
-  answer: >
-    Lyra, Ubuntu Colombia, Forest Software Community,
-    dotfiles and other public repositories.

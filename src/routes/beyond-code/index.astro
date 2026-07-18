@@ -5,12 +5,14 @@ import { t, getLocale } from "i18n:astro";
 
 import Layout from "../../layouts/Layout.astro";
 
+import BreadcrumbJsonLd from "../../components/seo/BreadcrumbJsonLd.astro";
 import CommunityUpcoming from "../../components/community/CommunityUpcoming.astro";
 import TalksList from "../../components/talks/TalksList.astro";
 
 import { getUpdates, getNextUpcoming } from "../../lib/talks";
 
 import { person } from "../../data/person";
+import { site } from "../../data/site";
 
 const locale = getLocale();
 const items = await getUpdates(locale);
@@ -19,6 +21,12 @@ const title = `${person.name} | ${t("beyondCode.title")}`;
 ---
 
 <Layout title={title}>
+  <BreadcrumbJsonLd
+    items={[
+      { name: "Home", url: site.url },
+      { name: "Beyond Code", url: `${site.url}/beyond-code` },
+    ]}
+  />
   <section class="max-w-7xl mx-auto px-6 py-6 pb-24">
     <CommunityUpcoming next={next} locale={locale} />
     <TalksList items={items} locale={locale} />
