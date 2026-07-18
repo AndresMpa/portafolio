@@ -5,10 +5,10 @@ import { t, getLocale } from "i18n:astro";
 
 import type { HomeComponentsProps } from "../../types";
 
-import { getLatestWriting, localizeHref } from "../../lib/writing";
+import { getLatestTalks, localizeHref } from "../../lib/talks";
 
 const lang = getLocale();
-const posts = await getLatestWriting(lang, 2);
+const posts = await getLatestTalks(lang, 2);
 const { order, id } = Astro.props as HomeComponentsProps;
 
 const entries = posts.map((post) => ({
@@ -22,7 +22,7 @@ const entries = posts.map((post) => ({
 <section id={id} class="py-4">
   <div class="max-w-7xl mx-auto px-6">
     <h3 class="text-sm uppercase text-accent mb-8">
-      // {String(order).padStart(2, "0")} {t("writing.title")}
+      // {String(order).padStart(2, "0")} {t("talks.title")}
     </h3>
     {entries.length === 0 ? (
       <p class="text-zinc-600 text-sm">No posts yet.</p>
@@ -69,7 +69,7 @@ const entries = posts.map((post) => ({
                           {ref.label}
                         </a>
                         {i < post.data.references!.length - 1 && ", "}
-                        {"\t"}"{t("writing.curlText")}"
+                        {"\t"}"{t("talks.curlText")}"
                       </>
                     ))}
                   </p>
@@ -80,7 +80,7 @@ const entries = posts.map((post) => ({
                 href={href}
                 class="mt-4 inline-flex items-center gap-1 text-accent hover:underline"
               >
-                [ {t("writing.readFull")} ]<span class="animate-pulse">▌</span>
+                [ {t("talks.readFull")} ]<span class="animate-pulse">▌</span>
               </a>
             </div>
           </div>

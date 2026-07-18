@@ -1,10 +1,12 @@
 ---
 // src/components/seo/TalkJsonLd.astro
+
 import type { CollectionEntry } from "astro:content";
+
 import { site } from "../../data/site";
 
 interface Props {
-  talk: CollectionEntry<"writing">;
+talk: CollectionEntry<"talks">;
 }
 
 const { talk } = Astro.props;

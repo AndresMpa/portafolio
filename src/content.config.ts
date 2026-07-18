@@ -93,10 +93,10 @@ const community = defineCollection({
   }),
 });
 
-const writing = defineCollection({
+const talks = defineCollection({
   loader: glob({
     pattern: "**/*.md",
-    base: "./src/content/writing",
+    base: "./src/content/talks",
     generateId: ({ entry }) => entry.replace(/\.md$/, "")
   }),
   schema: z.object({
@@ -141,4 +141,4 @@ const faq = defineCollection({
   }),
 });
 
-export const collections = { about, projects, experience, community, faq, writing, education };
+export const collections = { about, projects, experience, community, faq, talks, education };
