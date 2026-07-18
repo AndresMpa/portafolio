@@ -7,6 +7,8 @@ import Layout from "../layouts/Layout.astro";
 
 import BreadcrumbJsonLd from "../components/seo/BreadcrumbJsonLd.astro";
 
+import DownloadCV from "../components/shared/DownloadCV.astro"
+
 import { site } from "../data/site";
 import { person } from "../data/person";
 
@@ -27,15 +29,7 @@ const title = `${person.name} | ${t("resume.title")}`;
       <h1 class="text-4xl md:text-5xl font-black leading-tight">
         {t("resume.title")}
       </h1>
-      <a
-        href={cv}
-        download="AndresMpa_CV.pdf"
-        class="p-2 mr-2 rounded-full bg-accent hover:bg-accent active:bg-accent focus:outline-none focus:ring focus:ring-accent flex items-center justify-center"
-      >
-        <span class="md:ml-1 font-bold">
-          ↓<span class="hidden md:inline"> {t("hero.actions.downloadResume")}</span>
-        </span>
-      </a>
+        <DownloadCV buttonLabel={t("hero.actions.downloadResume")} />
     </div>
     <div class="border border-zinc-800 rounded-lg overflow-hidden bg-black/40" style="height: 85vh;">
       <object data={cv} type="application/pdf" width="100%" height="100%">

@@ -24,14 +24,14 @@ const { next, locale } = Astro.props;
       <span class="text-accent font-semibold">{t("beyondCode.upcoming.label")}</span>
       <span class="font-medium">{next.title}</span>
       {next.place && (
-        <span class="text-zinc-500">{t("beyondCode.upcoming.in")} {next.place}</span>
+        <span class="text-zinc-400">{t("beyondCode.upcoming.in")} {next.place}</span>
       )}
-      <span class="text-zinc-500">{t("beyondCode.upcoming.in")} {next.place}</span>
-      <span class="text-zinc-500">
+      <span class="text-zinc-400">{t("beyondCode.upcoming.in")} {next.place}</span>
+      <span class="text-zinc-400">
         {t("beyondCode.upcoming.on")} {next.date.toLocaleDateString(locale, { year: "numeric", month: "long", day: "numeric" })}
       </span>
     </a>
   ) : (
-    <p class="text-sm text-zinc-500">{t("beyondCode.upcoming.empty")}</p>
+    <p class="text-sm text-zinc-400">{t("beyondCode.upcoming.empty")}</p>
   )}
 </div>
