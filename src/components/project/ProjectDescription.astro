@@ -16,7 +16,7 @@ const {
 } = Astro.props as ProjectDescriptionProps;
 ---
 
-<div class="md:w-6/12 px-12">
+<div class:list={["md:w-6/12 px-12", flip && "md:order-2"]}>
   <div class="flex items-center gap-3 py-6">
     <h4 class="text-2xl text-accent">{title}</h4>
     {url && (

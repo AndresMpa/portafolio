@@ -4,6 +4,8 @@
 import { t, getLocale } from "i18n:astro";
 import { getEntry } from "astro:content";
 
+import { localizeHref } from "../../lib/utils";
+
 import HeroTerminal from "./HeroTerminal.astro";
 import HeroMetrics from "./HeroMetrics.astro";
 
@@ -23,7 +25,7 @@ const about = await getEntry("about", lang);
         {t("hero.description")}
       </p>
       <div class="mt-8 flex gap-4">
-        <a href="/projects" class="btn-primary mt-2">
+        <a href={localizeHref("/projects", lang)} class="btn-primary mt-2">
           {t("hero.actions.viewProjects")}
         </a>
         <a

@@ -5,8 +5,6 @@ import { t, getLocale } from "i18n:astro";
 
 import { getCommunity } from "../../lib/community";
 
-import { talks } from "../../data/talks";
-
 import ubuco from "../../assets/ubuco.png";
 import forest from "../../assets/forest.png";
 import flisol from "../../assets/flisol.png";
@@ -31,7 +29,7 @@ const { order, id } = Astro.props as HomeComponentsProps;
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
       {entries.map((entry) => (
         <article class="border border-zinc-800 p-6 rounded flex items-center">
-          <img src={iconMap[entry.slug].src} alt={entry.organization} class="w-12 h-12 shrink-0" />
+          <img src={iconMap[entry.slug].src} alt={entry.company} class="w-12 h-12 shrink-0" />
           <div class="ml-5">
             <h4 class="font-bold">{entry.company}</h4>
             <p class="text-accent text-sm">{entry.role}</p>
@@ -41,12 +39,6 @@ const { order, id } = Astro.props as HomeComponentsProps;
           </div>
         </article>
       ))}
-      <article class="border border-zinc-800 p-6 rounded">
-        <h4 class="font-bold">{t("community.andMore")}</h4>
-        <p class="text-zinc-400 text-sm">
-          {t("community.andMoreDescription1")} — {talks.length} {t("community.andMoreDescription2")}
-        </p>
-      </article>
     </div>
   </div>
 </section>

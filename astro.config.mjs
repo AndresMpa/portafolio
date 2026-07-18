@@ -17,9 +17,7 @@ export default defineConfig({
         data: true,
         translations: true,
       },
-      routing: {
-        prefixDefaultLocale: true,
-      },
+      strategy: "prefix",
     }),
   ],
   output: "static",

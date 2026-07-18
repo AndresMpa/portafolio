@@ -1,14 +1,14 @@
 ---
 // src/components/layout/Navigation.astro
-
 import { t, getLocale } from "i18n:astro";
+import { localizeHref } from "../../lib/utils";
 
 const locale = getLocale();
-const defaultLocale = "en";
 
 const navItems = [
   { key: "home", href: "/" },
   { key: "projects", href: "/projects" },
+  { key: "education", href: "/education" },
   { key: "experience", href: "/experience" },
   { key: "beyondCode", href: "/beyond-code" },
   { key: "about", href: "/about" },
@@ -16,20 +16,14 @@ const navItems = [
 ];
 
 const currentPath = Astro.url.pathname;
-
-function localize(path: string) {
-  if (locale === defaultLocale) return path;
-  return path === "/" ? `/${locale}` : `/${locale}${path}`;
-}
 ---
-
 <nav class="hidden md:flex gap-8 text-xs uppercase tracking-wider mt-0">
   {navItems.map((item) => {
-    const href = localize(item.href);
+    const href = localizeHref(item.href, locale);
     const isActive =
       item.href === "/"
-        ? currentPath === "/" || currentPath === `/${locale}` || currentPath === `/${locale}/`
-        : currentPath.startsWith(item.href) || currentPath.startsWith(`/${locale}${item.href}`);
+        ? currentPath === `/${locale}` || currentPath === `/${locale}/`
+        : currentPath.startsWith(`/${locale}${item.href}`);
     return (
       <a
         href={href}
@@ -39,7 +33,7 @@ function localize(path: string) {
             : "border-transparent text-zinc-400 hover:text-zinc-200"
         }`}
       >
-        {t(`nav.${item.key}`)}
+        {t(`nav.${item.key}` as any)}
       </a>
     );
   })}

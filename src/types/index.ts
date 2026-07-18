@@ -22,15 +22,14 @@ interface DockRouteProps {
 interface ProjectDescriptionProps {
   title: string;
   context: string;
-  authors?: {
-    link: string;
-    user: string;
-  }[];
+  authors?: { user: string; link: string }[];
+  url?: string;
+  flip?: boolean;
 }
 
 interface ProjectLinkProps {
-  url: string;
-  image: any;
+  slug: string;
+  image: string;
   topics: string;
   alt?: string;
   flip?: boolean;

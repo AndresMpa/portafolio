@@ -38,17 +38,17 @@ const { project } = Astro.props;
 
     inLanguage: project.data.locale,
 
-    about: project.data.aiTopics.map((topic) => ({
+    about: project.data.aiTopics.map((topic: string) => ({
       "@type": "Thing",
       name: topic,
     })),
 
-    teaches: project.data.skills.map((skill) => ({
+    teaches: project.data.skills.map((skill: string) => ({
       "@type": "DefinedTerm",
       name: skill,
     })),
 
-    audience: project.data.expertise.map((exp) => ({
+    audience: project.data.expertise.map((exp: string) => ({
       "@type": "Audience",
       audienceType: exp,
     })),

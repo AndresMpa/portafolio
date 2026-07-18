@@ -50,29 +50,4 @@ export const organizations: Organization[] = [
 
     role: "Co-Founder"
   },
-
-  {
-    id: "delphi",
-    name: "Delphi",
-
-    url: "https://www.delphihq.com",
-
-    description:
-      "Software engineering consultancy.",
-
-    role: "Software Engineer"
-  },
-
-  {
-    id: "pulsatrix",
-
-    name: "Pulsatrix",
-
-    url: "https://pulsatrix.co",
-
-    description:
-      "Blockchain software company.",
-
-    role: "Blockchain Developer"
-  }
 ];

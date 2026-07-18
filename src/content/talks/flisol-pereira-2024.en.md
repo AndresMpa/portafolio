@@ -1,7 +1,6 @@
 ---
 locale: en
 slug: flisol-2024-pereira
-
 title: FLISoL Pereira 2024 - Leading One of the Largest Free Software Events in Colombia's Coffee Region
 
 kind: Talk

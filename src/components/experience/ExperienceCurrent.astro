@@ -1,0 +1,34 @@
+---
+// src/components/experience/ExperienceCurrent.astro
+
+import { t } from "i18n:astro";
+
+interface ExperienceEntry {
+  role: string; company: string; startDate: string; endDate: string | null;
+  description?: string; stack?: string[];
+}
+interface Props { items: ExperienceEntry[] }
+
+const { items } = Astro.props;
+---
+
+{items.length > 0 && (
+  <div class="mb-16">
+    <h2 class="text-sm text-accent mb-6">{t("experience.current")}</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      {items.map((item) => (
+        <div class="border border-zinc-800 rounded-lg p-6">
+          <p class="text-accent text-sm">{item.startDate.slice(0, 4)} — {t("experience.present")}</p>
+          <h4 class="font-bold text-lg mt-1">{item.role}</h4>
+          <p class="text-zinc-500">{item.company}</p>
+          {item.description && <p class="text-zinc-400 mt-2">{item.description}</p>}
+          {(item.stack?.length ?? 0) > 0 && (
+            <div class="flex gap-2 mt-3 flex-wrap">
+              {item.stack?.map((tech) => <span class="bg-accent/20 text-accent text-xs px-2 py-1 rounded-full">{tech}</span>)}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+)}

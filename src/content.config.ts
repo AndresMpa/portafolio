@@ -112,7 +112,7 @@ const talks = defineCollection({
     attendees: z.number().optional(),
     references: z.array(z.object({
       label: z.string(),
-      url: z.string().url(),
+      url: z.url(),
     })).optional(),
     keywords: z.array(z.string()).optional(),
     eventType: z.string().optional(),

@@ -2,7 +2,7 @@
 locale: en
 slug: flisol-utp-2024-20-years-digital-freedom
 
-title: FLISoL UTP 2024: 20 Years Promoting Digital Freedom
+title: "FLISoL UTP 2024: 20 Years Promoting Digital Freedom"
 
 kind: Talk
 

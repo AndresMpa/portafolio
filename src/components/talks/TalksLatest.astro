@@ -1,11 +1,12 @@
 ---
-// src/components/home/Writing.astro
+// src/components/talks/TalksLatest.astro
 
 import { t, getLocale } from "i18n:astro";
 
 import type { HomeComponentsProps } from "../../types";
 
-import { getLatestTalks, localizeHref } from "../../lib/talks";
+import { getLatestTalks } from "../../lib/talks";
+import { localizeHref } from "../../lib/utils";
 
 const lang = getLocale();
 const posts = await getLatestTalks(lang, 2);
@@ -52,13 +53,13 @@ const entries = posts.map((post) => ({
               <p class="text-zinc-300">{post.data.description}</p>
 
               {post.data.references && post.data.references.length > 0 && (
-                <>
+                <Fragment>
                   <p class="mt-4">
                     <span class="text-blue-400">reference</span><span class="text-white">@</span><span class="text-white">(</span><span class="text-yellow-300">{post.data.title}</span><span class="text-white">)</span><span class="text-white">:</span>
                   </p>
                   <p class="text-zinc-300">
                     {post.data.references.map((ref, i) => (
-                      <>
+                      <Fragment>
                         <span class="text-zinc-400">curl -o </span>
                         <a
                           href={ref.url}
@@ -69,11 +70,11 @@ const entries = posts.map((post) => ({
                           {ref.label}
                         </a>
                         {i < post.data.references!.length - 1 && ", "}
-                        {"\t"}"{t("talks.curlText")}"
-                      </>
+                        &Tab;&lbrace;{t("talks.curlText")}&rbrace;
+                      </Fragment>
                     ))}
                   </p>
-                </>
+                </Fragment>
               )}
 
               <a

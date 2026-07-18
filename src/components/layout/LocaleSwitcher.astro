@@ -44,6 +44,8 @@ const data = getSwitcherData();
   const button = document.getElementById("locale-btn");
   const menu = document.getElementById("locale-menu");
 
+  if (!switcher || !button || !menu) throw new Error("LocaleSwitcher: missing required elements");
+
   button.addEventListener("click", () => {
     const open = menu.classList.toggle("open");
 
@@ -54,11 +56,11 @@ const data = getSwitcherData();
     menu.classList.toggle("scale-y-100", open);
     menu.classList.toggle("opacity-100", open);
 
-    button.setAttribute("aria-expanded", open);
++   button.setAttribute("aria-expanded", String(open));
   });
 
   document.addEventListener("click", (e) => {
-    if (!switcher.contains(e.target)) {
+    if (!switcher.contains(e.target as Node)) {
       menu.classList.add("scale-y-0", "opacity-0", "pointer-events-none");
       menu.classList.remove("scale-y-100", "opacity-100");
       button.setAttribute("aria-expanded", "false");

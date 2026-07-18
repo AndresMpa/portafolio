@@ -6,21 +6,16 @@ import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 
 import TalkJsonLd from "../../components/seo/TalkJsonLd.astro";
-
 import BreadcrumbJsonLd from "../../components/seo/BreadcrumbJsonLd.astro";
+
+import TalkDetail from "../../components/talks/TalkDetail.astro";
 
 import { site } from "../../data/site";
 
 export async function getStaticPaths() {
   const locale = getLocalePlaceholder();
-  const posts = await getCollection(
-    "talks",
-    (entry) => entry.data.locale === locale
-  );
-  return posts.map((post) => ({
-    params: { slug: post.data.slug },
-    props: { post },
-  }));
+  const posts = await getCollection("talks", (entry) => entry.data.locale === locale);
+  return posts.map((post) => ({ params: { slug: post.data.slug }, props: { post } }));
 }
 
 const { post } = Astro.props;
@@ -37,28 +32,5 @@ const isTalk = post.data.kind === "Talk";
       { name: post.data.title, url: `${site.url}/${post.data.locale}/beyond-code/${post.data.slug}` },
     ]}
   />
-
-  <article class="prose prose-invert max-w-3xl mx-auto py-10">
-    {isTalk && post.data.eventType && (
-      <p class="text-accent text-sm uppercase tracking-wider mb-2">{post.data.eventType}</p>
-    )}
-    {isTalk && post.data.location && (
-      <p class="text-zinc-500 text-sm mb-8">
-        {post.data.location.venue ? `${post.data.location.venue}, ` : ""}
-        {post.data.location.city}{post.data.location.country ? `, ${post.data.location.country}` : ""}
-      </p>
-    )}
-    <Content />
-  </article>
-
-  {post.data.skills && post.data.skills.length > 0 && (
-    <section class="max-w-3xl mx-auto px-6 mt-12 mb-12">
-      <h2 class="text-sm uppercase tracking-wider text-zinc-500 mb-4">Skills</h2>
-      <div class="flex flex-wrap gap-2">
-        {post.data.skills.map((skill) => (
-          <span class="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs text-text">{skill}</span>
-        ))}
-      </div>
-    </section>
-  )}
+  <TalkDetail post={post} Content={Content} />
 </Layout>

@@ -1,24 +1,23 @@
 ---
 // components/home/FeaturedProjects.astro
 
-import { t, getLocale } from "i18n:astro";
 import { Image } from "astro:assets";
+import { t, getLocale } from "i18n:astro";
 
 import { getFeaturedProjects } from "../../lib/projects";
+import { localizeHref } from "../../lib/utils";
 
-import type { HomeComponentsProps } from "../../types"
+import type { HomeComponentsProps } from "../../types";
 
-const images = import.meta.glob("../../assets/projects/*", {
-  eager: true,
-  import: "default",
-});
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../../assets/projects/*",
+  { eager: true }
+);
 
 const lang = getLocale();
 const featured = await getFeaturedProjects(lang);
-
 const { order, id } = Astro.props as HomeComponentsProps;
 ---
-
 <section id={id} class="py-4">
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex justify-between items-center mb-8">
@@ -29,7 +28,7 @@ const { order, id } = Astro.props as HomeComponentsProps;
       <div class="grid md:grid-cols-2 gap-8 mb-12 border border-zinc-800 rounded-lg p-6">
         <div class="project-image">
           <Image
-            src={images[`../../assets/projects/${project.image}`]}
+            src={images[`../../assets/projects/${project.image}`].default}
             alt={project.title || "Image"}
             class={`rounded single-img ${index % 2 ? "flipped" : ""}`}
             loading="lazy"
@@ -39,13 +38,17 @@ const { order, id } = Astro.props as HomeComponentsProps;
           <h4 class="font-bold text-lg">{project.title}</h4>
           <p class="text-zinc-400 mt-2">{project.description}</p>
           <div class="flex gap-2 mt-4 flex-wrap">
-            {project.languages.map((lang) => (
-              <span class="bg-accent/20 text-accent text-xs px-2 py-1 rounded-full">{lang}</span>
+            {[...project.skills, ...project.aiTopics].map((tag) => (
+              <span class="bg-accent/20 text-accent text-xs px-2 py-1 rounded-full">{tag}</span>
             ))}
           </div>
           <div class="flex gap-4 mt-4 text-accent text-sm">
-            {project.caseStudy && <a href={`/projects/${project.slug}`}>{t("projects.caseStudy")} →</a>}
-            {project.repository && <a href={project.website} target="_blank">{t("projects.github")} ↗</a>}
+            <a href={localizeHref(`/projects/${project.slug}`, lang)}>{t("projects.caseStudy")} →</a>
+            {project.repository.length > 0 && (
+              <a href={project.repository[0]} target="_blank" rel="noopener noreferrer">
+                {t("projects.github")} ↗
+              </a>
+            )}
           </div>
         </div>
       </div>

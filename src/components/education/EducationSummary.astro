@@ -4,6 +4,7 @@
 import { t, getLocale } from "i18n:astro";
 
 import { getEducation } from "../../lib/education";
+import { localizeHref } from "../../lib/utils";
 
 import compass from "../../assets/compass.svg?raw";
 import layers from "../../assets/layers.svg?raw";
@@ -12,10 +13,8 @@ import chip from "../../assets/chip.svg?raw";
 import type { HomeComponentsProps } from "../../types"
 
 const icons: Record<string, string> = { compass, layers, chip };
-
 const lang = getLocale();
 const entries = await getEducation(lang);
-
 const { order, id } = Astro.props as HomeComponentsProps;
 ---
 
@@ -38,7 +37,7 @@ const { order, id } = Astro.props as HomeComponentsProps;
             <h4 class="font-bold group-hover:text-accent transition-colors pr-8">{item.degree}</h4>
             <p class="text-zinc-500 text-sm">{item.institution}</p>
             <div class="flex gap-2 mt-2 flex-wrap">
-              {item.tags.map((tag) => (
+              {item.tags?.map((tag) => (
                 <span class="text-zinc-400 text-xs">{tag}</span>
               ))}
             </div>
@@ -46,7 +45,7 @@ const { order, id } = Astro.props as HomeComponentsProps;
           </div>
         </a>
       ))}
-      <a href="/education" class="border border-zinc-800 hover:border-accent rounded-lg p-6 flex flex-col justify-end min-h-[180px] transition-colors text-accent">
+      <a href={localizeHref("/education", lang)} class="border border-zinc-800 hover:border-accent rounded-lg p-6 flex flex-col justify-end min-h-[180px] transition-colors text-accent">
         <span>{t("education.viewAll")} →</span>
       </a>
     </div>

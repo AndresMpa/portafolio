@@ -2,7 +2,7 @@
 locale: es
 slug: flisol-utp-2024-20-anos-libertad-digital
 
-title: FLISoL UTP 2024: 20 años trabajando por la libertad digital
+title: "FLISoL UTP 2024: 20 años trabajando por la libertad digital"
 
 kind: Talk
 

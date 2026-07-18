@@ -1,7 +1,7 @@
 // src/lib/talks.ts
 import { getCollection } from "astro:content";
 
-const DEFAULT_LOCALE = "en";
+import { localizeHref } from "./utils";
 
 export type UpdateItem = {
   type: "writing" | "event";
@@ -11,10 +11,6 @@ export type UpdateItem = {
   place?: string;
   meta: Record<string, unknown>;
 };
-
-export function localizeHref(path: string, locale: string) {
-  return locale === DEFAULT_LOCALE ? path : `/${locale}${path}`;
-}
 
 export async function getLatestTalks(locale: string, limit = 4) {
   const posts = await getCollection("talks", (e) => e.data.locale === locale);

@@ -6,7 +6,7 @@ import type { CollectionEntry } from "astro:content";
 import { site } from "../../data/site";
 
 interface Props {
-talk: CollectionEntry<"talks">;
+  talk: CollectionEntry<"talks">;
 }
 
 const { talk } = Astro.props;
@@ -53,4 +53,4 @@ const jsonLd = {
   }),
 };
 ---
-<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />

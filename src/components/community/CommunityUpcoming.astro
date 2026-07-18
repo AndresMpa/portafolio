@@ -6,7 +6,7 @@ import { t } from "i18n:astro";
 interface Props {
   next: {
     title: string;
-    place: string;
+    place?: string;
     date: Date;
     href?: string;
   } | null;
@@ -23,6 +23,9 @@ const { next, locale } = Astro.props;
     >
       <span class="text-accent font-semibold">{t("beyondCode.upcoming.label")}</span>
       <span class="font-medium">{next.title}</span>
+      {next.place && (
+        <span class="text-zinc-500">{t("beyondCode.upcoming.in")} {next.place}</span>
+      )}
       <span class="text-zinc-500">{t("beyondCode.upcoming.in")} {next.place}</span>
       <span class="text-zinc-500">
         {t("beyondCode.upcoming.on")} {next.date.toLocaleDateString(locale, { year: "numeric", month: "long", day: "numeric" })}
