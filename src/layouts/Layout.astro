@@ -7,33 +7,44 @@ import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
 import SEO from "../components/seo/SEO.astro";
 
+import { site } from "../data/site";
+
 import type { SEOProps } from "../types"
 
 const props = Astro.props as SEOProps;
 
+const ogImage = `${site.url}/og-image.png`
+
 const {
   title,
-  description = "Senior software engineer — AI infrastructure and fullstack development on GNU/Linux.",
-  image = "https://andresmpa.netlify.app/og-image.png",
+  description = site.description,
+  image = ogImage,
+  keywords=[],
+  includeProjects = false,
+  includeOrganizations = false,
+  project,
 } = props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <SEO
       title={title}
       description={description}
       image={image}
+      keywords={keywords}
+      includeProjects={includeProjects}
+      includeOrganizations={includeOrganizations}
+      project={project}
     />
-
     <I18nClient />
   </head>
 
-  <body class="bg-background text-text">
+  <body class="bg-background text-text min-h-screen flex flex-col">
     <Header />
 
-    <main>
+    <main class="flex-1">
       <slot />
     </main>
 

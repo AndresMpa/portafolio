@@ -1,3 +1,5 @@
+// src/data/site.ts
+
 export const site = {
   version: "1.0.0",
 

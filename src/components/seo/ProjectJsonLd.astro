@@ -1,0 +1,56 @@
+---
+// src/components/seo/ProjectJsonLd.astro
+
+import { site } from "../../data/site";
+
+const { project } = Astro.props;
+---
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+
+    "@type": "SoftwareSourceCode",
+
+    "@id": `${site.url}/${project.data.locale}/projects/${project.data.slug}#software`,
+
+    url: `${site.url}/${project.data.locale}/projects/${project.data.slug}`,
+
+    name: project.data.title,
+
+    description: project.data.description,
+
+    abstract:
+      project.data.intent?.length > 0
+        ? project.data.intent.join(". ")
+        : undefined,
+
+    keywords: project.data.keywords,
+
+    codeRepository:
+      project.data.repository?.length > 0
+        ? project.data.repository
+        : undefined,
+
+    creativeWorkStatus: project.data.status,
+
+    inLanguage: project.data.locale,
+
+    about: project.data.aiTopics.map((topic: string) => ({
+      "@type": "Thing",
+      name: topic,
+    })),
+
+    teaches: project.data.skills.map((skill: string) => ({
+      "@type": "DefinedTerm",
+      name: skill,
+    })),
+
+    audience: project.data.expertise.map((exp: string) => ({
+      "@type": "Audience",
+      audienceType: exp,
+    })),
+  })}
+/>

@@ -1,68 +1,113 @@
 {
-  "title": "AndresMpa - Senior Engineer, AI Infrastructure & Fullstack",
+  "title": "Senior Software Engineer • AI Infrastructure",
+  "description": "Senior Software Engineer • AI Infrastructure",
   "selectLanguage": "Select language",
-  "greeter": {
-    "title": "AI Infrastructure & Fullstack Engineer",
-    "description1": "I'm a senior software engineer with ~10 years of experience, building",
-    "key1": "AI infrastructure and fullstack systems",
-    "description2": "on",
-    "key2": "GNU/Linux",
-    "description3": "with a focus on",
-    "key3": "systems-level problem solving"
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "education": "Education",
+    "experience": "Experience",
+    "beyondCode": "Beyond Code",
+    "about": "About",
+    "resume": "Resume"
   },
-  "dock": "Home Experience Projects Education Communities Contact",
-  "experience": {
-    "title": "Experience",
-    "description1": "I made a platform for a highschool institution, the project was a books administration system in which I made requirements engineering, design and development",
-    "description2": "I developed small web components, a marketing campaign for a cryptocurrency game and some other game components.",
-    "description3": "Secure voting project on Blockchain to manage elections with a cleaner process, providing electronic, secure voting free of modifications by third parties.",
-    "description4": "Company dedicated to creating and innovating in the Artificial Intelligence (AI) sector, focused on machine learning techniques to create solutions.",
-    "description5": "As a member of Ubuntu, I have participated in various conferences, symposiums, talks and similar events, both as a speaker and as an organizer, manager and administrator. My work with communities is considered voluntary and I participate when possible, but it has allowed me to develop various soft skills and some technical ones.",
-    "description6": "I have founded a community of developers in which we dedicate ourselves to teaching others about software, to participate in events where we can interact with other devs, companies, etc. FOREST is an initiative that arises from the desire to share with other people what we know.",
-    "description7": "I have worked as a Technical Advisor for several companies, these were dedicated to banking and the role I played for them was to restructure part of their company, specifically their IT area.",
-    "description8": "I have been working as a freelancer for a few years now, and during this time I have had the opportunity to work for various industries, including education, marketing and SME banking. I have also had the opportunity to work with older code bases and larger ones, and to create projects with various concurrencies.",
-    "description9": "I work for an Agentic-first SAS as a AI engineer and Fullstack Developer. I do high performance agent and components used for millions of users."
-
+  "hero": {
+    "title": "Senior Software Engineer",
+    "description": "I build AI-powered products, developer tools and infrastructure that scale. Passionate about Linux, open source and the intersection of AI and software engineering.",
+    "actions": {
+      "viewProjects": "View Projects",
+      "downloadResume": "Download Resume"
+    },
+    "metrics": {
+      "experience": "Years of Experience",
+      "projects": "Projects",
+      "openSource": "Open Source",
+      "contributor": "Contributor",
+      "basedIn": "Based in"
+    },
+    "whoami": {
+      "role": "AI Infrastructure & Fullstack Engineer",
+      "location": "Colombia (LatAm)",
+      "focus": "AI agents, local LLMs, MCP",
+      "passion": "Linux, Open Source, DX"
+    },
+    "actions": {
+      "viewProjects": "View Projects",
+      "downloadResume": "Download Resume"
+    },
+    "metrics": {
+      "experience": "Years of Experience",
+      "projects": "Projects",
+      "openSource": "Open Source",
+      "contributor": "Contributor",
+      "basedIn": "Based in"
+    }
   },
   "projects": {
-    "title": "Projects",
-    "context1": "Lyra is a virtual assistant designed to navigate the vast sea of information in GNU/Linux, making your computing experience harmonious and intuitive.",
-    "context2": "Mu Vim is a fast NeoVim and Vim implementation made to handle big and small projects everything from your terminal",
-    "context3": "Dotfiles are configuration files, scripts and documentation about an operative system; this repository contains my configuration files including scripts, my shell config, some settings for those tools that I use; also some recommendations and guides such as Corne which contain all the necessary materials for building your own Corne keyboard such as mine. I highly recommend checking some of my daemons if you use systemctl and an AMD GPU like Radeon.",
-    "context4": "This is a re implementation from the classic rock, paper, scissors; I got the assets from frontendmentor and this project is a vanilla JS implementation, check the scr/util to see the logic behind it.",
-    "context5": "This is the classic TODO app crafted for browser, with a couple of extra features like, localstorage, drag&drop and themes",
-    "context6": "A random quotes generator using some cool staff from Less and JavaScript to create as much senteces as you want",
-    "context7": "This is a simple challenge from Frontend Mentor, it's this one. What you are finding here is a small example of a web component",
-    "context8": "Simple parking system hand crafted with Vue",
-    "context9": "Babylon is a collection of courses I have taken or I'm taking; these folders are my notes, code and personal thoughts about different technologies, from Frontend to AI/ML. The aim of this repository is to have a set of tools for myself to keep checking, in order to remember or find a topic. I'm also adding a reference list for tools I find useful.",
-    "context10": "This is a workshop about web, showing how to use the Web Speech API through some examples.",
-    "context11": "Educational platform designed to give teachers strategies to improve their writing teaching methods."
+    "title": "FEATURED PROJECTS",
+    "caseStudy": "Case study",
+    "github": "GitHub",
+    "viewAll": "View all projects",
+    "caseStudy": "View case study"
+  },
+  "experience": {
+    "title": "Experience",
+    "present": "Present",
+    "viewAll": "View all experience",
+    "current": "Currently"
   },
   "education": {
     "title": "Education",
-    "headers": "Title Institution Topics Year",
-    "more": "See full list",
-    "description1": "MEng. in Artificial Intelligence",
-    "description2": "Eng. Software",
-    "description3": "Tech. Software"
+    "viewAll": "View all degrees"
   },
   "community": {
-    "title": "Communities",
-    "headers": "Conference Event Topic Link Year",
-    "description1": "I'm",
-    "key1": " not only a developer",
-    "description2": " I truly believe that giving others to be heard makes devs the best community in the world and",
-    "key2": " gives my own voice",
-    "description3": " space for",
-    "key3": " an impact",
-    "description4": " on those who want me to talk to them, that's why",
-    "key4": " I also do blogs",
-    "description5": " and sometimes when my schedule allows me to do it",
-    "key5": " I give talks",
-    "description6": " and those things I know"
+    "title": "Open Source & Community",
+    "present": "Present",
+    "andMore": "And more",
+    "andMoreDescription1": "Speaker, mentor and open source enthusiast",
+    "andMoreDescription2": "talks and events"
+  },
+  "talks": {
+    "title": "Latest Writing",
+    "readFull": "Read full post",
+    "curlText": "Reference link",
+    "empty": "No recent post to show."
+  },
+  "beyondCode": {
+    "title": "Beyond Code",
+    "search": "Search...",
+    "empty": "Nothing here yet.",
+    "upcoming": {
+      "label": "Next talk:",
+      "in": "in",
+      "on": "on",
+      "empty": "No upcoming talks right now — check back soon."
+    },
+    "filters": {
+      "all": "All",
+      "writing": "Writing",
+      "events": "Events"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "languages": "Languages",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "ai": "AI / LLMs",
+    "infrastructure": "Infrastructure"
+  },
+  "about": {
+    "title": "About"
+  },
+  "resume": {
+    "title": "Resume",
+    "description": "Download my resume to get the full picture of my experience, skills and journey.",
+    "download": "Download resume.pdf",
+    "fallback": "Your browser can't preview PDFs inline."
   },
   "footer": {
-    "rights": "All Rights Reserved",
-    "made": "Made by "
+    "name": "Portfolio",
+    "made": "Made with "
   }
 }

@@ -8,9 +8,10 @@ interface SEOProps {
   description: string;
   image?: string;
   canonical?: string;
-  entryType?: "website" | "profile" | "article";
   includeProjects?: boolean;
   includeOrganizations?: boolean;
+  keywords?: string[];
+  project?: any;
 }
 
 interface DockRouteProps {
@@ -21,15 +22,14 @@ interface DockRouteProps {
 interface ProjectDescriptionProps {
   title: string;
   context: string;
-  authors?: {
-    link: string;
-    user: string;
-  }[];
+  authors?: { user: string; link: string }[];
+  url?: string;
+  flip?: boolean;
 }
 
 interface ProjectLinkProps {
-  url: string;
-  image: any;
+  slug: string;
+  image: string;
   topics: string;
   alt?: string;
   flip?: boolean;
@@ -71,6 +71,11 @@ interface TimelineProps {
   topics: string;
 }
 
+interface HomeComponentsProps {
+  order: number;
+  id: string;
+}
+
 export type {
   HeaderBtnProps,
   SEOProps,
@@ -82,4 +87,5 @@ export type {
   TableItemProps,
   TableHeadersProps,
   TimelineProps,
+  HomeComponentsProps,
 };

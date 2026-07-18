@@ -1,3 +1,5 @@
+// src/pages/api/knowledge.json.ts
+
 import { site, person } from "../../data";
 
 export const GET = () =>

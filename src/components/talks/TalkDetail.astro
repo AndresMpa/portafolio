@@ -1,0 +1,37 @@
+---
+// src/components/talks/TalkDetail.astro
+
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"talks">;
+  Content: any;
+}
+
+const { post, Content } = Astro.props;
+const isTalk = post.data.kind === "Talk";
+---
+
+<article class="prose prose-invert max-w-3xl mx-auto py-10">
+  {isTalk && post.data.eventType && (
+    <p class="text-accent text-sm uppercase tracking-wider mb-2">{post.data.eventType}</p>
+  )}
+  {isTalk && post.data.location && (
+    <p class="text-zinc-500 text-sm mb-8">
+      {post.data.location.venue ? `${post.data.location.venue}, ` : ""}
+      {post.data.location.city}{post.data.location.country ? `, ${post.data.location.country}` : ""}
+    </p>
+  )}
+  <Content />
+</article>
+
+{post.data.skills && post.data.skills.length > 0 && (
+  <section class="max-w-3xl mx-auto px-6 mt-12">
+    <h2 class="text-sm uppercase tracking-wider text-zinc-500 mb-4">Skills</h2>
+    <div class="flex flex-wrap gap-2">
+      {post.data.skills.map((skill) => (
+        <span class="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs text-text">{skill}</span>
+      ))}
+    </div>
+  </section>
+)}

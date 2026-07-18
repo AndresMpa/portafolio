@@ -1,9 +1,7 @@
 ---
 locale: en
 slug: dailybot
+role: AI Software Engineer
+description: I work for an Agentic-first SAS as a AI engineer and Fullstack Developer. I do high performance agent and components used for millions of users.
 company: dailybot
-role: AI engineer & Fullstack developer
-description: ""
 ---
-
-# Empty

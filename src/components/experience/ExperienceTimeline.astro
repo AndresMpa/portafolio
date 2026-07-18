@@ -1,0 +1,84 @@
+---
+// src/components/home/Experience.astro
+
+import { t, getLocale } from "i18n:astro";
+
+import { getExperience } from "../../lib/experience";
+import { localizeHref } from "../../lib/utils";
+
+import type { HomeComponentsProps } from "../../types"
+
+const lang = getLocale();
+const merged = (await getExperience(lang));
+
+const { order, id } = Astro.props as HomeComponentsProps;
+---
+
+<section id={id} class="py-4">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-sm uppercase text-accent mb-8">// {String(order).padStart(2, "0")} {t("experience.title")}</h3>
+
+  <div id="experience-scroll" class="overflow-x-auto pb-4 scrollbar-none cursor-grab active:cursor-grabbing">
+    <div class="relative flex min-w-max gap-16 pt-2">
+        <div class="relative flex min-w-max gap-16 pt-2">
+          <div class="absolute top-[0.4rem] left-0 right-0 h-px bg-zinc-800"></div>
+          {merged.map((item) => (
+            <div class="relative w-56 shrink-0 text-center">
+              <span class="absolute -top-[0.4rem] left-1/2 -translate-x-1/2 w-3 h-3 bg-accent rounded-full"></span>
+              <h4 class="font-bold leading-tight mt-5">{item.role}</h4>
+              <p class="text-accent text-sm mt-3">
+                {item.startDate.slice(0, 4)} - {item.endDate ? item.endDate.slice(0, 4) : t("experience.present")}
+              </p>
+              <p class="text-zinc-500 text-sm">({item.company})</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <a href={localizeHref("/experience", lang)} class="text-accent text-sm mt-8 inline-block">
+      {t("experience.viewAll")} →
+    </a>
+  </div>
+</section>
+
+<style>
+  .scrollbar-none {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+  }
+</style>
+
+<script>
+  const el = document.getElementById("experience-scroll");
+  if (el) {
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    el.addEventListener("mousedown", (e) => {
+      isDown = true;
+      startX = e.pageX - el.offsetLeft;
+      scrollLeft = el.scrollLeft;
+    });
+
+    el.addEventListener("mouseleave", () => {
+      isDown = false;
+    });
+
+    el.addEventListener("mouseup", () => {
+      isDown = false;
+    });
+
+    el.addEventListener("mousemove", (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - el.offsetLeft;
+      const walk = x - startX;
+      el.scrollLeft = scrollLeft - walk;
+    });
+  }
+</script>

@@ -1,3 +1,5 @@
+// src/pages/api/skills.json.ts
+
 import { site, skills } from "../../data";
 
 export const GET = () =>

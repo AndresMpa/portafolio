@@ -1,8 +1,7 @@
 ---
 locale: es
-slug: flisol-es
-organization: flisol
+slug: flisol
+company: FLISoL
+role: Lider organizador
 description: Festival Latinoamericano de Instalación de Software Libre
 ---
-
-# empty

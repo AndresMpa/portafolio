@@ -1,0 +1,26 @@
+---
+// src/routes/beyond-code/index.astro
+
+import { t, getLocale } from "i18n:astro";
+
+import Layout from "../../layouts/Layout.astro";
+
+import CommunityUpcoming from "../../components/community/CommunityUpcoming.astro";
+import TalksList from "../../components/talks/TalksList.astro";
+
+import { getUpdates, getNextUpcoming } from "../../lib/talks";
+
+import { person } from "../../data/person";
+
+const locale = getLocale();
+const items = await getUpdates(locale);
+const next = getNextUpcoming(items);
+const title = `${person.name} | ${t("beyondCode.title")}`;
+---
+
+<Layout title={title}>
+  <section class="max-w-7xl mx-auto px-6 py-6 pb-24">
+    <CommunityUpcoming next={next} locale={locale} />
+    <TalksList items={items} locale={locale} />
+  </section>
+</Layout>

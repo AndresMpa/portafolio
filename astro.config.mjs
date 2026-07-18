@@ -17,6 +17,7 @@ export default defineConfig({
         data: true,
         translations: true,
       },
+      strategy: "prefix",
     }),
   ],
   output: "static",

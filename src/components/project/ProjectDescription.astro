@@ -1,29 +1,42 @@
 ---
 // src/components/project/ProjectDescription.astro
 
+import { Image } from "astro:assets";
+
 import type { ProjectDescriptionProps } from "../../types";
+
+import github from "../../assets/github.svg";
 
 const {
   title,
   context,
   authors = [],
+  url,
+  flip = true,
 } = Astro.props as ProjectDescriptionProps;
 ---
 
-<div class="md:w-6/12 px-12">
-  <h4 class="text-2xl text-accent py-6">
-    {title}
-  </h4>
-  <p class="pl-6 py-6">
-    {context}
-  </p>
-  {
-    authors.map((author) => (
-      <a href={author.link} target="_blank" rel="noopener noreferrer">
-        <span class="bg-accent/30 text-accent text-sm text-center px-3 py-1 mx-2 rounded-full font-semibold hover:bg-accent hover:text-text transition-colors duration-200">
-          @{author.user}
-        </span>
+<div class:list={["md:w-6/12 px-12", flip && "md:order-2"]}>
+  <div class="flex items-center gap-3 py-6">
+    <h4 class="text-2xl text-accent">{title}</h4>
+    {url && (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Open GitHub repository: ${title}`}
+        class="shrink-0 text-white transition-all duration-300 hover:text-accent hover:drop-shadow-[0_0_8px_var(--color-accent)]"
+      >
+        <Image src={github} alt="GitHub" width={24} height={24} class="w-[18px] h-[18px] invert hover:brightness-0 hover:sepia hover:hue-rotate-[140deg] hover:saturate-200" />
       </a>
-    ))
-  }
+    )}
+  </div>
+  <p class="pl-6 py-6">{context}</p>
+  {authors.map((author) => (
+    <a href={author.link} target="_blank" rel="noopener noreferrer">
+      <span class="bg-accent/30 text-accent text-sm text-center px-3 py-1 mx-2 rounded-full font-semibold hover:bg-accent hover:text-text transition-colors duration-200">
+        @{author.user}
+      </span>
+    </a>
+  ))}
 </div>

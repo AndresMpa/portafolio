@@ -1,3 +1,11 @@
+// src/data/person.ts
+
+export const stats = {
+  yearsExperience: 10,
+  projectsCount: 20,
+  location: "Colombia",
+} as const;
+
 export const person = {
   id: "https://andresmpa.netlify.app/#person",
 

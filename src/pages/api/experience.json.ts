@@ -1,3 +1,5 @@
+// src/pages/api/experience.json.ts
+
 import { site, experience } from "../../data";
 
 export const GET = () =>

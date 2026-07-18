@@ -1,0 +1,45 @@
+---
+// src/components/project/ProjectsList.astro
+
+import { t, getLocale } from "i18n:astro";
+
+import { getProjects } from "../../lib/projects";
+
+import ProjectLink from "./ProjectLink.astro";
+import ProjectDescription from "./ProjectDescription.astro";
+
+const lang = getLocale();
+const projectsData = await getProjects(lang);
+const rawTitle = String(t("projects.title"));
+const title =
+  rawTitle.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+---
+
+<section id="projects">
+  <article class="flex flex-col items-end mb-6 pb-12 pr-12">
+    <h1 class="mt-6 text-4xl md:text-5xl font-black leading-tight">
+      {title}
+    </h1>
+  </article>
+  <article>
+    {projectsData.map((data, index) => (
+      <div class={`${index % 2 === 0 ? "" : "flex-row-reverse"} md:flex justify-around my-12`}>
+        <ProjectDescription
+          title={data.title}
+          context={data.description}
+          authors={data.authors}
+          url={data.repository ?? data.website}
+          flip={index % 2 === 0}
+        />
+        <ProjectLink
+          url={data.repository ?? data.website}
+          slug={data.slug}
+          image={data.image}
+          topics={data.languages.join(",")}
+          alt={data.title}
+          flip={index % 2 === 0}
+        />
+      </div>
+    ))}
+  </article>
+</section>

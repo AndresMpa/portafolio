@@ -3,6 +3,8 @@
 
 import { t } from "i18n:astro";
 
+import Navigation from "./Navigation.astro";
+import BrandLogo from "../shared/BrandLogo.astro";
 import SocialLink from "../shared/SocialLink.astro";
 
 import linkedin from "../../assets/linkedin.svg";
@@ -14,48 +16,43 @@ const todayDate = new Date();
 const today = todayDate.toISOString().split("-")[0];
 
 const socialMedia = [
-  {
-    icon: github,
-    link: "https://github.com/AndresMpa",
-    alt: "GitHub",
-  },
-  {
-    icon: telegram,
-    link: "https://t.me/AndresMpa",
-    alt: "Telegram",
-  },
-  {
-    icon: linkedin,
-    link: "https://www.linkedin.com/in/andresmpa/",
-    alt: "LinkedIn",
-  },
-  {
-    icon: gmail,
-    link: "mailto:ing.andres.m.prieto@gmail.com",
-    alt: "Correo: ing.andres.m.prieto@gmail.com",
-  },
+  { icon: github, link: "https://github.com/AndresMpa", alt: "GitHub" },
+  { icon: telegram, link: "https://t.me/AndresMpa", alt: "Telegram" },
+  { icon: linkedin, link: "https://www.linkedin.com/in/andresmpa/", alt: "LinkedIn" },
+  { icon: gmail, link: "mailto:ing.andres.m.prieto@gmail.com", alt: "Correo: ing.andres.m.prieto@gmail.com" },
 ];
 ---
 
-<footer id="contact" class="mx-auto bg-neutral-700 py-12">
-  <p class="text-center">
-    &copy; Copyright {today}. {t("footer.rights")}. {t("footer.made")}
-    <a
-      href="https://github.com/AndresMpa"
-      rel="noopener noreferrer"
-      aria-label="Check GitHub"
-      class="font-bold"
-      target="_blank">@AndresMpa</a
-    >
-  </p>
+<footer id="contact" class="bg-neutral-950 text-neutral-400 font-mono py-16 px-6">
+  <div class="max-w-[95%] mx-auto flex justify-between items-end">
+    <BrandLogo />
+    
+    <div class="hidden md:flex flex-col">
+      <div class="flex items-center">
+        <Navigation />
+      </div>
+    </div>
 
-  <div class="border border-white w-11/12 mx-auto my-10"></div>
+    <div class="flex flex-col">
+      <h3 class="text-accent text-sm mb-4">LET'S CONNECT</h3>
+      <div class="flex">
+        {socialMedia.map((data) => (
+          <SocialLink icon={data.icon} link={data.link} alt={data.alt} />
+        ))}
+      </div>
+    </div>
+  </div>
 
-  <div class="flex justify-center">
-    {
-      socialMedia.map((data) => (
-        <SocialLink icon={data.icon} link={data.link} alt={data.alt} />
-      ))
-    }
+  <div class="max-w-6xl mx-auto mt-16 pt-6 border-t border-neutral-800 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-neutral-500">
+    <p>&copy; {today} - {t("footer.name")}</p>
+    <p>
+      {t("footer.made")}
+      <a
+        href="https://astro.build"
+        rel="noopener noreferrer"
+        target="_blank"
+        class="text-accent hover:underline"
+      >Astro</a>
+    </p>
   </div>
 </footer>

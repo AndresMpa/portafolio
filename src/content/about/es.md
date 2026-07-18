@@ -1,7 +1,13 @@
 ---
 locale: es
 title: Sobre Andrés M. Prieto
-description: Ingeniero de software senior especializado en infraestructura de IA
+description: Desarrollo productos basados en inteligencia artificial, herramientas para desarrolladores e infraestructura escalable. Me apasionan Linux, el código abierto y la intersección entre la inteligencia artificial y la ingeniería de software.
+whoami:
+  role: Ingeniero de infraestructura de IA y Fullstack
+  location: Colombia (LatAm)
+  focus: Creando de productos de IA, herramientas de desarrollo e infraestructura
+  passion: Linux, código abierto, automatización, experiencia de desarrollador
+excerpt: Soy un ingeniero al que le encanta construir cosas que generen impacto. Durante más de 10 años he estado creando software en diferentes dominios, desde aplicaciones web hasta sistemas impulsados por IA y herramientas para desarrolladores, trabajando cerca del metal, automatizando todo lo que puedo y compartiendo conocimientos con la comunidad. Actualmente estamos explorando agentes de IA, LLM locales y el futuro de la colaboración entre humanos y máquinas.
 ---
 
 # Sobre Andrés M. Prieto

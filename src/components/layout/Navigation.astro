@@ -1,30 +1,40 @@
 ---
-// src/components/layout/Dock.astro
+// src/components/layout/Navigation.astro
+import { t, getLocale } from "i18n:astro";
+import { localizeHref } from "../../lib/utils";
 
-import { t } from "i18n:astro";
+const locale = getLocale();
 
-import DockRoute from "./DockRoute.astro";
-
-const dockName = t("dock").split(" ");
-const dockRoutes = [
-  "home",
-  "experience",
-  "projects",
-  "education",
-  "communities",
-  "contact",
+const navItems = [
+  { key: "home", href: "/" },
+  { key: "projects", href: "/projects" },
+  { key: "education", href: "/education" },
+  { key: "experience", href: "/experience" },
+  { key: "beyondCode", href: "/beyond-code" },
+  { key: "about", href: "/about" },
+  { key: "resume", href: "/resume" },
 ];
-const dockData = dockName.map((data, index) => {
-  return { name: data, route: dockRoutes[index] };
-});
----
 
-<aside
-  class="hidden md:flex justify-center absolute bottom-4 md:bottom-12 left-0 right-0 z-10"
->
-  <ul
-    class="flex rounded-lg border-white border-2 md:border-4 p-1 md:p-2 px-2 md:px-4 backdrop-blur-sm"
-  >
-    {dockData.map((data) => <DockRoute name={data.name} ref={data.route} />)}
-  </ul>
-</aside>
+const currentPath = Astro.url.pathname;
+---
+<nav class="hidden md:flex gap-8 text-xs uppercase tracking-wider mt-0">
+  {navItems.map((item) => {
+    const href = localizeHref(item.href, locale);
+    const isActive =
+      item.href === "/"
+        ? currentPath === `/${locale}` || currentPath === `/${locale}/`
+        : currentPath.startsWith(`/${locale}${item.href}`);
+    return (
+      <a
+        href={href}
+        class={`pb-1 border-b-2 ${
+          isActive
+            ? "border-accent text-accent"
+            : "border-transparent text-zinc-400 hover:text-zinc-200"
+        }`}
+      >
+        {t(`nav.${item.key}` as any)}
+      </a>
+    );
+  })}
+</nav>

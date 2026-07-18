@@ -1,9 +1,7 @@
 ---
 locale: es
-slug: delphi-es
-company: delphi
-role: Teach Leand & Fullstack software developer
-description: ""
+slug: delphi
+role: Ingeniero de Software
+description: Empresa dedicada a crear e innovar en el sector de la Inteligencia Artificial (IA), enfocada en técnicas de aprendizaje automático para crear soluciones.
+company: Delphi
 ---
-
-# Empty

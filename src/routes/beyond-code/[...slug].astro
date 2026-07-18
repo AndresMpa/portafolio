@@ -1,0 +1,36 @@
+---
+// src/routes/beyond-code/[...slug].astro
+import { getLocalePlaceholder } from "i18n:astro";
+import { getCollection, render } from "astro:content";
+
+import Layout from "../../layouts/Layout.astro";
+
+import TalkJsonLd from "../../components/seo/TalkJsonLd.astro";
+import BreadcrumbJsonLd from "../../components/seo/BreadcrumbJsonLd.astro";
+
+import TalkDetail from "../../components/talks/TalkDetail.astro";
+
+import { site } from "../../data/site";
+
+export async function getStaticPaths() {
+  const locale = getLocalePlaceholder();
+  const posts = await getCollection("talks", (entry) => entry.data.locale === locale);
+  return posts.map((post) => ({ params: { slug: post.data.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const isTalk = post.data.kind === "Talk";
+---
+
+<Layout title={post.data.title} description={post.data.description} keywords={post.data.keywords}>
+  {isTalk && <TalkJsonLd talk={post} />}
+  <BreadcrumbJsonLd
+    items={[
+      { name: "Home", url: `${site.url}/${post.data.locale}` },
+      { name: "Beyond Code", url: `${site.url}/${post.data.locale}/beyond-code` },
+      { name: post.data.title, url: `${site.url}/${post.data.locale}/beyond-code/${post.data.slug}` },
+    ]}
+  />
+  <TalkDetail post={post} Content={Content} />
+</Layout>

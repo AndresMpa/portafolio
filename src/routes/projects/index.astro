@@ -1,0 +1,35 @@
+---
+// src/routes/projects/index.astro
+
+import { t } from "i18n:astro";
+
+import { person } from "../../data/person";
+
+import Layout from "../../layouts/Layout.astro";
+import ProjectsList from "../../components/project/ProjectList.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { locale: "en" } },
+    { params: { locale: "es" } },
+  ];
+}
+
+const rawTitle = String(t("projects.title"));
+
+const capitalizedTitle =
+  rawTitle.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+
+const title = `${person.name} | ${capitalizedTitle}`;
+
+const description =
+  `${capitalizedTitle} made by ${person.name} at ${person.sameAs[0]} ${person.description}`;
+---
+
+<Layout
+  title={title}
+  description={description}
+  includeProjects={true}
+>
+  <ProjectsList />
+</Layout>

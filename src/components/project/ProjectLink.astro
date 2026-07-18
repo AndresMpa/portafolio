@@ -2,67 +2,92 @@
 // src/components/project/ProjectLink.astro
 
 import { Image } from "astro:assets";
+import { getLocale } from "i18n:astro";
 
 import type { ProjectLinkProps } from "../../types";
 
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../../assets/projects/*.{png,jpg,jpeg}",
+  { eager: true }
+);
+
 const {
-  url,
+  slug,
   image,
   topics,
   alt = "Project link",
   flip = true,
 } = Astro.props as ProjectLinkProps;
+
+const resolvedImage = images[`../../assets/projects/${image}`]?.default;
+
+const locale = getLocale();
+const defaultLocale = "en";
+
+const href =
+  locale === defaultLocale ? `/projects/${slug}` : `/${locale}/projects/${slug}`;
 ---
 
 <div>
-  <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`Open project: ${alt}`}>
-    <Image
-      alt={alt}
-      src={image}
-      width={450}
-      height={300}
-      format="avif"
-      loading="lazy"
-      decoding="async"
-      class={`rounded single-img ${flip ? "flipped" : ""}`}
-    />
+  <a href={href} aria-label={`View case study: ${alt}`} class="block p-4">
+    {resolvedImage && (
+      <Image
+        alt={alt}
+        src={resolvedImage}
+        width={450}
+        height={300}
+        format="avif"
+        loading="lazy"
+        decoding="async"
+        class={`rounded single-img ${flip ? "flipped" : ""}`}
+      />
+    )}
   </a>
-  <p class=`${flip ? "flex justify-end" : ""} px-5 mt-5`>
-    {
-      topics
-        .split(",")
-        .map((topic) => (
-          <span class="bg-accent/30 text-accent text-sm text-center px-3 py-1 mx-2 rounded-full font-semibold hover:bg-accent hover:text-text transition-colors duration-200">
-            {topic}
-          </span>
-        ))
-    }
+  <p class={`flex flex-wrap gap-2 ${flip ? "justify-end" : ""} px-5 mt-5`}>
+    {topics.split(",").map((topic) => (
+      <span class="whitespace-nowrap bg-accent/30 text-accent text-sm text-center px-3 py-1 rounded-full font-semibold hover:bg-accent hover:text-text transition-colors duration-200">
+        {topic}
+      </span>
+    ))}
   </p>
 </div>
 
 <style>
   .single-img {
+    max-width: 85%;
+    height: auto;
     box-shadow:
       rgba(155, 156, 159, 0.42) 0px 60px 123px -25px,
       rgba(155, 156, 159, 0.08) 0px 35px 75px -35px;
     transform: perspective(800px) rotateY(25deg) scale(0.8) rotateX(10deg);
-    transition:
-      transform 0.6s ease,
-      box-shadow 0.6s ease;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
   }
-
   .single-img:hover {
     box-shadow: 0px 19px 67px -38px rgba(155, 156, 159, 0.8);
-    transform: perspective(800px) rotateY(-15deg) translateY(-50px)
-      rotateX(10deg) scale(1);
+    transform: perspective(800px) rotateY(-15deg) translateY(-50px) rotateX(10deg) scale(1);
   }
-
   .flipped {
     transform: perspective(800px) rotateY(-25deg) scale(0.8) rotateX(10deg);
   }
-
   .flipped:hover {
-    transform: perspective(800px) rotateY(15deg) translateY(-50px)
-      rotateX(10deg) scale(1);
+    transform: perspective(800px) rotateY(15deg) translateY(-50px) rotateX(10deg) scale(1);
+  }
+
+  @media (max-width: 767px) {
+    a {
+      display: flex;
+      justify-content: center;
+    }
+    .single-img,
+    .flipped {
+      transform: none;
+      box-shadow:
+        rgba(155, 156, 159, 0.42) 0px 20px 50px -20px,
+        rgba(155, 156, 159, 0.08) 0px 12px 25px -15px;
+    }
+    .single-img:hover,
+    .flipped:hover {
+      transform: none;
+    }
   }
 </style>

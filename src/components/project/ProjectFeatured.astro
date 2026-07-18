@@ -1,0 +1,105 @@
+---
+// components/home/FeaturedProjects.astro
+
+import { Image } from "astro:assets";
+import { t, getLocale } from "i18n:astro";
+
+import { getFeaturedProjects } from "../../lib/projects";
+import { localizeHref } from "../../lib/utils";
+
+import type { HomeComponentsProps } from "../../types";
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../../assets/projects/*",
+  { eager: true }
+);
+
+const lang = getLocale();
+const featured = await getFeaturedProjects(lang);
+const { order, id } = Astro.props as HomeComponentsProps;
+---
+<section id={id} class="py-4">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex justify-between items-center mb-8">
+      <h3 class="text-sm uppercase text-accent">// {String(order).padStart(2, "0")} {t("projects.title")}</h3>
+      <a href="/projects" class="text-sm text-zinc-500">{t("projects.viewAll")} +</a>
+    </div>
+    {featured.map((project, index) => (
+      <div class="grid md:grid-cols-2 gap-8 mb-12 border border-zinc-800 rounded-lg p-6">
+        <div class="project-image">
+          <Image
+            src={images[`../../assets/projects/${project.image}`].default}
+            alt={project.title || "Image"}
+            class={`rounded single-img ${index % 2 ? "flipped" : ""}`}
+            loading="lazy"
+          />
+        </div>
+        <div class="flex flex-col justify-center">
+          <h4 class="font-bold text-lg">{project.title}</h4>
+          <p class="text-zinc-400 mt-2">{project.description}</p>
+          <div class="flex gap-2 mt-4 flex-wrap">
+            {[...project.skills, ...project.aiTopics].map((tag) => (
+              <span class="bg-accent/20 text-accent text-xs px-2 py-1 rounded-full">{tag}</span>
+            ))}
+          </div>
+          <div class="flex gap-4 mt-4 text-accent text-sm">
+            <a href={localizeHref(`/projects/${project.slug}`, lang)}>{t("projects.caseStudy")} →</a>
+            {project.repository.length > 0 && (
+              <a href={project.repository[0]} target="_blank" rel="noopener noreferrer">
+                {t("projects.github")} ↗
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .project-image {
+    perspective: 1000px;
+  }
+  .single-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow:
+      rgba(155, 156, 159, 0.42) 0px 60px 123px -25px,
+      rgba(155, 156, 159, 0.08) 0px 35px 75px -35px;
+    transform: rotateY(18deg) rotateX(8deg) scale(0.9);
+    transform-style: preserve-3d;
+    transition:
+      transform 0.5s ease,
+      box-shadow 0.5s ease;
+  }
+  .single-img:hover {
+    transform: rotateY(0deg) rotateX(0deg) translateY(-12px) scale(1.03);
+    box-shadow:
+      rgba(155, 156, 159, 0.55) 0px 35px 80px -20px;
+  }
+  .flipped {
+    transform: rotateY(-18deg) rotateX(8deg) scale(0.9);
+  }
+  .flipped:hover {
+    transform: rotateY(0deg) rotateX(0deg) translateY(-12px) scale(1.03);
+  }
+
+  @media (max-width: 767px) {
+    .project-image {
+      display: flex;
+      justify-content: center;
+    }
+    .single-img,
+    .flipped {
+      transform: none;
+      box-shadow:
+        rgba(155, 156, 159, 0.42) 0px 20px 50px -20px,
+        rgba(155, 156, 159, 0.08) 0px 12px 25px -15px;
+    }
+    .single-img:hover,
+    .flipped:hover {
+      transform: none;
+    }
+  }
+</style>
