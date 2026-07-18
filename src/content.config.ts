@@ -138,6 +138,10 @@ const faq = defineCollection({
     locale: z.enum(availableLanguages),
     title: z.string(),
     description: z.string().optional(),
+    items: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })),
   }),
 });
 

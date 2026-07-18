@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# NEW — Content Signals: declares your preference for how AI may use this content.
+# Content Signals: declares your preference for how AI may use this content.
 # https://contentsignals.org
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
 

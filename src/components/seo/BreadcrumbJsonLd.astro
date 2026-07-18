@@ -1,14 +1,9 @@
 ---
-interface Crumb {
-  name: string;
-  url: string;
-}
+// src/components/seo/BreadcrumbJsonLd.astro
 
-interface Props {
-  items: Crumb[];
-}
+import type { BreadcrumbJsonLdProps } from "../../types";
 
-const { items } = Astro.props;
+const { items } = Astro.props as BreadcrumbJsonLdProps;
 ---
 
 <script

@@ -1,11 +1,11 @@
 // src/data/projects.ts
 
-export interface ProjectAuthor {
+interface ProjectAuthor {
   user: string;
   link: string;
 }
 
-export interface ProjectMeta {
+interface ProjectMeta {
   slug: string;
   image: string;
   repository?: string;

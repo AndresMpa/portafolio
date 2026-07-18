@@ -2,8 +2,9 @@
 // src/components/seo/ProjectJsonLd.astro
 
 import { site } from "../../data/site";
+import type { ProjectJsonLdProps } from "../../types";
 
-const { project } = Astro.props;
+const { project } = Astro.props as ProjectJsonLdProps;
 ---
 
 <script

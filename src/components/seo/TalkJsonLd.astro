@@ -1,15 +1,10 @@
 ---
 // src/components/seo/TalkJsonLd.astro
 
-import type { CollectionEntry } from "astro:content";
-
 import { site } from "../../data/site";
+import type { TalkJsonLdProps } from "../../types";
 
-interface Props {
-  talk: CollectionEntry<"talks">;
-}
-
-const { talk } = Astro.props;
+const { talk } = Astro.props as TalkJsonLdProps;
 const { title, description, date, authors, eventType, location, references, keywords } = talk.data;
 
 const video = references?.[0];

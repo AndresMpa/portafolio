@@ -3,13 +3,11 @@
 
 import cv from "/AndresMpa_CV.pdf";
 
-interface cvButtonProps {
-  buttonLabel: string;
-}
+import type { DownloadCVProps } from "../../types";
 
 const {
   buttonLabel
-} = Astro.props as cvButtonProps
+} = Astro.props as DownloadCVProps;
 ---
 
 

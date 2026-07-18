@@ -1,0 +1,24 @@
+---
+// src/components/seo/FAQJsonLd.astro
+
+import type { FAQJsonLdProps } from "../../types";
+
+const { items } = Astro.props as FAQJsonLdProps;
+---
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  })}
+/>

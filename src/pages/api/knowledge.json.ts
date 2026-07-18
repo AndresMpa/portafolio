@@ -13,14 +13,13 @@ export const GET = () =>
     description: person.description,
 
     resources: {
-      person: "/api/person.json",
       projects: "/api/projects.json",
       experience: "/api/experience.json",
       skills: "/api/skills.json",
-      organizations: "/api/organizations.json",
 
       about: "/about",
       resume: "/resume",
+      faq: "/faq",
 
       llms: "/llms.txt",
       llmsFull: "/llms-full.md",

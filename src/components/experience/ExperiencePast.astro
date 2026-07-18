@@ -1,13 +1,9 @@
 ---
 // src/components/experience/ExperiencePast.astro
 
-interface ExperienceEntry {
-  role: string; company: string; startDate: string; endDate: string | null;
-  description?: string; stack?: string[];
-}
-interface Props { items: ExperienceEntry[] }
+import type { ExperienceListProps } from "../../types";
 
-const { items } = Astro.props;
+const { items } = Astro.props as ExperienceListProps;
 ---
 
 <div class="relative border-l border-zinc-800 pl-8 space-y-10">

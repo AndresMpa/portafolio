@@ -1,6 +1,6 @@
 // src/data/community.ts
 
-export interface CommunityMeta {
+interface CommunityMeta {
   slug: string;
   startDate: string;
   endDate: string | null;

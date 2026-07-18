@@ -3,13 +3,9 @@
 
 import { t } from "i18n:astro";
 
-interface ExperienceEntry {
-  role: string; company: string; startDate: string; endDate: string | null;
-  description?: string; stack?: string[];
-}
-interface Props { items: ExperienceEntry[] }
+import type { ExperienceListProps } from "../../types";
 
-const { items } = Astro.props;
+const { items } = Astro.props as ExperienceListProps;
 ---
 
 {items.length > 0 && (
