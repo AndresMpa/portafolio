@@ -9,8 +9,12 @@ import { person } from "../data/person";
 
 import Layout from "../layouts/Layout.astro";
 
+import BreadcrumbJsonLd from "../components/seo/BreadcrumbJsonLd.astro";
+
 import ExperienceCurrent from "../components/experience/ExperienceCurrent.astro";
 import ExperiencePast from "../components/experience/ExperiencePast.astro";
+
+import { site } from "../data/site";
 
 const lang = getLocale();
 const entries = await getExperience(lang);
@@ -20,6 +24,12 @@ const past = entries.filter((e) => e.endDate !== null);
 ---
 
 <Layout title={title}>
+  <BreadcrumbJsonLd
+    items={[
+      { name: "Home", url: site.url },
+      { name: "Experience", url: `${site.url}/experience` },
+    ]}
+  />
   <section class="max-w-7xl mx-auto px-6 py-6 pb-24">
     <h1 class="text-4xl md:text-5xl font-black leading-tight mb-12">{t("experience.title")}</h1>
     <ExperienceCurrent items={current} />
