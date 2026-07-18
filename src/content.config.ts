@@ -103,7 +103,7 @@ const writing = defineCollection({
     locale: z.enum(availableLanguages),
     slug: z.string(),
     title: z.string(),
-    kind: z.enum(["Blog", "Prize", "Paper", "Technical Writing", "Guide"]),
+    kind: z.enum(["Blog", "Prize", "Paper", "Technical Writing", "Guide", "Talk"]).default("Talk"),
     topics: z.array(z.string()),
     date: z.date(),
     description: z.string(),
@@ -114,6 +114,17 @@ const writing = defineCollection({
       label: z.string(),
       url: z.string().url(),
     })).optional(),
+    keywords: z.array(z.string()).optional(),
+    eventType: z.string().optional(),
+    featured: z.boolean().optional(),
+    location: z.object({
+      city: z.string(),
+      venue: z.string().optional(),
+      country: z.string().optional(),
+    }).optional(),
+    skills: z.array(z.string()).optional(),
+    expertise: z.array(z.string()).optional(),
+    intent: z.array(z.string()).optional(),
   }),
 });
 

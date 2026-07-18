@@ -1,0 +1,54 @@
+---
+// src/components/seo/TalkJsonLd.astro
+import type { CollectionEntry } from "astro:content";
+import { site } from "../../data/site";
+
+interface Props {
+  talk: CollectionEntry<"writing">;
+}
+
+const { talk } = Astro.props;
+const { title, description, date, authors, eventType, location, references, keywords } = talk.data;
+
+const video = references?.[0];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: title,
+  description,
+  startDate: date.toISOString(),
+  endDate: date.toISOString(),
+  eventStatus: "https://schema.org/EventCompleted",
+  eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+  ...(eventType && { additionalType: eventType }),
+  ...(keywords && { keywords: keywords.join(", ") }),
+  performer: authors.map((name) => ({
+    "@type": "Person",
+    name,
+  })),
+  ...(location && {
+    location: {
+      "@type": "Place",
+      name: location.venue ?? location.city,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: location.city,
+        ...(location.country && { addressCountry: location.country }),
+      },
+    },
+  }),
+  ...(video && {
+    recordedIn: {
+      "@type": "VideoObject",
+      name: video.label,
+      url: video.url,
+      contentUrl: video.url,
+      uploadDate: date.toISOString(),
+      description,
+      thumbnailUrl: `${site.url}/og-image.png`,
+    },
+  }),
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

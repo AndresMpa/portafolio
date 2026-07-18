@@ -20,6 +20,7 @@ export const projects: ProjectMeta[] = [
     slug: "lyra",
     image: "Lyra.png",
     repository: "https://github.com/lyra-ai-assistant",
+    website: "https://github.com/lyra-ai-assistant",
     languages: ["AI", "JavaScript", "Python"],
     authors: [
       { user: "AndresMpa", link: "https://github.com/AndresMpa" },
@@ -39,6 +40,7 @@ export const projects: ProjectMeta[] = [
     slug: "dotfiles",
     image: "dotfiles.png",
     repository: "https://github.com/AndresMpa/dotfiles",
+    website: "https://github.com/AndresMpa/dotfiles",
     languages: ["GNU/Linux", "Shell", "Dockerfile", "Python", "Lua", "C/C++"],
     featured: true,
   },

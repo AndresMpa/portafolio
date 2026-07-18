@@ -1,90 +1,90 @@
 ---
-// components/home/Writing.astro
+// src/components/home/Writing.astro
 
 import { t, getLocale } from "i18n:astro";
 
-import { getLatestWriting } from "../../lib/writing";
-
 import type { HomeComponentsProps } from "../../types";
 
+import { getLatestWriting, localizeHref } from "../../lib/writing";
+
 const lang = getLocale();
-const posts = await getLatestWriting(lang);
-import { getCollection } from "astro:content";
-const all = await getCollection("writing");
-
+const posts = await getLatestWriting(lang, 2);
 const { order, id } = Astro.props as HomeComponentsProps;
----
 
+const entries = posts.map((post) => ({
+  post,
+  className: post.data.kind.replace(/\s+/g, ""),
+  primaryTopic: post.data.topics[0],
+  topicsArgs: post.data.topics.join(", "),
+  href: localizeHref(`/beyond-code/${post.data.slug}`, lang),
+}));
+---
 <section id={id} class="py-4">
   <div class="max-w-7xl mx-auto px-6">
     <h3 class="text-sm uppercase text-accent mb-8">
       // {String(order).padStart(2, "0")} {t("writing.title")}
     </h3>
-    {posts.length === 0 ? (
+    {entries.length === 0 ? (
       <p class="text-zinc-600 text-sm">No posts yet.</p>
     ) : (
       <div class="grid md:grid-cols-2 gap-6">
-        {posts.map((post) => {
-          const className = post.data.kind.replace(/\s+/g, "");
-          const topicsArgs = post.data.topics.join(", ");
-          return (
-            <div class="border border-zinc-800 rounded-lg overflow-hidden bg-black/40 font-mono">
-              <div class="flex gap-2 px-4 py-3 border-b border-zinc-800 bg-zinc-900/60">
-                <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
-                <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                <span class="ml-2 text-xs text-zinc-500">~/entry/{post.data.slug}.py</span>
-              </div>
-              <pre class="bg-black/60 text-xs p-4 overflow-x-auto text-zinc-400 border-b border-zinc-800"><code><span class="text-purple-400">class</span> <span class="text-accent">{className}</span>(<span class="text-yellow-300">{topicsArgs}</span>):
+        {entries.map(({ post, className, primaryTopic, topicsArgs, href }) => (
+          <div class="border border-zinc-800 rounded-lg overflow-hidden bg-black/40 font-mono">
+            <div class="flex gap-2 px-4 py-3 border-b border-zinc-800 bg-zinc-900/60">
+              <span class="w-3 h-3 rounded-full bg-red-500"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500"></span>
+              <span class="ml-2 text-xs text-zinc-500">~/entry/{post.data.slug}.py</span>
+            </div>
+            <pre class="bg-black/60 text-xs p-4 overflow-x-auto text-zinc-400 border-b border-zinc-800"><code><span class="text-purple-400">class</span> <span class="text-accent">{className}</span>(<span class="text-yellow-300">{primaryTopic}</span>):
     <span class="text-purple-400">def</span> <span class="text-blue-300">__init__</span>(self, content):
         self.authors: [
 {post.data.authors.map((a, i) => `            "${a}"${i < post.data.authors.length - 1 ? "," : ""}`).join("\n")}
         ]{post.data.event ? `
         self.event: "${post.data.event}"` : ""}{post.data.attendees ? `
         self.attendees: ${post.data.attendees}` : ""}</code></pre>
-              <div class="p-5 text-sm">
-                <p class="text-white font-bold">[{post.data.title}]</p>
+            <div class="p-5 text-sm">
+              <p class="text-white font-bold">[{post.data.title}]</p>
 
-                <p class="mt-4">
-                  <span class="text-blue-400">summary</span><span class="text-white">@</span><span class="text-white">(</span><span class="text-yellow-300">{topicsArgs}</span><span class="text-white">)</span><span class="text-white">:</span>
-                </p>
-                <p class="text-zinc-300">{post.data.description}</p>
+              <p class="mt-4">
+                <span class="text-blue-400">summary</span><span class="text-white">@</span><span class="text-white">(</span><span class="text-yellow-300">{topicsArgs}</span><span class="text-white">)</span><span class="text-white">:</span>
+              </p>
+              <p class="text-zinc-300">{post.data.description}</p>
 
-                {post.data.references && post.data.references.length > 0 && (
-                  <>
-                    <p class="mt-4">
-                      <span class="text-blue-400">reference</span><span class="text-white">@</span><span class="text-white">(</span><span class="text-yellow-300">{post.data.title}</span><span class="text-white">)</span><span class="text-white">:</span>
-                    </p>
-                    <p class="text-zinc-300">
-                      {post.data.references.map((ref, i) => (
-                        <>
-                          <span class="text-zinc-400">curl -o </span>
-                          <a
-                            href={ref.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-purple-400 underline hover:text-purple-300"
-                          >
-                            {ref.label}
-                          </a>
-                          {i < post.data.references!.length - 1 && ", "}
-                          {"\t"}"{t("writing.curlText")}"
-                        </>
-                      ))}
-                    </p>
-                  </>
-                )}
+              {post.data.references && post.data.references.length > 0 && (
+                <>
+                  <p class="mt-4">
+                    <span class="text-blue-400">reference</span><span class="text-white">@</span><span class="text-white">(</span><span class="text-yellow-300">{post.data.title}</span><span class="text-white">)</span><span class="text-white">:</span>
+                  </p>
+                  <p class="text-zinc-300">
+                    {post.data.references.map((ref, i) => (
+                      <>
+                        <span class="text-zinc-400">curl -o </span>
+                        <a
+                          href={ref.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="text-purple-400 underline hover:text-purple-300"
+                        >
+                          {ref.label}
+                        </a>
+                        {i < post.data.references!.length - 1 && ", "}
+                        {"\t"}"{t("writing.curlText")}"
+                      </>
+                    ))}
+                  </p>
+                </>
+              )}
 
-                <a
-                  href={`/beyond-code/${post.data.locale}/${post.data.slug}`}
-                  class="mt-4 inline-flex items-center gap-1 text-accent hover:underline"
-                >
-                  [ {t("writing.readFull")} ]<span class="animate-pulse">▌</span>
-                </a>
-              </div>
+              <a
+                href={href}
+                class="mt-4 inline-flex items-center gap-1 text-accent hover:underline"
+              >
+                [ {t("writing.readFull")} ]<span class="animate-pulse">▌</span>
+              </a>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     )}
   </div>

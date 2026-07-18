@@ -1,6 +1,11 @@
 // src/lib/writing.ts
-
 import { getCollection } from "astro:content";
+
+const DEFAULT_LOCALE = "en";
+
+export function localizeHref(path: string, locale: string) {
+  return locale === DEFAULT_LOCALE ? path : `/${locale}${path}`;
+}
 
 export type UpdateItem = {
   type: "writing" | "event";
@@ -23,27 +28,17 @@ export async function getAllWriting(locale: string) {
   return posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 }
 
-// TODO: cuando exista la colección "talks", reemplaza este stub por
-// getCollection("talks", (e) => e.data.locale === locale)
-async function getEvents(_locale: string): Promise<UpdateItem[]> {
-  return [];
-}
-
 export async function getUpdates(locale: string): Promise<UpdateItem[]> {
-  const writing = await getAllWriting(locale);
-  const events = await getEvents(locale);
+  const posts = await getAllWriting(locale);
 
-  const writingItems: UpdateItem[] = writing.map((post) => ({
-    type: "writing",
+  return posts.map((post): UpdateItem => ({
+    type: post.data.kind === "Talk" ? "event" : "writing",
     title: post.data.title,
     date: post.data.date,
-    href: `/beyond-code/${locale}/${post.data.slug}`,
+    href: localizeHref(`/beyond-code/${post.data.slug}`, locale),
+    place: post.data.location?.city,
     meta: post.data,
   }));
-
-  return [...writingItems, ...events].sort(
-    (a, b) => b.date.valueOf() - a.date.valueOf()
-  );
 }
 
 export function getNextUpcoming(items: UpdateItem[]): UpdateItem | null {

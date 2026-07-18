@@ -1,25 +1,59 @@
 ---
-// src/routes/writing/[...slug].astro
-
+// src/routes/beyond-code/[...slug].astro
+import { getLocalePlaceholder } from "i18n:astro";
 import { getCollection, render } from "astro:content";
-
 import Layout from "../../layouts/Layout.astro";
+import TalkJsonLd from "../../components/seo/TalkJsonLd.astro";
+import BreadcrumbJsonLd from "../../components/seo/BreadcrumbJsonLd.astro";
+import { site } from "../../data/site";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("writing");
+  const locale = getLocalePlaceholder();
+  const posts = await getCollection(
+    "writing",
+    (entry) => entry.data.locale === locale
+  );
   return posts.map((post) => ({
-    params: { slug: `${post.data.locale}/${post.data.slug}` },
+    params: { slug: post.data.slug },
     props: { post },
   }));
 }
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const isTalk = post.data.kind === "Talk";
 ---
+<Layout title={post.data.title} description={post.data.description} keywords={post.data.keywords}>
+  {isTalk && <TalkJsonLd talk={post} />}
+  <BreadcrumbJsonLd
+    items={[
+      { name: "Home", url: `${site.url}/${post.data.locale}` },
+      { name: "Beyond Code", url: `${site.url}/${post.data.locale}/beyond-code` },
+      { name: post.data.title, url: `${site.url}/${post.data.locale}/beyond-code/${post.data.slug}` },
+    ]}
+  />
 
-<Layout title={post.data.title} description={post.data.description}>
-  <article class="max-w-3xl mx-auto px-6 py-6 pb-24 prose prose-invert">
-    <h1>{post.data.title}</h1>
+  <article class="prose prose-invert max-w-3xl mx-auto py-10">
+    {isTalk && post.data.eventType && (
+      <p class="text-accent text-sm uppercase tracking-wider mb-2">{post.data.eventType}</p>
+    )}
+    {isTalk && post.data.location && (
+      <p class="text-zinc-500 text-sm mb-8">
+        {post.data.location.venue ? `${post.data.location.venue}, ` : ""}
+        {post.data.location.city}{post.data.location.country ? `, ${post.data.location.country}` : ""}
+      </p>
+    )}
     <Content />
   </article>
+
+  {post.data.skills && post.data.skills.length > 0 && (
+    <section class="max-w-3xl mx-auto px-6 mt-12 mb-12">
+      <h2 class="text-sm uppercase tracking-wider text-zinc-500 mb-4">Skills</h2>
+      <div class="flex flex-wrap gap-2">
+        {post.data.skills.map((skill) => (
+          <span class="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs text-text">{skill}</span>
+        ))}
+      </div>
+    </section>
+  )}
 </Layout>

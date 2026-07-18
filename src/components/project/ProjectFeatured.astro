@@ -45,7 +45,7 @@ const { order, id } = Astro.props as HomeComponentsProps;
           </div>
           <div class="flex gap-4 mt-4 text-accent text-sm">
             {project.caseStudy && <a href={`/projects/${project.slug}`}>{t("projects.caseStudy")} →</a>}
-            {project.repository && <a href={project.repository} target="_blank">{t("projects.github")} ↗</a>}
+            {project.repository && <a href={project.website} target="_blank">{t("projects.github")} ↗</a>}
           </div>
         </div>
       </div>
