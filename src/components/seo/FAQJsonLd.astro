@@ -1,16 +1,9 @@
 ---
 // src/components/seo/FAQJsonLd.astro
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
+import type { FAQJsonLdProps } from "../../types";
 
-interface Props {
-  items: FAQItem[];
-}
-
-const { items } = Astro.props;
+const { items } = Astro.props as FAQJsonLdProps;
 ---
 
 <script

@@ -1,7 +1,6 @@
-interface HeaderBtnProps {
-  icon: any;
-  alt: string;
-}
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import type { CollectionEntry } from "astro:content";
+import type { UpdateItem } from "../lib/talks";
 
 interface SEOProps {
   title: string;
@@ -11,12 +10,7 @@ interface SEOProps {
   includeProjects?: boolean;
   includeOrganizations?: boolean;
   keywords?: string[];
-  project?: any;
-}
-
-interface DockRouteProps {
-  name: string;
-  ref: string;
+  project?: CollectionEntry<"projects">;
 }
 
 interface ProjectDescriptionProps {
@@ -35,13 +29,8 @@ interface ProjectLinkProps {
   flip?: boolean;
 }
 
-interface ProjectProps {
-  description: ProjectDescriptionProps;
-  link: ProjectLinkProps;
-}
-
 interface ReferenceProps {
-  icon: any;
+  icon: ImageMetadata;
   link: string;
   alt: string;
   width?: number;
@@ -51,41 +40,98 @@ interface ReferenceProps {
   underline?: boolean;
 }
 
-interface TableItemProps {
-  type: "chip" | "reference" | "title";
-  ref: boolean;
-  bolder: boolean;
-  context: string;
-}
-
-interface TableHeadersProps {
-  headers: string[];
-  entries: Array<TableItemProps[]>;
-}
-
-interface TimelineProps {
-  year: string;
-  company: string;
-  title: string;
-  description: string;
-  topics: string;
-}
-
 interface HomeComponentsProps {
   order: number;
   id: string;
 }
 
+interface TalkContentProps {
+  post: CollectionEntry<"talks">;
+  Content: AstroComponentFactory;
+}
+
+interface TermTitleProps {
+  order: number;
+  title: string;
+}
+
+interface DownloadCVProps {
+  buttonLabel: string;
+}
+
+interface TalksListProps {
+  items: UpdateItem[];
+  locale: string;
+}
+
+interface CommunityUpcomingProps {
+  next: UpdateItem | null;
+  locale: string;
+}
+
+interface TalkJsonLdProps {
+  talk: CollectionEntry<"talks">;
+}
+
+interface WebPageJsonLdProps {
+  title: string;
+  description: string;
+  canonical: string;
+}
+
+interface Crumb {
+  name: string;
+  url: string;
+}
+
+interface BreadcrumbJsonLdProps {
+  items: Crumb[];
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQJsonLdProps {
+  items: FAQItem[];
+}
+
+interface ExperienceEntry {
+  role: string;
+  company: string;
+  startDate: string;
+  endDate: string | null;
+  description?: string;
+  stack?: string[];
+}
+
+interface ExperienceListProps {
+  items: ExperienceEntry[];
+}
+
+interface ProjectJsonLdProps {
+  project: CollectionEntry<"projects">;
+}
+
 export type {
-  HeaderBtnProps,
   SEOProps,
-  DockRouteProps,
-  ProjectProps,
   ProjectDescriptionProps,
   ProjectLinkProps,
   ReferenceProps,
-  TableItemProps,
-  TableHeadersProps,
-  TimelineProps,
   HomeComponentsProps,
+  TalkContentProps,
+  TermTitleProps,
+  DownloadCVProps,
+  TalksListProps,
+  CommunityUpcomingProps,
+  TalkJsonLdProps,
+  WebPageJsonLdProps,
+  Crumb,
+  BreadcrumbJsonLdProps,
+  FAQItem,
+  FAQJsonLdProps,
+  ExperienceEntry,
+  ExperienceListProps,
+  ProjectJsonLdProps,
 };

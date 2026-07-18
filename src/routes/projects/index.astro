@@ -5,6 +5,7 @@ import { t } from "i18n:astro";
 
 import { person } from "../../data/person";
 import { site } from "../../data/site";
+import { titleCase } from "../../lib/utils";
 
 import Layout from "../../layouts/Layout.astro";
 import BreadcrumbJsonLd from "../../components/seo/BreadcrumbJsonLd.astro";
@@ -17,10 +18,7 @@ export function getStaticPaths() {
   ];
 }
 
-const rawTitle = String(t("projects.title"));
-
-const capitalizedTitle =
-  rawTitle.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+const capitalizedTitle = titleCase(String(t("projects.title")));
 
 const title = `${person.name} | ${capitalizedTitle}`;
 

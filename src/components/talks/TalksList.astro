@@ -3,13 +3,9 @@
 
 import { t } from "i18n:astro";
 
-import type { UpdateItem } from "../../lib/talks";
+import type { TalksListProps } from "../../types";
 
-interface Props {
-  items: UpdateItem[];
-  locale: string;
-}
-const { items, locale } = Astro.props;
+const { items, locale } = Astro.props as TalksListProps;
 ---
 
 <div class="flex flex-col md:flex-row gap-3 mb-8">
