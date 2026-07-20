@@ -36,6 +36,8 @@ const { order, id } = Astro.props as HomeComponentsProps;
             alt={project.title || "Image"}
             class={`rounded single-img ${index % 2 ? "flipped" : ""}`}
             loading="lazy"
+            height={1920} 
+            width={1280}
           />
         </div>
         <div class="flex flex-col justify-center">

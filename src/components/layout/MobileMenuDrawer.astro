@@ -1,0 +1,30 @@
+---
+// src/components/layout/MobileMenuDrawer.astro
+
+import Navigation from "./Navigation.astro";
+
+interface Props {
+  toggleId?: string;
+}
+const { toggleId = "mobile-nav-toggle" } = Astro.props as Props;
+---
+
+<aside
+  class="fixed top-0 right-0 h-full w-72 bg-neutral-950 border-l border-zinc-800 z-50 p-8 translate-x-full transition-transform duration-300 peer-checked:translate-x-0 lg:hidden"
+>
+  <div class="flex justify-end mb-10">
+    <label for={toggleId} aria-label="Close menu" class="cursor-pointer text-zinc-400 hover:text-zinc-200 text-xl">
+      ✕
+    </label>
+  </div>
+  <Navigation variant="mobile" />
+</aside>
+
+<script define:vars={{ toggleId }}>
+  const toggle = document.getElementById(toggleId);
+  document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      toggle.checked = false;
+    });
+  });
+</script>

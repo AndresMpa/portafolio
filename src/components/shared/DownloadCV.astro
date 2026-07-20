@@ -2,7 +2,6 @@
 // src/components/shared/DownloadCV.astro
 
 import cv from "/AndresMpa_CV.pdf";
-
 import type { DownloadCVProps } from "../../types";
 
 const {
@@ -10,13 +9,12 @@ const {
 } = Astro.props as DownloadCVProps;
 ---
 
-
 <a
   href={cv}
   download="AndresMpa_CV.pdf"
   class="p-2 mr-2 rounded-full bg-accent hover:bg-accent active:bg-accent focus:outline-none focus:ring focus:ring-accent flex items-center justify-center"
 >
-  <span class="ml-1 font-bold text-black">
+  <span class="ml-1 font-bold text-white">
     ↓ {buttonLabel}
   </span>
 </a>

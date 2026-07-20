@@ -1,5 +1,5 @@
 ---
-locale: en
+locale: es
 slug: arch-linux
 company: Arch Linux Project
 role: Colaborador

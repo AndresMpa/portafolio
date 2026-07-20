@@ -1,9 +1,14 @@
 ---
 // src/components/shared/BrandLogo.astro
+import { getLocale } from "i18n:astro";
+import { localizeHref } from "../../lib/utils";
+
+const locale = getLocale();
+const href = localizeHref("/", locale);
 ---
 <a
-    href="/"
-    class="text-1xl font-semibold tracking-tight whitespace-nowrap"
+  href={href}
+  class="text-1xl font-semibold tracking-tight whitespace-nowrap"
 >
   <span class="text-accent">&gt;_</span>
   <span class="ml-2 text-accent">AndresMpa</span><span>@dev</span>
