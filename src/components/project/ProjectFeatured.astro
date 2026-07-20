@@ -32,11 +32,14 @@ const { order, id } = Astro.props as HomeComponentsProps;
       <div class="grid md:grid-cols-2 gap-8 mb-12 border border-zinc-800 rounded-lg p-6">
         <div class="project-image">
           <Image
+            class={`rounded single-img ${index % 2 ? "flipped" : ""}`}
             src={images[`../../assets/projects/${project.image}`].default}
             alt={project.title || "Image"}
-            class={`rounded single-img ${index % 2 ? "flipped" : ""}`}
             loading="lazy"
-            height={1920} 
+            format="webp"
+            sizes="(max-width: 768px) 100vw, 640px"
+            widths={[320, 640, 1280]}
+            height={1920}
             width={1280}
           />
         </div>
