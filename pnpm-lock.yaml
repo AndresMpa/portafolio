@@ -51,6 +51,9 @@ importers:
       '@biomejs/biome':
         specifier: 2.5.2
         version: 2.5.2
+      '@netlify/edge-functions':
+        specifier: ^3.0.8
+        version: 3.0.8
       '@tailwindcss/typography':
         specifier: ^0.5.20
         version: 0.5.20(tailwindcss@3.4.19(yaml@2.9.0))
@@ -970,6 +973,14 @@ packages:
     peerDependencies:
       '@emnapi/core': ^1.7.1
       '@emnapi/runtime': ^1.7.1
+
+  '@netlify/edge-functions@3.0.8':
+    resolution: {integrity: sha512-ml1oCDsRTTRmZS2nUj8XRD1b6+foEiZT3lPk7qQ4nv/jnxylHJ20ooPzPDH+cJmGjXFrMeR14/91W1o6D2ftBg==}
+    engines: {node: '>=18.0.0'}
+
+  '@netlify/types@2.8.0':
+    resolution: {integrity: sha512-8/g0Pt6y6wXj5Ia5eeYLiXhRfWeqZXGXpGFeCiiQdUOem+FPtXdA4+YdGxqzWc7D0AvptKSO01KGeeVWHSu8Kg==}
+    engines: {node: ^18.14.0 || >=20}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -3890,6 +3901,12 @@ snapshots:
       '@emnapi/runtime': 1.11.2
       '@tybys/wasm-util': 0.10.3
     optional: true
+
+  '@netlify/edge-functions@3.0.8':
+    dependencies:
+      '@netlify/types': 2.8.0
+
+  '@netlify/types@2.8.0': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
