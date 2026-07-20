@@ -1,6 +1,8 @@
 ---
 // src/components/seo/SEO.astro
 
+import { getSwitcherData } from "i18n:astro";
+
 import PersonJsonLd from "./PersonJsonLd.astro";
 import WebsiteJsonLd from "./WebsiteJsonLd.astro";
 import WebPageJsonLd from "./WebPageJsonLd.astro";
@@ -9,6 +11,7 @@ import ProjectsJsonLd from "./ProjectsJsonLd.astro";
 import OrganizationsJsonLd from "./OrganizationsJsonLd.astro";
 
 import { person } from "../../data/person";
+import { site } from "../../data/site";
 
 import type { SEOProps } from "../../types"
 
@@ -26,6 +29,9 @@ const {
 } = props;
 
 const keywordsContent = (keywords ?? []).join(", ");
+
+const alternates = getSwitcherData();
+const defaultAlternate = alternates.find((item) => item.locale === "en") ?? alternates[0];
 ---
 
 <meta charset="UTF-8" />
@@ -48,6 +54,17 @@ const keywordsContent = (keywords ?? []).join(", ");
   rel="canonical"
   href={canonical}
 />
+
+{
+  alternates.map((item) => (
+    <link rel="alternate" hreflang={item.locale} href={`${site.url}${item.href}`} />
+  ))
+}
+{
+  defaultAlternate && (
+    <link rel="alternate" hreflang="x-default" href={`${site.url}${defaultAlternate.href}`} />
+  )
+}
 
 <meta name="author" content="Andrés M. Prieto" />
 <meta name="creator" content="Andrés M. Prieto" />
