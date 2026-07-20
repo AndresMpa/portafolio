@@ -1,12 +1,11 @@
 // src/routes/index.md.ts
-// Markdown twin of the homepage. The homepage itself is composed of many
-// UI components rather than one content-collection entry, so this pulls
-// the same underlying data directly instead of converting rendered HTML.
+// Markdown twin of the homepage. Uses the "@/*" alias — see the note in
+// experience.md.ts for why relative imports break here specifically.
 
 import { getLocale } from "i18n:astro";
 import { getCollection } from "astro:content";
-import { person } from "../data/person";
-import { getExperience } from "../lib/experience";
+import { person } from "@/data/person";
+import { getExperience } from "@/lib/experience";
 
 export async function GET() {
   const locale = getLocale();

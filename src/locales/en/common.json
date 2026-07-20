@@ -49,7 +49,14 @@
     "caseStudy": "Case study",
     "github": "GitHub",
     "viewAll": "View all projects",
-    "caseStudy": "View case study"
+    "caseStudy": "View case study",
+    "detail": {
+      "specialLabel": "Featured projects",
+      "knowledgeAreas": "Knowledge Areas",
+      "repositories": "Repositories",
+      "deployments": "Deployments",
+      "skillsDemonstrated": "Skills Demonstrated"
+    }
   },
   "experience": {
     "title": "Experience",

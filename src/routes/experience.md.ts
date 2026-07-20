@@ -1,9 +1,14 @@
 // src/routes/experience.md.ts
 // Markdown twin of experience/index.astro.
+//
+// Uses the "@/*" alias (see tsconfig.json + astro.config.mjs) instead of a
+// relative import — this file gets copied by @astrolicious/i18n into
+// .astro/astro-i18n/entrypoints/<locale>/, one directory deeper than its
+// source location, which breaks plain "../lib/..." relative imports.
 
 import { getLocale } from "i18n:astro";
-import { getExperience } from "../lib/experience";
-import { person } from "../data/person";
+import { getExperience } from "@/lib/experience";
+import { person } from "@/data/person";
 
 export async function GET() {
   const locale = getLocale();

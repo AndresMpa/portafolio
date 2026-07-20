@@ -1,0 +1,44 @@
+---
+// src/routes/projects/[...slug].md
+
+import { getLocalePlaceholder } from "i18n:astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const locale = getLocalePlaceholder();
+  const projects = await getCollection(
+    "projects",
+    (project) => project.data.locale === locale
+  );
+  return projects.map((project) => ({
+    params: { slug: project.data.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const d = project.data;
+
+const lines = [
+  `# ${d.title}`,
+  "",
+  `> ${d.description}`,
+  "",
+  project.body,
+  "",
+];
+
+if (d.skills?.length) {
+  lines.push("## Skills", "", d.skills.map((s) => `- ${s}`).join("\n"), "");
+}
+if (d.aiTopics?.length) {
+  lines.push("## Knowledge Areas", "", d.aiTopics.map((t) => `- ${t}`).join("\n"), "");
+}
+if (d.repository?.length) {
+  lines.push("## Links", "", d.repository.map((r) => `- ${r}`).join("\n"), "");
+}
+
+const markdown = lines.join("\n");
+---
+
+<Fragment set:html={markdown} />
