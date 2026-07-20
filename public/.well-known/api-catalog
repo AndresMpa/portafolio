@@ -1,0 +1,29 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://andresmpa.netlify.app/",
+      "service-desc": [
+        {
+          "href": "https://andresmpa.netlify.app/api/knowledge.json",
+          "title": "Entry point — links to every other data endpoint on this site",
+          "type": "application/json"
+        },
+        {
+          "href": "https://andresmpa.netlify.app/api/projects.json",
+          "title": "Project catalog — titles, descriptions, skills, repositories",
+          "type": "application/json"
+        },
+        {
+          "href": "https://andresmpa.netlify.app/api/experience.json",
+          "title": "Work experience history",
+          "type": "application/json"
+        },
+        {
+          "href": "https://andresmpa.netlify.app/api/skills.json",
+          "title": "Skills, languages and tools",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}

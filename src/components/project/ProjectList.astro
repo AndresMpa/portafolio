@@ -22,7 +22,7 @@ const title = titleCase(String(t("projects.title")));
   </article>
   <article>
     {projectsData.map((data, index) => (
-      <div class={`${index % 2 === 0 ? "" : "flex-row-reverse"} md:flex justify-around my-12`}>
+      <div class={`md:flex ${index % 2 === 0 ? "md:flex-row-reverse" : ""} justify-around my-12`}>
         <ProjectDescription
           title={data.title}
           context={data.description}

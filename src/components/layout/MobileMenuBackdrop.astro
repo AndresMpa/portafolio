@@ -1,0 +1,12 @@
+---
+// src/components/layout/MobileMenuBackdrop.astro
+interface Props {
+  toggleId?: string;
+}
+const { toggleId = "mobile-nav-toggle" } = Astro.props as Props;
+---
+
+<label
+  for={toggleId}
+  class="fixed inset-0 bg-black/60 z-40 opacity-0 pointer-events-none transition-opacity duration-300 peer-checked:opacity-100 peer-checked:pointer-events-auto lg:hidden"
+></label>

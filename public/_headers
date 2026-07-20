@@ -1,0 +1,18 @@
+# public/_headers — Netlify reads this verbatim, no build step needed.
+# https://docs.netlify.com/routing/headers/
+
+# Site-wide: point agents at the discovery surfaces without a full crawl.
+/*
+  Link: </.well-known/agent-skills-index.json>; rel="agent-skills-index", </.well-known/api-catalog>; rel="api-catalog", </llms.txt>; rel="llms-txt", </llms-full.md>; rel="alternate"; type="text/markdown"
+
+# JSON endpoints and well-known files should be readable cross-origin —
+# agents fetching these aren't running in a browser tab on your origin.
+/api/*
+  Access-Control-Allow-Origin: *
+
+/.well-known/*
+  Access-Control-Allow-Origin: *
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/agent-skills-index.json
+  Content-Type: application/json; charset=utf-8

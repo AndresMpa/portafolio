@@ -3,8 +3,14 @@
 import { t, getLocale } from "i18n:astro";
 import { localizeHref } from "../../lib/utils";
 
-const locale = getLocale();
+interface Props {
+  lines?: number;
+  variant?: "desktop" | "mobile";
+}
 
+const { lines = 1, variant = "desktop" } = Astro.props as Props;
+
+const locale = getLocale();
 const navItems = [
   { key: "home", href: "/" },
   { key: "projects", href: "/projects" },
@@ -17,25 +23,55 @@ const navItems = [
 ];
 
 const currentPath = Astro.url.pathname;
+
+function isItemActive(href: string) {
+  return href === "/"
+    ? currentPath === `/${locale}` || currentPath === `/${locale}/`
+    : currentPath.startsWith(`/${locale}${href}`);
+}
+
+const itemsPerLine = Math.ceil(navItems.length / lines);
 ---
-<nav class="hidden md:flex gap-8 text-xs uppercase tracking-wider mt-0">
-  {navItems.map((item) => {
-    const href = localizeHref(item.href, locale);
-    const isActive =
-      item.href === "/"
-        ? currentPath === `/${locale}` || currentPath === `/${locale}/`
-        : currentPath.startsWith(`/${locale}${item.href}`);
-    return (
-      <a
-        href={href}
-        class={`pb-1 border-b-2 ${
-          isActive
-            ? "border-accent text-accent"
-            : "border-transparent text-zinc-400 hover:text-zinc-200"
-        }`}
-      >
-        {t(`nav.${item.key}` as any)}
-      </a>
-    );
-  })}
-</nav>
+
+{variant === "desktop" ? (
+  <nav
+    class="hidden md:grid gap-x-8 gap-y-3 text-xs uppercase tracking-wider mt-0"
+    style={`grid-template-columns: repeat(${itemsPerLine}, max-content);`}
+  >
+    {navItems.map((item) => {
+      const href = localizeHref(item.href, locale);
+      const isActive = isItemActive(item.href);
+      return (
+        <a
+          href={href}
+          class={`pb-1 border-b-2 ${
+            isActive
+              ? "border-accent text-accent"
+              : "border-transparent text-zinc-400 hover:text-zinc-200"
+          }`}
+        >
+          {t(`nav.${item.key}` as any)}
+        </a>
+      );
+    })}
+  </nav>
+) : (
+  <nav class="flex flex-col gap-6 text-sm uppercase tracking-wider">
+    {navItems.map((item) => {
+      const href = localizeHref(item.href, locale);
+      const isActive = isItemActive(item.href);
+      return (
+        <a
+          href={href}
+          class={`mobile-nav-link pb-1 border-b w-fit ${
+            isActive
+              ? "border-accent text-accent"
+              : "border-transparent text-zinc-400 hover:text-zinc-200"
+          }`}
+        >
+          {t(`nav.${item.key}` as any)}
+        </a>
+      );
+    })}
+  </nav>
+)}

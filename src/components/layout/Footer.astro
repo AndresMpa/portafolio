@@ -24,17 +24,15 @@ const socialMedia = [
 ---
 
 <footer id="contact" class="bg-neutral-950 text-neutral-400 font-mono py-16 px-6">
-  <div class="max-w-[95%] mx-auto flex justify-between items-end">
-    <BrandLogo />
-    
-    <div class="hidden md:flex flex-col">
-      <div class="flex items-center">
-        <Navigation />
-      </div>
+  <div class="max-w-[95%] mx-auto flex justify-center md:justify-between items-end text-center md:text-left">
+    <div class="hidden md:block">
+      <BrandLogo />
     </div>
 
     <div class="flex flex-col">
-      <h3 class="text-accent text-sm mb-4">LET'S CONNECT</h3>
+      <h3 class="text-accent uppercase text-sm mb-4">
+        {t("footer.connetCta")}
+      </h3>
       <div class="flex">
         {socialMedia.map((data) => (
           <SocialLink icon={data.icon} link={data.link} alt={data.alt} />

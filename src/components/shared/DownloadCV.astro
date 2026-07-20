@@ -4,19 +4,19 @@
 import cv from "/AndresMpa_CV.pdf";
 
 import type { DownloadCVProps } from "../../types";
-
 const {
   buttonLabel
 } = Astro.props as DownloadCVProps;
 ---
 
-
-<a
-  href={cv}
-  download="AndresMpa_CV.pdf"
-  class="p-2 mr-2 rounded-full bg-accent hover:bg-accent active:bg-accent focus:outline-none focus:ring focus:ring-accent flex items-center justify-center"
->
-  <span class="ml-1 font-bold text-black">
-    ↓ {buttonLabel}
-  </span>
-</a>
+<div class="cv-button-wrap relative inline-block mr-2">
+  <a
+    href={cv}
+    download="AndresMpa_CV.pdf"
+    class="p-2 rounded-full flex items-center justify-center transition-colors duration-200 hover:bg-accent/10 focus:bg-accent/10 focus:outline-none"
+  >
+    <span class="ml-1 font-bold text-accent">
+      &darr; {buttonLabel}
+    </span>
+  </a>
+</div>

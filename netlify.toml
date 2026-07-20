@@ -1,0 +1,13 @@
+# netlify.toml
+# You don't have one currently (build settings are presumably set in the
+# Netlify dashboard) — this makes them explicit and adds the edge function.
+# If your dashboard settings differ, keep those and just add the
+# [[edge_functions]] block below.
+
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+
+[[edge_functions]]
+  path = "/*"
+  function = "markdown-negotiation"

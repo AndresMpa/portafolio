@@ -1,4 +1,5 @@
 // @ts-check
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "astro/config";
 import liciousI18n from "@astrolicious/i18n";
 import tailwind from "@astrojs/tailwind";
@@ -21,4 +22,11 @@ export default defineConfig({
     }),
   ],
   output: "static",
+  vite: {
+    resolve: {
+      alias: {
+        "@": fileURLToPath(new URL("./src", import.meta.url)),
+      },
+    },
+  },
 });
