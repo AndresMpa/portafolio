@@ -23,6 +23,7 @@ repository:
   - https://github.com/lyra-ai-assistant/lyra-server
   - https://github.com/lyra-ai-assistant/lyra-ui
   - https://github.com/lyra-ai-assistant/lyra-packaging
+  - https://lyra-ai-assistant.github.io/lyra-page/
 
 skills:
   - Arquitectura de Software
